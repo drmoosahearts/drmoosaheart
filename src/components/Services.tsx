@@ -1,5 +1,4 @@
-
-import { ArrowRight, Heart, Activity, Baby, Minimize2, Lungs, Zap } from "lucide-react";
+import { ArrowRight, Heart, Activity, Baby, Minimize2, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Services = () => {
@@ -27,12 +26,6 @@ const Services = () => {
       title: "Minimally Invasive Surgery",
       description: "Advanced techniques resulting in less pain, smaller incisions, and quicker recovery.",
       link: "/services#minimally-invasive"
-    },
-    {
-      icon: <Lungs className="h-10 w-10 text-white" />,
-      title: "Vascular & Lung Surgery",
-      description: "Expert surgical treatment for vascular conditions and lung disorders.",
-      link: "/services#vascular-lung"
     },
     {
       icon: <Zap className="h-10 w-10 text-white" />,
