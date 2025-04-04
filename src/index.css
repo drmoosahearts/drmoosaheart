@@ -85,3 +85,86 @@
     @apply text-xl md:text-2xl font-semibold text-medical-teal mb-4;
   }
 }
+
+@keyframes heartbeat {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  60% {
+    stroke-dashoffset: 0;
+    d: path("M0,50 L200,50 L220,50 L240,20 L260,80 L280,50 L300,50 L1000,50");
+  }
+  70% {
+    d: path("M0,50 L200,50 L220,50 L240,30 L260,70 L280,50 L300,50 L1000,50");
+  }
+  80% {
+    d: path("M0,50 L200,50 L220,50 L240,40 L260,60 L280,50 L300,50 L1000,50");
+  }
+  90% {
+    d: path("M0,50 L200,50 L220,50 L240,45 L260,55 L280,50 L300,50 L1000,50");
+  }
+  100% {
+    d: path("M0,50 L1000,50");
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-heartbeat {
+  animation: heartbeat 2s ease-in-out forwards;
+}
+
+@keyframes reveal-line {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes fade-in {
+  '0%': { opacity: '0' },
+  '100%': { opacity: '1' },
+}
+
+@keyframes slide-up {
+  '0%': { transform: 'translateY(20px)', opacity: '0' },
+  '100%': { transform: 'translateY(0)', opacity: '1' },
+}
+
+@keyframes accordion-down {
+  from {
+    height: '0';
+  }
+  to {
+    height: 'var(--radix-accordion-content-height)';
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: 'var(--radix-accordion-content-height)';
+  }
+  to {
+    height: '0';
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.5s ease-out;
+}
+
+.animate-accordion-down {
+  animation: accordion-down 0.2s ease-out;
+}
+
+.animate-accordion-up {
+  animation: accordion-up 0.2s ease-out;
+}
