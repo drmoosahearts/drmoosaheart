@@ -36,10 +36,11 @@ const Hero = () => {
           <div className="flex justify-center md:justify-end animate-slide-up">
             <div className="relative">
               <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-white shadow-xl">
-                {/* Placeholder for doctor image */}
-                <div className="w-full h-full bg-medical-blue-light flex items-center justify-center text-white text-center p-4">
-                  <p className="text-lg">Dr. M.K. Moosa Kunhi's professional photo will appear here</p>
-                </div>
+                <img 
+                  src="/lovable-uploads/df9ff86b-8972-4f53-8033-9a6eecd1fd98.png" 
+                  alt="Dr. M.K. Moosa Kunhi" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="absolute -bottom-4 -right-4 bg-white p-4 rounded-lg shadow-lg">
                 <p className="text-medical-blue-dark font-bold">First Indian Heart Surgeon Trained in Modern Artificial Heart Technology</p>

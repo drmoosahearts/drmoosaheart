@@ -25,6 +25,15 @@ const Introduction = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="section-title after:left-1/2 after:-translate-x-1/2">Meet Dr. M.K. Moosa Kunhi</h2>
+          <div className="flex justify-center mb-8">
+            <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-medical-teal shadow-lg">
+              <img 
+                src="/lovable-uploads/70c164f0-c589-4af4-bf9d-05fc475344cd.png" 
+                alt="Dr. M.K. Moosa Kunhi in surgical attire" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
           <p className="text-lg text-gray-700 mb-6">
             A globally renowned heart surgeon, celebrated for pioneering advanced cardiac surgery techniques in India. 
             Dr. Moosa Kunhi introduced beating-heart bypass surgery in 1997, making complex heart procedures safer, 

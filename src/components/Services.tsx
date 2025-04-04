@@ -1,3 +1,4 @@
+
 import { ArrowRight, Heart, Activity, Baby, Minimize2, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -44,6 +45,46 @@ const Services = () => {
             Dr. Moosa Kunhi offers a comprehensive range of advanced cardiac surgical procedures,
             combining cutting-edge techniques with decades of expertise.
           </p>
+        </div>
+
+        <div className="flex flex-col md:flex-row items-center mb-12">
+          <div className="md:w-1/3 mb-8 md:mb-0">
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              <img 
+                src="/lovable-uploads/9813e1f4-e69f-4247-b997-ca1ea58bd3d3.png" 
+                alt="Dr. Moosa Kunhi in formal attire" 
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
+          <div className="md:w-2/3 md:pl-12">
+            <h3 className="text-2xl font-bold text-medical-blue-dark mb-4">Expertise That Is A Class Apart</h3>
+            <p className="text-gray-700 mb-4">
+              Dr. Moosa is one among those rare group of surgeons in the world, who are skilled in performing almost all types of Cardiac surgeries with highest success rates.
+            </p>
+            <ul className="space-y-2 text-gray-700">
+              <li className="flex items-start">
+                <span className="text-medical-teal mr-2">●</span>
+                <span>Bypass heart surgery, conventional as well as beating heart surgery</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-medical-teal mr-2">●</span>
+                <span>Heart valve replacement and repair</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-medical-teal mr-2">●</span>
+                <span>High risk and complex heart surgeries</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-medical-teal mr-2">●</span>
+                <span>Vascular and Lung surgeries</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-medical-teal mr-2">●</span>
+                <span>Children's heart diseases (congenital and acquired)</span>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
