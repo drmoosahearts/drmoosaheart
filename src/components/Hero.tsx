@@ -17,7 +17,7 @@ const Hero = () => {
             </p>
             <div className="flex items-center mb-8 bg-white p-4 rounded-lg shadow-sm border border-medical-gray-dark">
               <div className="text-medical-blue-dark font-semibold text-lg">
-                <span className="font-bold text-medical-teal text-2xl">15,000+</span> Successful Heart Surgeries
+                <span className="font-bold text-medical-teal text-2xl">16,000+</span> Successful Heart Surgeries
               </div>
               <div className="w-px h-10 bg-gray-300 mx-4"></div>
               <div className="text-medical-blue-dark font-semibold text-lg">
@@ -42,7 +42,7 @@ const Hero = () => {
                 </div>
               </div>
               <div className="absolute -bottom-4 -right-4 bg-white p-4 rounded-lg shadow-lg">
-                <p className="text-medical-blue-dark font-bold">Pioneer of Beating Heart Bypass Surgery in India</p>
+                <p className="text-medical-blue-dark font-bold">First Indian Heart Surgeon Trained in Modern Artificial Heart Technology</p>
               </div>
             </div>
           </div>

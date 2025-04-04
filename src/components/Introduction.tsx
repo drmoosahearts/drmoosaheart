@@ -11,7 +11,7 @@ const Introduction = () => {
     {
       icon: <Award className="h-12 w-12 text-medical-teal" />,
       title: "World-Class Surgeon",
-      description: "Over 35 years of experience with 15,000+ successful heart operations and a 99.7% success rate."
+      description: "Over 35 years of experience with 16,000+ successful heart operations and a 99.7% success rate."
     },
     {
       icon: <Users className="h-12 w-12 text-medical-teal" />,
@@ -31,8 +31,9 @@ const Introduction = () => {
             more affordable, and accessible to all.
           </p>
           <p className="text-lg text-gray-700">
-            With over three decades of experience and more than 15,000 successful surgeries, 
-            Dr. Moosa Kunhi has transformed cardiac care throughout India and beyond.
+            With over three decades of experience and more than 16,000 successful surgeries, 
+            Dr. Moosa Kunhi has transformed cardiac care throughout India and beyond. His astounding surgical feats in 
+            high-complication cases have been revered by the cardiac fraternity worldwide.
           </p>
         </div>
 
@@ -50,7 +51,7 @@ const Introduction = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <p className="text-medical-blue font-semibold mb-6">Dr. Moosa Kunhi has pioneered multiple cardiac surgery techniques and technologies that have benefited patients worldwide.</p>
+          <p className="text-medical-blue font-semibold mb-6">Dr. Moosa Kunhi is the only heart surgeon from India invited by Europe's biggest heart surgery hospital, The German Heart Institute in Berlin, as a guest heart surgeon.</p>
           <a href="/about" className="btn-outline inline-flex items-center gap-2">
             Read Full Biography
           </a>

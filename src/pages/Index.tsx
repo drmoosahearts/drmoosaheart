@@ -13,7 +13,7 @@ const Index = () => {
     document.title = "Dr. M.K. Moosa Kunhi - Renowned Cardiac Surgeon in India";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute("content", "Dr. M.K. Moosa Kunhi is a globally renowned cardiac surgeon, pioneer of beating heart bypass surgery in India with over 15,000 successful surgeries and 35+ years of experience.");
+      metaDescription.setAttribute("content", "Dr. M.K. Moosa Kunhi is a globally renowned cardiac surgeon with 16,000+ successful surgeries, pioneer of beating heart bypass surgery in India, and the first Indian heart surgeon trained in artificial heart technology.");
     }
   }, []);
 

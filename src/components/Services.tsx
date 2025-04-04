@@ -1,12 +1,12 @@
 
-import { ArrowRight, Heart, Activity, Baby, Minimize2 } from "lucide-react";
+import { ArrowRight, Heart, Activity, Baby, Minimize2, Lungs, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Services = () => {
   const services = [
     {
       icon: <Heart className="h-10 w-10 text-white" />,
-      title: "Beating Heart Bypass Surgery",
+      title: "Bypass & Beating Heart Surgery",
       description: "Safer, cost-effective bypass surgery with faster recovery and reduced complications.",
       link: "/services#bypass"
     },
@@ -24,9 +24,21 @@ const Services = () => {
     },
     {
       icon: <Minimize2 className="h-10 w-10 text-white" />,
-      title: "Minimally Invasive Cardiac Surgery",
+      title: "Minimally Invasive Surgery",
       description: "Advanced techniques resulting in less pain, smaller incisions, and quicker recovery.",
       link: "/services#minimally-invasive"
+    },
+    {
+      icon: <Lungs className="h-10 w-10 text-white" />,
+      title: "Vascular & Lung Surgery",
+      description: "Expert surgical treatment for vascular conditions and lung disorders.",
+      link: "/services#vascular-lung"
+    },
+    {
+      icon: <Zap className="h-10 w-10 text-white" />,
+      title: "Artificial Heart Technology",
+      description: "Pioneering mechanical circulatory support systems and artificial heart procedures.",
+      link: "/services#artificial-heart"
     }
   ];
 
@@ -41,7 +53,7 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div key={index} className="group relative overflow-hidden rounded-xl transition-all duration-300 hover:shadow-xl">
               <div className="bg-gradient-to-r from-medical-blue to-medical-teal p-6 h-full flex flex-col">

@@ -1,5 +1,5 @@
 
-import { ArrowRight, Calendar, Award, HeartPulse, Stethoscope } from "lucide-react";
+import { ArrowRight, Calendar, Award, HeartPulse, Stethoscope, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Achievements = () => {
@@ -20,17 +20,26 @@ const Achievements = () => {
       description: "Successfully performed surgery on Asia's smallest baby (750g), setting new standards."
     },
     {
-      year: "Ongoing",
-      title: "Charitable Medical Service",
-      description: "Established cardiac centers and programs to serve underprivileged patients."
+      year: "2010s",
+      title: "Artificial Heart Technology",
+      description: "First Indian heart surgeon to be trained in modern artificial heart technology at the German Heart Institute, Berlin."
     }
   ];
 
   const stats = [
-    { icon: <HeartPulse className="h-10 w-10 text-medical-teal" />, value: "15,000+", label: "Successful Heart Surgeries" },
+    { icon: <HeartPulse className="h-10 w-10 text-medical-teal" />, value: "16,000+", label: "Successful Heart Surgeries" },
     { icon: <Calendar className="h-10 w-10 text-medical-teal" />, value: "35+", label: "Years of Experience" },
     { icon: <Award className="h-10 w-10 text-medical-teal" />, value: "99.7%", label: "Success Rate" },
     { icon: <Stethoscope className="h-10 w-10 text-medical-teal" />, value: "1st", label: "Beating Heart Surgery in India" }
+  ];
+
+  const awards = [
+    { name: "Bharat Excellence Award", year: "2011" },
+    { name: "Lifetime Achievement Award (FFI, New Delhi)", year: "2011" },
+    { name: "Certificate of Excellence", year: "2017" },
+    { name: "Red Cross Society Award", year: "2003" },
+    { name: "Mother Teresa Award", year: "2003" },
+    { name: "N.S. Das Puraskaram", year: "2001" }
   ];
 
   return (
@@ -52,6 +61,21 @@ const Achievements = () => {
               <div className="text-gray-700">{stat.label}</div>
             </div>
           ))}
+        </div>
+
+        <div className="mb-16">
+          <h3 className="text-2xl font-bold text-medical-blue-dark mb-6 text-center">Award Recognition</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {awards.map((award, index) => (
+              <div key={index} className="bg-medical-gray p-4 rounded-lg flex items-center gap-3">
+                <Star className="text-medical-gold h-6 w-6 flex-shrink-0" />
+                <div>
+                  <p className="font-semibold text-medical-blue-dark">{award.name}</p>
+                  <p className="text-sm text-gray-600">{award.year}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="relative">
