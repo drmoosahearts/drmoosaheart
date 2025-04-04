@@ -5,6 +5,7 @@ import Services from "@/components/Services";
 import Achievements from "@/components/Achievements";
 import CallToAction from "@/components/CallToAction";
 import ContactInfo from "@/components/ContactInfo";
+import MediaCoverage from "@/components/MediaCoverage";
 import { useEffect } from "react";
 import { Quote } from "lucide-react";
 
@@ -97,6 +98,7 @@ const Index = () => {
       <Hero />
       <Introduction />
       <Services />
+      <MediaCoverage />
       <Achievements />
       <Testimonials />
       <CallToAction />

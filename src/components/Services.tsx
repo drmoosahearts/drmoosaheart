@@ -51,8 +51,8 @@ const Services = () => {
           <div className="md:w-1/3 mb-8 md:mb-0">
             <div className="rounded-lg overflow-hidden shadow-lg">
               <img 
-                src="/lovable-uploads/9813e1f4-e69f-4247-b997-ca1ea58bd3d3.png" 
-                alt="Dr. Moosa Kunhi in formal attire" 
+                src="/lovable-uploads/80670cba-b70e-4db3-be7f-0cef3def222a.png" 
+                alt="Dr. Moosa Kunhi performing surgery" 
                 className="w-full h-auto"
               />
             </div>

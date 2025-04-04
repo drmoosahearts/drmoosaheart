@@ -37,7 +37,7 @@ const Hero = () => {
             <div className="relative">
               <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-white shadow-xl">
                 <img 
-                  src="/lovable-uploads/df9ff86b-8972-4f53-8033-9a6eecd1fd98.png" 
+                  src="/lovable-uploads/3ae0be19-9973-4994-87d1-3c3287e74b01.png" 
                   alt="Dr. M.K. Moosa Kunhi" 
                   className="w-full h-full object-cover"
                 />
