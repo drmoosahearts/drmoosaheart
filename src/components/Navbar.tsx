@@ -30,6 +30,18 @@ const Navbar = () => {
     setIsOpen(false);
   }, [location.pathname]);
 
+  // Add body scroll lock when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   return (
     <nav 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
@@ -39,14 +51,14 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center">
-            <h1 className="text-2xl font-bold text-medical-blue">
+            <h1 className="text-xl md:text-2xl font-bold text-medical-blue">
               Dr. M.K. Moosa Kunhi
-              <span className="block text-sm font-normal text-medical-teal">Cardiac Surgery Specialist</span>
+              <span className="block text-xs md:text-sm font-normal text-medical-teal">Cardiac Surgery Specialist</span>
             </h1>
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-6 lg:space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -62,7 +74,7 @@ const Navbar = () => {
             ))}
             <Link
               to="/contact#appointment"
-              className="btn-primary"
+              className="btn-primary py-2 px-4 text-sm"
             >
               Book Appointment
             </Link>
@@ -71,36 +83,39 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-medical-blue-dark"
+            className="md:hidden text-medical-blue-dark p-2"
+            aria-label="Toggle menu"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Full Screen Overlay */}
       <div
-        className={`md:hidden transition-all duration-300 overflow-hidden ${
-          isOpen ? "max-h-screen bg-white shadow-md" : "max-h-0"
+        className={`fixed inset-0 bg-white z-40 transition-transform duration-300 md:hidden ${
+          isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
+        <div className="container mx-auto px-4 py-20 flex flex-col h-full">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.path}
-              className={`py-2 px-4 font-medium ${
+              className={`py-4 text-xl font-medium border-b border-gray-100 ${
                 location.pathname === link.path
                   ? "text-medical-teal"
                   : "text-medical-blue-dark"
               }`}
+              onClick={() => setIsOpen(false)}
             >
               {link.name}
             </Link>
           ))}
           <Link
             to="/contact#appointment"
-            className="btn-primary w-full text-center"
+            className="btn-primary w-full text-center mt-6 py-4"
+            onClick={() => setIsOpen(false)}
           >
             Book Appointment
           </Link>

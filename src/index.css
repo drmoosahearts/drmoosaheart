@@ -52,7 +52,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-lato;
+    @apply bg-background text-foreground font-lato overflow-x-hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -62,30 +62,41 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-medical-blue hover:bg-medical-blue-dark text-white font-semibold py-3 px-6 rounded-md transition-colors duration-300;
+    @apply bg-medical-blue hover:bg-medical-blue-dark text-white font-semibold py-2 md:py-3 px-4 md:px-6 rounded-md transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-medical-blue-light focus:ring-opacity-50 touch-manipulation;
   }
   
   .btn-secondary {
-    @apply bg-medical-teal hover:bg-medical-teal-dark text-white font-semibold py-3 px-6 rounded-md transition-colors duration-300;
+    @apply bg-medical-teal hover:bg-medical-teal-dark text-white font-semibold py-2 md:py-3 px-4 md:px-6 rounded-md transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-medical-teal-light focus:ring-opacity-50 touch-manipulation;
   }
   
   .btn-outline {
-    @apply border-2 border-medical-blue text-medical-blue hover:bg-medical-blue hover:text-white font-semibold py-3 px-6 rounded-md transition-colors duration-300;
+    @apply border-2 border-medical-blue text-medical-blue hover:bg-medical-blue hover:text-white font-semibold py-2 md:py-3 px-4 md:px-6 rounded-md transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-medical-blue-light focus:ring-opacity-50 touch-manipulation;
   }
 
   .section-title {
-    @apply text-4xl md:text-5xl font-bold text-medical-blue-dark mb-6 relative;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-medical-blue-dark mb-4 md:mb-6 relative;
   }
 
   .section-title::after {
-    @apply content-[''] absolute bottom-0 left-0 w-20 h-1 bg-medical-gold;
+    @apply content-[''] absolute bottom-0 left-0 w-16 md:w-20 h-1 bg-medical-gold;
   }
 
   .section-subtitle {
-    @apply text-xl md:text-2xl font-semibold text-medical-teal mb-4;
+    @apply text-lg md:text-xl lg:text-2xl font-semibold text-medical-teal mb-3 md:mb-4;
+  }
+  
+  /* Touch-friendly improvements */
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+  
+  /* Ensure tap targets are large enough */
+  .tap-target {
+    @apply min-h-[44px] min-w-[44px];
   }
 }
 
+/* Animations */
 @keyframes heartbeat {
   0% {
     stroke-dashoffset: 1000;
@@ -180,4 +191,30 @@
 
 .gallery-item:hover::after {
   @apply opacity-20;
+}
+
+/* Handle mobile taps */
+@media (hover: none) {
+  .gallery-item::after {
+    @apply opacity-10;
+  }
+  
+  .gallery-item img {
+    @apply transform scale-[1.02];
+  }
+}
+
+/* Media query to adjust font sizes and spacing for small screens */
+@media (max-width: 360px) {
+  .btn-primary, .btn-secondary, .btn-outline {
+    @apply py-2 px-3 text-sm;
+  }
+  
+  .section-title {
+    @apply text-2xl;
+  }
+  
+  .section-subtitle {
+    @apply text-lg;
+  }
 }

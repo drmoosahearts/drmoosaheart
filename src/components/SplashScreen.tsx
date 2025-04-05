@@ -32,20 +32,20 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
         isFading ? 'opacity-0' : 'opacity-100'
       }`}
     >
-      <div className="w-full max-w-lg mx-auto text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 font-playfair">
+      <div className="w-full max-w-lg mx-auto text-center px-4">
+        <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 font-playfair">
           Dr. M.K. Moosa Kunhi
         </h1>
         <dotlottie-player 
           src="https://lottie.host/85bedc86-399c-46a1-8d59-192e512c3d46/VPEoqhRMXz.lottie" 
           background="transparent" 
           speed="1" 
-          style={{ width: "300px", height: "300px" }} 
+          style={{ width: "280px", height: "280px", maxWidth: "100%" }} 
           loop 
           autoplay
           className="mx-auto"
         ></dotlottie-player>
-        <p className="text-white text-xl">Pioneering Cardiac Surgery</p>
+        <p className="text-white text-lg md:text-xl">Pioneering Cardiac Surgery</p>
       </div>
     </div>
   );

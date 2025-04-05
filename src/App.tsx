@@ -19,6 +19,7 @@ const queryClient = new QueryClient();
 
 const App = () => {
   const [showSplash, setShowSplash] = useState(true);
+  const [isPageLoaded, setIsPageLoaded] = useState(false);
 
   // Add the Lottie script
   useEffect(() => {
@@ -26,6 +27,16 @@ const App = () => {
     script.src = "https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs";
     script.type = "module";
     document.body.appendChild(script);
+
+    // Mark page as loaded
+    window.addEventListener('load', () => {
+      setIsPageLoaded(true);
+    });
+
+    // If page is already loaded (e.g. cached)
+    if (document.readyState === 'complete') {
+      setIsPageLoaded(true);
+    }
 
     return () => {
       document.body.removeChild(script);
@@ -37,18 +48,20 @@ const App = () => {
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
-        <div className={showSplash ? 'invisible' : 'visible'}>
+        {showSplash && isPageLoaded && <SplashScreen onComplete={() => setShowSplash(false)} />}
+        <div className={showSplash && isPageLoaded ? 'invisible' : 'visible'}>
           <BrowserRouter>
             <Navbar />
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/about" element={<AboutPage />} />
-              <Route path="/services" element={<ServicesPage />} />
-              <Route path="/achievements" element={<AchievementsPage />} />
-              <Route path="/contact" element={<ContactPage />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+            <main className="min-h-screen pt-16">
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/services" element={<ServicesPage />} />
+                <Route path="/achievements" element={<AchievementsPage />} />
+                <Route path="/contact" element={<ContactPage />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </main>
             <Footer />
           </BrowserRouter>
         </div>
