@@ -1,57 +1,27 @@
-
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 
 const Hero = () => {
   const [animationStage, setAnimationStage] = useState(0);
-  const [revealText, setRevealText] = useState("");
-  const fullName = "DR MOOSA";
   const svgRef = useRef<SVGSVGElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
   
   useEffect(() => {
     // Make sure we start fresh on component mount
     setAnimationStage(0);
-    setRevealText("");
     
-    // Initial delay before starting animation
-    const timer1 = setTimeout(() => {
+    // Start heartbeat animation after a short delay
+    const timer = setTimeout(() => {
       console.log("Starting heartbeat animation");
       setAnimationStage(1); // Start heartbeat animation
     }, 500);
     
-    // Transition to text reveal animation
-    const timer2 = setTimeout(() => {
-      console.log("Starting text reveal");
-      setAnimationStage(2); // Start text reveal
-    }, 3000);
-    
-    // Clean up timers
+    // Clean up timer
     return () => {
-      clearTimeout(timer1);
-      clearTimeout(timer2);
+      clearTimeout(timer);
     };
   }, []);
-  
-  // Handle text reveal animation
-  useEffect(() => {
-    if (animationStage !== 2) return;
-    
-    let currentIndex = 0;
-    const textRevealInterval = setInterval(() => {
-      if (currentIndex < fullName.length) {
-        setRevealText(fullName.substring(0, currentIndex + 1));
-        currentIndex++;
-      } else {
-        clearInterval(textRevealInterval);
-      }
-    }, 150);
-    
-    return () => {
-      clearInterval(textRevealInterval);
-    };
-  }, [animationStage]);
 
   return (
     <section className="relative bg-medical-gray pt-24 min-h-screen flex items-center">
@@ -75,36 +45,18 @@ const Hero = () => {
               strokeWidth="2"
             />
             
-            {/* Animated heartbeat or text reveal line */}
+            {/* Animated heartbeat line */}
             {animationStage > 0 && (
               <path
                 ref={pathRef}
-                d={animationStage === 1 
-                  ? "M0,50 L200,50 L220,50 L240,20 L260,80 L280,50 L300,50 L1000,50" 
-                  : "M0,50 L1000,50"}
+                d="M0,50 L200,50 L220,50 L240,20 L260,80 L280,50 L300,50 L1000,50"
                 fill="none"
                 stroke="#0A4DA2"
                 strokeWidth="3"
-                strokeDasharray={animationStage === 1 ? "1000" : "0"}
-                strokeDashoffset={animationStage === 1 ? "1000" : "0"}
-                className={animationStage === 1 
-                  ? "animate-heartbeat" 
-                  : "transition-all duration-500"}
+                strokeDasharray="1000"
+                strokeDashoffset="1000"
+                className="animate-heartbeat"
               />
-            )}
-            
-            {/* Text reveal */}
-            {animationStage === 2 && (
-              <text 
-                x="240" 
-                y="45" 
-                fill="#0A4DA2" 
-                fontSize="32" 
-                fontWeight="bold" 
-                fontFamily="Playfair Display"
-              >
-                {revealText}
-              </text>
             )}
           </svg>
         </div>
