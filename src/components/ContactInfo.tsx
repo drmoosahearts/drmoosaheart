@@ -4,17 +4,17 @@ import { MapPin, Phone, Mail } from "lucide-react";
 const ContactInfo = () => {
   const locations = [
     {
-      name: "Lakeshore Hospital & Research Centre",
-      address: "N.H. 17, Bypass, Maradu, Nettoor P.O, Kochi - 682040, Kerala, India",
-      phone: "+91-484-2701032 / 2701033",
-      email: "moosamk@sify.com"
+      name: "Kauvery Hospitals",
+      address: "200feet Radial Road, Kovilambakkam, Pallavaram, Chennai, Tamil Nadu, India - 600129",
+      phone: "+91-44-61116111 / +91-44-40504050",
+      email: "doctormoosa@yahoo.com"
     }
   ];
 
   const contactInfo = {
-    mobile: "+91-9847142064",
+    mobile: "+91-9061693446",
     email: "doctormoosa@yahoo.com",
-    fax: "+91-484-2701996"
+    website: "krr@kauveryhospital.com"
   };
 
   return (
@@ -25,7 +25,7 @@ const ContactInfo = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-xl font-bold text-medical-blue-dark mb-4">Clinic Location</h3>
+              <h3 className="text-xl font-bold text-medical-blue-dark mb-4">Primary Center</h3>
               {locations.map((location, index) => (
                 <div key={index} className="mb-6">
                   <h4 className="text-lg font-semibold text-medical-blue-dark mb-2">{location.name}</h4>
@@ -69,10 +69,10 @@ const ContactInfo = () => {
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Phone size={20} className="text-medical-teal flex-shrink-0" />
+                  <Mail size={20} className="text-medical-teal flex-shrink-0" />
                   <div>
-                    <p className="text-gray-700">Fax:</p>
-                    <p className="font-semibold">{contactInfo.fax}</p>
+                    <p className="text-gray-700">Website:</p>
+                    <p className="font-semibold">www.{contactInfo.website}</p>
                   </div>
                 </div>
               </div>

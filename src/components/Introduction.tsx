@@ -28,7 +28,7 @@ const Introduction = () => {
           <div className="flex justify-center mb-8">
             <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-medical-teal shadow-lg">
               <img 
-                src="/lovable-uploads/70c164f0-c589-4af4-bf9d-05fc475344cd.png" 
+                src="/lovable-uploads/085a84f1-c51d-4d67-89fb-6194514d69cb.png" 
                 alt="Dr. M.K. Moosa Kunhi in surgical attire" 
                 className="w-full h-full object-cover"
               />
@@ -59,11 +59,20 @@ const Introduction = () => {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <p className="text-medical-blue font-semibold mb-6">Dr. Moosa Kunhi is the only heart surgeon from India invited by Europe's biggest heart surgery hospital, The German Heart Institute in Berlin, as a guest heart surgeon.</p>
-          <a href="/about" className="btn-outline inline-flex items-center gap-2">
-            Read Full Biography
-          </a>
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div>
+            <p className="text-medical-blue font-semibold mb-6">Dr. Moosa Kunhi is the only heart surgeon from India invited by Europe's biggest heart surgery hospital, The German Heart Institute in Berlin, as a guest heart surgeon.</p>
+            <a href="/about" className="btn-outline inline-flex items-center gap-2">
+              Read Full Biography
+            </a>
+          </div>
+          <div className="rounded-lg overflow-hidden shadow-lg">
+            <img 
+              src="/lovable-uploads/728aaaee-502c-485f-a51a-4f0fb2936e11.png" 
+              alt="Dr. Moosa Kunhi with heart monitoring equipment" 
+              className="w-full h-auto"
+            />
+          </div>
         </div>
       </div>
     </section>

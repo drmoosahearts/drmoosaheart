@@ -19,7 +19,7 @@ const ContactPage = () => {
     document.title = "Contact Dr. M.K. Moosa Kunhi - Appointment Booking";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute("content", "Contact Dr. M.K. Moosa Kunhi for consultations and appointments. Reach out to schedule a visit at Lakeshore Hospital & Research Centre, Kochi, Kerala, India.");
+      metaDescription.setAttribute("content", "Contact Dr. M.K. Moosa Kunhi for consultations and appointments. Reach out to schedule a visit at Kauvery Hospitals, Chennai, Tamil Nadu, India.");
     }
   }, []);
 
@@ -77,9 +77,9 @@ const ContactPage = () => {
                       <MapPin className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-medical-blue-dark mb-2">Primary Clinic</h3>
-                      <p className="text-gray-700 mb-1">Lakeshore Hospital & Research Centre</p>
-                      <p className="text-gray-700">N.H. 17, Bypass, Maradu, Nettoor P.O, Kochi - 682040, Kerala, India</p>
+                      <h3 className="text-lg font-semibold text-medical-blue-dark mb-2">Primary Center</h3>
+                      <p className="text-gray-700 mb-1">Kauvery Hospitals</p>
+                      <p className="text-gray-700">200feet Radial Road, Kovilambakkam, Pallavaram, Chennai, Tamil Nadu, India - 600129</p>
                     </div>
                   </div>
                   
@@ -89,9 +89,9 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-medical-blue-dark mb-2">Phone Numbers</h3>
-                      <p className="text-gray-700 mb-1">Mobile: <a href="tel:+919847142064" className="text-medical-blue hover:underline">+91-9847142064</a></p>
-                      <p className="text-gray-700 mb-1">Hospital: <a href="tel:+914842701032" className="text-medical-blue hover:underline">+91-484-2701032 / 2701033</a></p>
-                      <p className="text-gray-700">Fax: +91-484-2701996</p>
+                      <p className="text-gray-700 mb-1">Mobile: <a href="tel:+919061693446" className="text-medical-blue hover:underline">+91-9061693446</a></p>
+                      <p className="text-gray-700 mb-1">Hospital: <a href="tel:+914461116111" className="text-medical-blue hover:underline">+91-44-61116111</a></p>
+                      <p className="text-gray-700">Hospital (Alt): <a href="tel:+914440504050" className="text-medical-blue hover:underline">+91-44-40504050</a></p>
                     </div>
                   </div>
                   
@@ -100,12 +100,12 @@ const ContactPage = () => {
                       <Mail className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-medical-blue-dark mb-2">Email</h3>
+                      <h3 className="text-lg font-semibold text-medical-blue-dark mb-2">Email & Website</h3>
                       <p className="text-gray-700 mb-1">
-                        <a href="mailto:moosamk@sify.com" className="text-medical-blue hover:underline">moosamk@sify.com</a>
+                        <a href="mailto:doctormoosa@yahoo.com" className="text-medical-blue hover:underline">doctormoosa@yahoo.com</a>
                       </p>
                       <p className="text-gray-700">
-                        <a href="mailto:doctormoosa@yahoo.com" className="text-medical-blue hover:underline">doctormoosa@yahoo.com</a>
+                        Website: <span className="text-medical-blue">www.krr@kauveryhospital.com</span>
                       </p>
                     </div>
                   </div>
@@ -121,14 +121,6 @@ const ContactPage = () => {
                       <p className="text-gray-700">Sunday: Closed (Emergency services available)</p>
                     </div>
                   </div>
-                </div>
-                
-                <div className="bg-medical-gray p-6 rounded-lg">
-                  <h3 className="text-lg font-semibold text-medical-blue-dark mb-3">Residential Address</h3>
-                  <p className="text-gray-700 mb-1">33/1478 A, Thekkedathu,</p>
-                  <p className="text-gray-700 mb-1">Chakkaraparamba, Vennala,</p>
-                  <p className="text-gray-700 mb-3">Kochi, Kerala, India.</p>
-                  <p className="text-gray-700">Phone: +91-484-2893120</p>
                 </div>
               </div>
               
@@ -250,19 +242,19 @@ const ContactPage = () => {
             
             <div className="flex flex-col md:flex-row gap-4 justify-center">
               <a 
-                href="tel:+919847142064" 
+                href="tel:+919061693446" 
                 className="bg-medical-blue hover:bg-medical-blue-dark transition-colors duration-300 text-white py-3 px-6 rounded-md font-semibold inline-flex items-center justify-center gap-2"
               >
                 <Phone className="h-5 w-5" />
-                Call Now: +91-9847142064
+                Call Now: +91-9061693446
               </a>
               
               <a 
-                href="mailto:moosamk@sify.com" 
+                href="mailto:doctormoosa@yahoo.com" 
                 className="bg-medical-teal hover:bg-medical-teal-dark transition-colors duration-300 text-white py-3 px-6 rounded-md font-semibold inline-flex items-center justify-center gap-2"
               >
                 <Mail className="h-5 w-5" />
-                Email: moosamk@sify.com
+                Email: doctormoosa@yahoo.com
               </a>
             </div>
           </div>

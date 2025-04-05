@@ -11,13 +11,19 @@ const Hero = () => {
   const pathRef = useRef<SVGPathElement>(null);
   
   useEffect(() => {
-    // Initial heartbeat animation
+    // Make sure we start fresh on component mount
+    setAnimationStage(0);
+    setRevealText("");
+    
+    // Initial delay before starting animation
     const timer1 = setTimeout(() => {
+      console.log("Starting heartbeat animation");
       setAnimationStage(1); // Start heartbeat animation
     }, 500);
     
     // Transition to text reveal animation
     const timer2 = setTimeout(() => {
+      console.log("Starting text reveal");
       setAnimationStage(2); // Start text reveal
     }, 3000);
     
@@ -59,48 +65,46 @@ const Hero = () => {
             viewBox="0 0 1000 100" 
             preserveAspectRatio="none"
           >
+            {/* Baseline */}
+            <line 
+              x1="0" 
+              y1="50" 
+              x2="1000" 
+              y2="50" 
+              stroke="#e1e7f0" 
+              strokeWidth="2"
+            />
+            
+            {/* Animated heartbeat or text reveal line */}
             {animationStage > 0 && (
-              <>
-                {/* Baseline */}
-                <line 
-                  x1="0" 
-                  y1="50" 
-                  x2="1000" 
-                  y2="50" 
-                  stroke="#e1e7f0" 
-                  strokeWidth="2"
-                />
-                
-                {/* Animated heartbeat or text reveal line */}
-                <path
-                  ref={pathRef}
-                  d={animationStage === 1 
-                    ? "M0,50 L200,50 L220,50 L240,20 L260,80 L280,50 L300,50 L1000,50" 
-                    : "M0,50 L1000,50"}
-                  fill="none"
-                  stroke="#0A4DA2"
-                  strokeWidth="3"
-                  strokeDasharray={animationStage === 1 ? "1000" : "0"}
-                  strokeDashoffset={animationStage === 1 ? "1000" : "0"}
-                  className={animationStage === 1 
-                    ? "transition-all duration-1000 animate-heartbeat" 
-                    : "transition-all duration-500"}
-                />
-                
-                {/* Text reveal */}
-                {animationStage === 2 && (
-                  <text 
-                    x="240" 
-                    y="45" 
-                    fill="#0A4DA2" 
-                    fontSize="32" 
-                    fontWeight="bold" 
-                    fontFamily="Playfair Display"
-                  >
-                    {revealText}
-                  </text>
-                )}
-              </>
+              <path
+                ref={pathRef}
+                d={animationStage === 1 
+                  ? "M0,50 L200,50 L220,50 L240,20 L260,80 L280,50 L300,50 L1000,50" 
+                  : "M0,50 L1000,50"}
+                fill="none"
+                stroke="#0A4DA2"
+                strokeWidth="3"
+                strokeDasharray={animationStage === 1 ? "1000" : "0"}
+                strokeDashoffset={animationStage === 1 ? "1000" : "0"}
+                className={animationStage === 1 
+                  ? "animate-heartbeat" 
+                  : "transition-all duration-500"}
+              />
+            )}
+            
+            {/* Text reveal */}
+            {animationStage === 2 && (
+              <text 
+                x="240" 
+                y="45" 
+                fill="#0A4DA2" 
+                fontSize="32" 
+                fontWeight="bold" 
+                fontFamily="Playfair Display"
+              >
+                {revealText}
+              </text>
             )}
           </svg>
         </div>

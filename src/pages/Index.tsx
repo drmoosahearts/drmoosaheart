@@ -6,6 +6,7 @@ import Achievements from "@/components/Achievements";
 import CallToAction from "@/components/CallToAction";
 import ContactInfo from "@/components/ContactInfo";
 import MediaCoverage from "@/components/MediaCoverage";
+import SurgicalGallery from "@/components/SurgicalGallery";
 import { useEffect } from "react";
 import { Quote } from "lucide-react";
 
@@ -25,8 +26,8 @@ const Testimonials = () => {
           <div className="lg:w-1/3">
             <div className="rounded-lg overflow-hidden shadow-xl">
               <img 
-                src="/lovable-uploads/5750b90d-5c04-455d-98cd-b9e238cb4bfa.png" 
-                alt="Dr. Moosa Kunhi in professional setting" 
+                src="/lovable-uploads/61ee55a5-fad0-419a-8d12-fccae88fba4c.png" 
+                alt="Dr. Moosa Kunhi giving a speech" 
                 className="w-full h-auto"
               />
             </div>
@@ -99,6 +100,7 @@ const Index = () => {
       <Introduction />
       <Services />
       <MediaCoverage />
+      <SurgicalGallery />
       <Achievements />
       <Testimonials />
       <CallToAction />
