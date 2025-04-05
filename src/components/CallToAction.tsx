@@ -7,6 +7,7 @@ const CallToAction = () => {
     <section className="py-12 bg-medical-blue text-white">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-2xl md:text-3xl font-bold mb-6">Ready to Schedule Your Consultation?</h2>
+        <div className="w-40 h-1 bg-medical-teal mx-auto mb-8"></div>
         <p className="text-lg mb-8 max-w-2xl mx-auto">
           Take the first step towards expert cardiac care with Dr. M.K. Moosa Kunhi.
           Schedule your consultation today.

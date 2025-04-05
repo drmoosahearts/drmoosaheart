@@ -10,10 +10,16 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10 md:mb-12">
           <div>
-            <h3 className="text-lg md:text-xl font-bold mb-4 md:mb-6 flex items-center gap-2">
-              <Heart className="text-medical-gold" size={18} />
-              Dr. M.K. Moosa Kunhi
-            </h3>
+            <div className="flex items-center gap-3 mb-4">
+              <img 
+                src="/lovable-uploads/c3c9eb4d-5b2d-4995-9c87-f4c88209fdd4.png" 
+                alt="Dr. Moosa Heart Logo" 
+                className="w-10 h-10"
+              />
+              <h3 className="text-lg md:text-xl font-bold">
+                Dr. M.K. Moosa Kunhi
+              </h3>
+            </div>
             <p className="mb-4 md:mb-6 text-gray-300 text-sm md:text-base">
               A globally renowned cardiac surgeon with over 35 years of experience and 16,000+ successful surgeries.
             </p>

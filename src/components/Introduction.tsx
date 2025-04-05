@@ -26,14 +26,14 @@ const Introduction = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-medical-blue mb-6 text-center">Meet Dr. M.K. Moosa Kunhi</h2>
-          <div className="w-16 h-1 bg-medical-teal mx-auto mb-8"></div>
+          <div className="w-40 h-1 bg-medical-teal mx-auto mb-8"></div>
           
           <div className="flex flex-col md:flex-row gap-8 items-center">
             <div className="md:w-1/3">
               <div className="w-48 h-48 rounded-sm overflow-hidden border-4 border-white shadow-lg mx-auto">
                 <img 
-                  src="/lovable-uploads/085a84f1-c51d-4d67-89fb-6194514d69cb.png" 
-                  alt="Dr. M.K. Moosa Kunhi in surgical attire" 
+                  src="/lovable-uploads/8a33f6a2-57ea-42bc-b912-d401ecb5ef1f.png" 
+                  alt="Dr. M.K. Moosa Kunhi" 
                   className="w-full h-full object-cover"
                 />
               </div>

@@ -50,11 +50,18 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center">
-            <h1 className="text-xl md:text-2xl font-bold text-medical-blue">
-              Dr. M.K. Moosa Kunhi
-              <span className="block text-xs md:text-sm font-normal text-medical-teal">Cardiac Surgery Specialist</span>
-            </h1>
+          <Link to="/" className="flex items-center gap-3">
+            <img 
+              src="/lovable-uploads/c3c9eb4d-5b2d-4995-9c87-f4c88209fdd4.png" 
+              alt="Dr. Moosa Heart Logo" 
+              className="w-10 h-10"
+            />
+            <div>
+              <h1 className="text-xl md:text-2xl font-bold text-medical-blue">
+                Dr. M.K. Moosa Kunhi
+                <span className="block text-xs md:text-sm font-normal text-medical-teal">Cardiac Surgery Specialist</span>
+              </h1>
+            </div>
           </Link>
 
           {/* Contact Info - Visible on medium screens and above */}

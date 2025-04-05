@@ -7,12 +7,12 @@ const SurgicalGallery = () => {
   
   const surgicalImages = [
     {
-      src: "/lovable-uploads/e4261c22-c5de-43df-bf5b-0a16d3cc632c.png",
+      src: "/lovable-uploads/d930c800-b764-4b79-8124-b2548b232add.png",
       alt: "Dr. Moosa during heart surgery with surgical loupe"
     },
     {
       src: "/lovable-uploads/d8af5afe-808f-4886-8d69-fbb27a110a72.png", 
-      alt: "Dr. Moosa performing open heart surgery"
+      alt: "Dr. Moosa with his Surgical Team"
     },
     {
       src: "/lovable-uploads/99e2f5ec-fc30-489e-9a73-cbe1ca614e72.png",
@@ -47,7 +47,7 @@ const SurgicalGallery = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-medical-blue mb-6">In The Operating Room</h2>
-          <div className="w-16 h-1 bg-medical-teal mx-auto mb-8"></div>
+          <div className="w-40 h-1 bg-medical-teal mx-auto mb-8"></div>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">
             Dr. Moosa Kunhi's surgical expertise on display. With precision and care, 
             he has performed over 16,000 heart surgeries with a remarkable 99.7% success rate.
