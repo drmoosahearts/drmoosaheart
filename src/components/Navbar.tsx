@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,7 +45,7 @@ const Navbar = () => {
   return (
     <nav 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"
+        isScrolled ? "bg-white shadow-md py-2" : "bg-white shadow-sm py-4"
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
@@ -57,6 +57,17 @@ const Navbar = () => {
             </h1>
           </Link>
 
+          {/* Contact Info - Visible on medium screens and above */}
+          <div className="hidden md:flex items-center mr-4 lg:mr-0">
+            <a href="tel:+919061693446" className="flex items-center text-medical-blue hover:text-medical-teal transition-colors">
+              <Phone className="mr-2 h-5 w-5" />
+              <div>
+                <p className="text-sm font-semibold">+91-9061693446</p>
+                <p className="text-xs">Book an appointment</p>
+              </div>
+            </a>
+          </div>
+
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6 lg:space-x-8">
             {navLinks.map((link) => (
@@ -66,7 +77,7 @@ const Navbar = () => {
                 className={`font-medium transition-colors hover:text-medical-teal ${
                   location.pathname === link.path
                     ? "text-medical-teal"
-                    : isScrolled ? "text-medical-blue-dark" : "text-medical-blue-dark"
+                    : "text-medical-blue-dark"
                 }`}
               >
                 {link.name}
@@ -74,7 +85,7 @@ const Navbar = () => {
             ))}
             <Link
               to="/contact#appointment"
-              className="btn-primary py-2 px-4 text-sm"
+              className="bg-medical-blue text-white hover:bg-medical-blue-dark transition-colors px-4 py-2 rounded-sm"
             >
               Book Appointment
             </Link>
@@ -119,6 +130,17 @@ const Navbar = () => {
           >
             Book Appointment
           </Link>
+          
+          {/* Mobile contact info */}
+          <div className="mt-6 flex items-center">
+            <a href="tel:+919061693446" className="flex items-center text-medical-blue">
+              <Phone className="mr-2 h-5 w-5" />
+              <div>
+                <p className="text-sm font-semibold">+91-9061693446</p>
+                <p className="text-xs">Book an appointment</p>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </nav>

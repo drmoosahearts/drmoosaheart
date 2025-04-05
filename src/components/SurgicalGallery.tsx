@@ -43,21 +43,22 @@ const SurgicalGallery = () => {
   };
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-medical-gray">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="section-title after:left-1/2 after:-translate-x-1/2">In The Operating Room</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-medical-blue mb-6">In The Operating Room</h2>
+          <div className="w-16 h-1 bg-medical-teal mx-auto mb-8"></div>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">
             Dr. Moosa Kunhi's surgical expertise on display. With precision and care, 
             he has performed over 16,000 heart surgeries with a remarkable 99.7% success rate.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {surgicalImages.map((image, index) => (
             <div 
               key={index} 
-              className="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer"
+              className="overflow-hidden rounded-sm hover:shadow-md transition-shadow duration-300 cursor-pointer bg-white"
               onClick={() => openLightbox(image.src)}
             >
               <div className="aspect-w-4 aspect-h-3 bg-gray-100">
@@ -66,6 +67,9 @@ const SurgicalGallery = () => {
                   alt={image.alt}
                   className="object-cover w-full h-full"
                 />
+              </div>
+              <div className="p-3 border-t border-gray-100">
+                <p className="text-sm text-gray-700">{image.alt}</p>
               </div>
             </div>
           ))}

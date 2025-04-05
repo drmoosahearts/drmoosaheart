@@ -1,6 +1,6 @@
 
-import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { ArrowRight, Phone } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
@@ -16,7 +16,6 @@ const Hero = () => {
     
     // Start heartbeat animation after a short delay
     const timer = setTimeout(() => {
-      console.log("Starting heartbeat animation");
       setAnimationStage(1); // Start heartbeat animation
     }, 500);
     
@@ -27,11 +26,62 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative bg-medical-gray pt-24 min-h-screen flex items-center">
-      <div className="absolute inset-0 bg-hero-pattern bg-cover bg-center opacity-20"></div>
-      <div className="container mx-auto px-4 py-12 md:py-24 relative z-10">
+    <section className="relative bg-medical-gray pt-24 min-h-[90vh] flex items-center">
+      <div className="container mx-auto px-4 py-12 md:py-16 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="animate-fade-in order-2 md:order-1">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-medical-blue-dark leading-tight mb-4 md:mb-6">
+              Expert Cardiac Care <span className="text-medical-teal">You Can Trust</span>
+            </h1>
+            <p className="text-lg md:text-xl mb-6 text-gray-700 max-w-lg">
+              Dr. M.K. Moosa Kunhi is a globally renowned heart surgeon with over 35 years of experience and 16,000+ successful surgeries.
+            </p>
+            
+            <div className="mb-8 bg-white p-4 md:p-5 rounded-md shadow-sm border border-gray-100 max-w-md">
+              <div className="flex items-center mb-3">
+                <div className="w-1 h-16 bg-medical-blue mr-4"></div>
+                <div>
+                  <div className="text-medical-blue-dark font-semibold text-lg">
+                    <span className="font-bold text-medical-teal text-xl md:text-2xl">16,000+</span> Successful Surgeries
+                  </div>
+                  <div className="text-medical-blue-dark font-semibold text-lg">
+                    <span className="font-bold text-medical-teal text-xl md:text-2xl">99.7%</span> Success Rate
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-gray-600">First Indian Heart Surgeon Trained in Modern Artificial Heart Technology</p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href="tel:+919061693446" className="bg-medical-blue hover:bg-medical-blue-dark text-white px-6 py-3 rounded-sm flex items-center justify-center sm:justify-start gap-2 transition-colors">
+                <Phone size={18} />
+                <span>+91-9061693446</span>
+              </a>
+              <Link to="/about" className="border-2 border-medical-blue text-medical-blue hover:bg-medical-blue hover:text-white px-6 py-3 rounded-sm flex items-center justify-center sm:justify-start gap-2 transition-colors">
+                Learn More <ArrowRight size={18} />
+              </Link>
+            </div>
+          </div>
+
+          <div className="flex justify-center md:justify-end animate-slide-up order-1 md:order-2 mb-8 md:mb-0">
+            <div className="relative">
+              <div className="w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-sm overflow-hidden shadow-xl">
+                <img 
+                  src="/lovable-uploads/3ae0be19-9973-4994-87d1-3c3287e74b01.png" 
+                  alt="Dr. M.K. Moosa Kunhi" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 bg-medical-blue bg-opacity-90 p-3 text-white">
+                <p className="text-center text-sm">Dr. M.K. Moosa Kunhi</p>
+                <p className="text-center text-xs">Cardiac Surgery Specialist</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Heartbeat Animation */}
-        <div className="w-full h-20 md:h-24 mb-6 md:mb-8 overflow-hidden">
+        <div className="w-full h-16 md:h-20 mt-12 mb-4 overflow-hidden">
           <svg 
             ref={svgRef}
             className="w-full h-full" 
@@ -54,7 +104,7 @@ const Hero = () => {
                 ref={pathRef}
                 d="M0,50 L200,50 L220,50 L240,20 L260,80 L280,50 L300,50 L1000,50"
                 fill="none"
-                stroke="#0A4DA2"
+                stroke="#00457c"
                 strokeWidth="3"
                 strokeDasharray="1000"
                 strokeDashoffset="1000"
@@ -62,48 +112,6 @@ const Hero = () => {
               />
             )}
           </svg>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-          <div className="animate-fade-in order-2 md:order-1">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-medical-blue-dark leading-tight mb-4 md:mb-6">
-              Pioneering Cardiac Surgery, Transforming Lives
-            </h1>
-            <p className="text-lg md:text-xl mb-4 text-gray-700">
-              Dr. M.K. Moosa Kunhi - A globally renowned heart surgeon with over 35 years of experience.
-            </p>
-            <div className="flex flex-col md:flex-row items-center mb-6 md:mb-8 bg-white p-3 md:p-4 rounded-lg shadow-sm border border-medical-gray-dark">
-              <div className="text-medical-blue-dark font-semibold text-lg mb-2 md:mb-0">
-                <span className="font-bold text-medical-teal text-xl md:text-2xl">16,000+</span> Successful Heart Surgeries
-              </div>
-              <div className="hidden md:block w-px h-10 bg-gray-300 mx-4"></div>
-              <div className="text-medical-blue-dark font-semibold text-lg">
-                <span className="font-bold text-medical-teal text-xl md:text-2xl">99.7%</span> Success Rate
-              </div>
-            </div>
-            <div className="flex flex-wrap gap-3 md:gap-4 justify-center md:justify-start">
-              <Link to="/contact#appointment" className="btn-primary flex items-center gap-2 text-sm md:text-base w-full md:w-auto justify-center">
-                Book an Appointment <ArrowRight size={18} />
-              </Link>
-              <Link to="/about" className="btn-outline flex items-center gap-2 text-sm md:text-base w-full md:w-auto justify-center mt-3 md:mt-0">
-                Learn More <ArrowRight size={18} />
-              </Link>
-            </div>
-          </div>
-          <div className="flex justify-center md:justify-end animate-slide-up order-1 md:order-2 mb-8 md:mb-0">
-            <div className="relative">
-              <div className="w-56 h-56 md:w-72 md:h-72 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-white shadow-xl">
-                <img 
-                  src="/lovable-uploads/3ae0be19-9973-4994-87d1-3c3287e74b01.png" 
-                  alt="Dr. M.K. Moosa Kunhi" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="absolute -bottom-4 -right-4 bg-white p-3 md:p-4 rounded-lg shadow-lg max-w-[200px] md:max-w-none">
-                <p className="text-medical-blue-dark font-bold text-xs md:text-sm">First Indian Heart Surgeon Trained in Modern Artificial Heart Technology</p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

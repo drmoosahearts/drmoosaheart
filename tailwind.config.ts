@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,18 +62,18 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom colors for Dr. Moosa Kunhi's website
-				'medical-blue': '#0A4DA2',
-				'medical-blue-light': '#3974C4',
-				'medical-blue-dark': '#073A7A',
-				'medical-teal': '#37B4AC',
-				'medical-teal-light': '#5ED0C8',
-				'medical-teal-dark': '#238F88',
-				'medical-gold': '#DBAA5A',
-				'medical-gold-light': '#E8C686',
-				'medical-gold-dark': '#C2922F',
-				'medical-gray': '#F7F9FC',
-				'medical-gray-dark': '#E1E7F0',
+				// Updated medical colors to match the reference site
+				'medical-blue': '#00457c',
+				'medical-blue-light': '#005c9e',
+				'medical-blue-dark': '#00365e',
+				'medical-teal': '#20717a',
+				'medical-teal-light': '#2a8a94',
+				'medical-teal-dark': '#195a61',
+				'medical-gold': '#e1b16a',
+				'medical-gold-light': '#ebca96',
+				'medical-gold-dark': '#c79a52',
+				'medical-gray': '#f8f9fa',
+				'medical-gray-dark': '#e9ecef',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -118,8 +117,8 @@ export default {
 				'lato': ['Lato', 'sans-serif'],
 			},
 			backgroundImage: {
-				'hero-pattern': 'linear-gradient(to right, rgba(10, 77, 162, 0.9), rgba(55, 180, 172, 0.8))',
-				'cta-pattern': 'linear-gradient(to right, rgba(10, 77, 162, 0.9), rgba(55, 180, 172, 0.8))',
+				'hero-pattern': 'linear-gradient(to right, rgba(0, 69, 124, 0.8), rgba(32, 113, 122, 0.7))',
+				'cta-pattern': 'linear-gradient(to right, rgba(0, 69, 124, 0.8), rgba(32, 113, 122, 0.7))',
 			},
 		}
 	},

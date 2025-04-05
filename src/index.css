@@ -62,15 +62,15 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-medical-blue hover:bg-medical-blue-dark text-white font-semibold py-2 md:py-3 px-4 md:px-6 rounded-md transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-medical-blue-light focus:ring-opacity-50 touch-manipulation;
+    @apply bg-medical-blue hover:bg-medical-blue-dark text-white font-semibold py-2 md:py-3 px-4 md:px-6 rounded-sm transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-medical-blue-light focus:ring-opacity-50 touch-manipulation;
   }
   
   .btn-secondary {
-    @apply bg-medical-teal hover:bg-medical-teal-dark text-white font-semibold py-2 md:py-3 px-4 md:px-6 rounded-md transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-medical-teal-light focus:ring-opacity-50 touch-manipulation;
+    @apply bg-medical-teal hover:bg-medical-teal-dark text-white font-semibold py-2 md:py-3 px-4 md:px-6 rounded-sm transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-medical-teal-light focus:ring-opacity-50 touch-manipulation;
   }
   
   .btn-outline {
-    @apply border-2 border-medical-blue text-medical-blue hover:bg-medical-blue hover:text-white font-semibold py-2 md:py-3 px-4 md:px-6 rounded-md transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-medical-blue-light focus:ring-opacity-50 touch-manipulation;
+    @apply border-2 border-medical-blue text-medical-blue hover:bg-medical-blue hover:text-white font-semibold py-2 md:py-3 px-4 md:px-6 rounded-sm transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-medical-blue-light focus:ring-opacity-50 touch-manipulation;
   }
 
   .section-title {
@@ -78,7 +78,7 @@
   }
 
   .section-title::after {
-    @apply content-[''] absolute bottom-0 left-0 w-16 md:w-20 h-1 bg-medical-gold;
+    @apply content-[''] absolute bottom-0 left-0 w-16 md:w-20 h-1 bg-medical-teal;
   }
 
   .section-subtitle {

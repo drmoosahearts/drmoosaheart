@@ -1,5 +1,6 @@
 
 import { Heart, Award, Users } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Introduction = () => {
   const highlights = [
@@ -23,34 +24,42 @@ const Introduction = () => {
   return (
     <section className="py-16 bg-white" id="introduction">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="section-title after:left-1/2 after:-translate-x-1/2">Meet Dr. M.K. Moosa Kunhi</h2>
-          <div className="flex justify-center mb-8">
-            <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-medical-teal shadow-lg">
-              <img 
-                src="/lovable-uploads/085a84f1-c51d-4d67-89fb-6194514d69cb.png" 
-                alt="Dr. M.K. Moosa Kunhi in surgical attire" 
-                className="w-full h-full object-cover"
-              />
+        <div className="max-w-3xl mx-auto mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-medical-blue mb-6 text-center">Meet Dr. M.K. Moosa Kunhi</h2>
+          <div className="w-16 h-1 bg-medical-teal mx-auto mb-8"></div>
+          
+          <div className="flex flex-col md:flex-row gap-8 items-center">
+            <div className="md:w-1/3">
+              <div className="w-48 h-48 rounded-sm overflow-hidden border-4 border-white shadow-lg mx-auto">
+                <img 
+                  src="/lovable-uploads/085a84f1-c51d-4d67-89fb-6194514d69cb.png" 
+                  alt="Dr. M.K. Moosa Kunhi in surgical attire" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            <div className="md:w-2/3">
+              <p className="text-lg text-gray-700 mb-4">
+                A globally renowned heart surgeon, celebrated for pioneering advanced cardiac surgery techniques in India. 
+                Dr. Moosa Kunhi introduced beating-heart bypass surgery in 1997, making complex heart procedures safer, 
+                more affordable, and accessible to all.
+              </p>
+              <p className="text-lg text-gray-700 mb-6">
+                With over three decades of experience and more than 16,000 successful surgeries, 
+                Dr. Moosa Kunhi has transformed cardiac care throughout India and beyond.
+              </p>
+              <Link to="/about" className="bg-medical-blue text-white hover:bg-medical-blue-dark transition-colors px-6 py-3 inline-block rounded-sm">
+                Full Biography
+              </Link>
             </div>
           </div>
-          <p className="text-lg text-gray-700 mb-6">
-            A globally renowned heart surgeon, celebrated for pioneering advanced cardiac surgery techniques in India. 
-            Dr. Moosa Kunhi introduced beating-heart bypass surgery in 1997, making complex heart procedures safer, 
-            more affordable, and accessible to all.
-          </p>
-          <p className="text-lg text-gray-700">
-            With over three decades of experience and more than 16,000 successful surgeries, 
-            Dr. Moosa Kunhi has transformed cardiac care throughout India and beyond. His astounding surgical feats in 
-            high-complication cases have been revered by the cardiac fraternity worldwide.
-          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
           {highlights.map((item, index) => (
             <div 
               key={index} 
-              className="bg-medical-gray p-6 rounded-lg hover:shadow-lg transition-shadow duration-300 text-center"
+              className="bg-medical-gray p-6 rounded-sm hover:shadow-md transition-shadow duration-300 text-center"
             >
               <div className="flex justify-center mb-4">{item.icon}</div>
               <h3 className="text-xl font-bold text-medical-blue-dark mb-3">{item.title}</h3>
@@ -59,20 +68,11 @@ const Introduction = () => {
           ))}
         </div>
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div>
-            <p className="text-medical-blue font-semibold mb-6">Dr. Moosa Kunhi is the only heart surgeon from India invited by Europe's biggest heart surgery hospital, The German Heart Institute in Berlin, as a guest heart surgeon.</p>
-            <a href="/about" className="btn-outline inline-flex items-center gap-2">
-              Read Full Biography
-            </a>
-          </div>
-          <div className="rounded-lg overflow-hidden shadow-lg">
-            <img 
-              src="/lovable-uploads/728aaaee-502c-485f-a51a-4f0fb2936e11.png" 
-              alt="Dr. Moosa Kunhi with heart monitoring equipment" 
-              className="w-full h-auto"
-            />
-          </div>
+        <div className="mt-16 p-6 bg-medical-gray rounded-sm">
+          <p className="text-center text-medical-blue font-semibold mb-4">
+            "Dr. Moosa Kunhi is the only heart surgeon from India invited by Europe's biggest heart surgery hospital, 
+            The German Heart Institute in Berlin, as a guest heart surgeon."
+          </p>
         </div>
       </div>
     </section>

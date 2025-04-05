@@ -28,7 +28,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
 
   return (
     <div 
-      className={`fixed inset-0 bg-medical-blue-dark flex items-center justify-center z-50 transition-opacity duration-1000 ${
+      className={`fixed inset-0 bg-medical-blue flex items-center justify-center z-50 transition-opacity duration-1000 ${
         isFading ? 'opacity-0' : 'opacity-100'
       }`}
     >
@@ -45,7 +45,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
           autoplay
           className="mx-auto"
         ></dotlottie-player>
-        <p className="text-white text-lg md:text-xl">Pioneering Cardiac Surgery</p>
+        <p className="text-white text-lg md:text-xl">Cardiac Surgery Specialist</p>
       </div>
     </div>
   );
