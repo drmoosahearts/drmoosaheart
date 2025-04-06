@@ -33,18 +33,11 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
       }`}
     >
       <div className="w-full max-w-lg mx-auto text-center px-4">
-        <div className="flex justify-center mb-4">
-          <img 
-            src="/lovable-uploads/c3c9eb4d-5b2d-4995-9c87-f4c88209fdd4.png" 
-            alt="Dr. Moosa Heart Logo" 
-            className="w-32 h-32 mx-auto"
-          />
-        </div>
         <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 font-playfair">
           Dr. M.K. Moosa Kunhi
         </h1>
         
-        {/* Modern animation replacing the purple poster */}
+        {/* Modern animation replacing the logo */}
         <div className="relative mx-auto w-64 h-64 md:w-80 md:h-80">
           <div className="absolute inset-0 rounded-full bg-medical-teal opacity-20 animate-pulse"></div>
           <div className="absolute inset-4 rounded-full bg-medical-teal opacity-30 animate-pulse" style={{ animationDelay: '0.5s' }}></div>

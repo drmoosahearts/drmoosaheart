@@ -1,5 +1,5 @@
 
-import { MapPin, Phone, Mail, Calendar, Clock, ArrowRight } from "lucide-react";
+import { MapPin, Phone, Mail, Calendar, Clock, ArrowRight, Globe, ExternalLink } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -78,8 +78,24 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-medical-blue-dark mb-2">Primary Center</h3>
-                      <p className="text-gray-700 mb-1">Kauvery Hospitals</p>
+                      <div className="flex items-center gap-2 mb-1">
+                        <img 
+                          src="https://www.kauveryhospital.com/wp-content/themes/KauveryHospital/images/logo.png" 
+                          alt="Kauvery Hospital Logo" 
+                          className="h-6 w-auto"
+                        />
+                        <p className="text-gray-700">Kauvery Hospitals</p>
+                      </div>
                       <p className="text-gray-700">200feet Radial Road, Kovilambakkam, Pallavaram, Chennai, Tamil Nadu, India - 600129</p>
+                      <a
+                        href="https://maps.google.com/maps/dir//Kauvery+Hospital+-+Radial+Road+2%2F473,+200+Feet+Radial+Rd,+Ganapathy+Nagar,+Kovilambakkam+Chennai,+Tamil+Nadu+600129+India/@12.9482448,80.1896242,16z/data=!4m5!4m4!1m0!1m2!1m1!1s0x3a525d054c8b23ef:0x126b948e5ee9888c"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-medical-blue hover:underline flex items-center mt-1 gap-1"
+                      >
+                        <Navigation size={14} />
+                        <span>Get Directions</span>
+                      </a>
                     </div>
                   </div>
                   
@@ -105,7 +121,7 @@ const ContactPage = () => {
                         <a href="mailto:doctormoosa@yahoo.com" className="text-medical-blue hover:underline">doctormoosa@yahoo.com</a>
                       </p>
                       <p className="text-gray-700">
-                        Website: <span className="text-medical-blue">www.krr@kauveryhospital.com</span>
+                        Website: <a href="https://www.kauveryhospital.com/doctors/chennai-radial-road/cardiothoracic-surgery/dr-moose-kunhi-m-k/" target="_blank" rel="noopener noreferrer" className="text-medical-blue hover:underline">www.krr@kauveryhospital.com</a>
                       </p>
                     </div>
                   </div>
@@ -119,6 +135,33 @@ const ContactPage = () => {
                       <p className="text-gray-700 mb-1">Monday - Friday: 9:00 AM - 5:00 PM</p>
                       <p className="text-gray-700 mb-1">Saturday: 9:00 AM - 1:00 PM</p>
                       <p className="text-gray-700">Sunday: Closed (Emergency services available)</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-4">
+                    <div className="bg-medical-blue-light p-3 rounded-full mt-1">
+                      <Globe className="h-6 w-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-medical-blue-dark mb-2">International Relations</h3>
+                      <p className="text-gray-700 mb-2">For all international inquiries, please contact:</p>
+                      <div className="bg-medical-gray p-3 rounded-lg">
+                        <p className="font-semibold mb-1">Dr. PT Abdul Rahman</p>
+                        <p className="text-sm mb-1">
+                          <ExternalLink size={14} className="inline mr-1 text-medical-blue" />
+                          <a href="http://www.ptabdulrahman.com" target="_blank" rel="noopener noreferrer" className="text-medical-blue hover:underline">www.ptabdulrahman.com</a>
+                        </p>
+                        <p className="text-sm mb-1">
+                          <Mail size={14} className="inline mr-1 text-medical-blue" />
+                          <a href="mailto:6505422@gmail.com" className="text-medical-blue hover:underline">6505422@gmail.com</a> or 
+                          <a href="mailto:mail@ptabdulrahman.com" className="text-medical-blue hover:underline ml-1">mail@ptabdulrahman.com</a>
+                        </p>
+                        <p className="text-sm mb-1">
+                          <Phone size={14} className="inline mr-1 text-medical-blue" />
+                          <a href="tel:+971506505422" className="text-medical-blue hover:underline">+971506505422</a>
+                        </p>
+                        <p className="text-sm mt-2 italic">Office Hours: Mon-Sat, 9:00 AM - 5:00 PM (GMT+4)</p>
+                      </div>
                     </div>
                   </div>
                 </div>

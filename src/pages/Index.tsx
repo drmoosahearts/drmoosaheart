@@ -27,7 +27,6 @@ const Index = () => {
       <MediaCoverage />
       <SurgicalGallery />
       <Achievements />
-      {/* Testimonials section removed as requested */}
       <CallToAction />
       <ContactInfo />
     </div>

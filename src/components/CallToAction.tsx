@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { PhoneCall, Calendar, Globe } from "lucide-react";
+import { PhoneCall, Calendar, Globe, ExternalLink } from "lucide-react";
 
 const CallToAction = () => {
   return (
@@ -32,26 +32,74 @@ const CallToAction = () => {
             </div>
           </div>
           
-          {/* International Relations & Inquiries */}
-          <div className="bg-medical-blue-dark p-6 rounded-lg mt-8">
-            <div className="flex items-center gap-3 mb-4">
-              <Globe size={24} className="text-medical-gold" />
-              <h3 className="text-xl font-bold">International Relations & Inquiries</h3>
+          {/* International Relations & Inquiries - Prominently displayed */}
+          <div className="bg-medical-blue-dark p-8 rounded-lg mt-8">
+            <div className="flex items-center gap-3 mb-6">
+              <Globe size={28} className="text-medical-gold" />
+              <h3 className="text-2xl font-bold">International Relations & Inquiries</h3>
             </div>
-            <p className="mb-4">
+            <p className="mb-6 text-gray-200">
               For all inquiries originating from outside India, including prospective patients, 
               international referrers, potential partners, or collaboration requests, please contact:
             </p>
-            <div className="bg-medical-blue-light p-4 rounded-lg">
-              <p className="font-bold mb-1">Dr. PT Abdul Rahman</p>
-              <p className="mb-1">Website: <a href="http://www.ptabdulrahman.com" target="_blank" rel="noopener noreferrer" className="text-medical-gold hover:underline">www.ptabdulrahman.com</a></p>
-              <p className="mb-1">
-                Email: <a href="mailto:6505422@gmail.com" className="text-medical-gold hover:underline">6505422@gmail.com</a>; 
-                <a href="mailto:mail@ptabdulrahman.com" className="text-medical-gold hover:underline ml-1">mail@ptabdulrahman.com</a>
-              </p>
-              <p className="mb-1">Phone: <a href="tel:+971506505422" className="text-medical-gold hover:underline">+971506505422</a></p>
-              <p className="mb-3">Please specify the nature of your inquiry in your communication.</p>
-              <p>Office Hours: Monday - Saturday, 9:00 AM - 5:00 PM UAE Time (GMT+4)</p>
+            <div className="bg-medical-blue-light p-6 rounded-lg">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="font-bold text-xl mb-3 text-medical-gold">Dr. PT Abdul Rahman</h4>
+                  <ul className="space-y-3">
+                    <li className="flex items-center gap-2">
+                      <ExternalLink size={16} className="text-medical-gold flex-shrink-0" />
+                      <a 
+                        href="http://www.ptabdulrahman.com" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="text-white hover:text-medical-gold hover:underline transition-colors"
+                      >
+                        www.ptabdulrahman.com
+                      </a>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Mail size={16} className="text-medical-gold flex-shrink-0" />
+                      <div>
+                        <a 
+                          href="mailto:6505422@gmail.com" 
+                          className="text-white hover:text-medical-gold hover:underline transition-colors"
+                        >
+                          6505422@gmail.com
+                        </a>
+                        <span className="mx-1">;</span>
+                        <a 
+                          href="mailto:mail@ptabdulrahman.com" 
+                          className="text-white hover:text-medical-gold hover:underline transition-colors"
+                        >
+                          mail@ptabdulrahman.com
+                        </a>
+                      </div>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Phone size={16} className="text-medical-gold flex-shrink-0" />
+                      <a 
+                        href="tel:+971506505422" 
+                        className="text-white hover:text-medical-gold hover:underline transition-colors"
+                      >
+                        +971506505422
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="text-gray-200 mb-4">
+                    Please specify the nature of your inquiry in your communication.
+                  </p>
+                  <div className="bg-medical-blue bg-opacity-50 p-4 rounded-lg">
+                    <h5 className="font-semibold mb-2 text-medical-gold">Office Hours:</h5>
+                    <p className="text-white">
+                      Monday - Saturday<br />
+                      9:00 AM - 5:00 PM UAE Time (GMT+4)
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

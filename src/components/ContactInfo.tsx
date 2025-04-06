@@ -1,5 +1,5 @@
 
-import { MapPin, Phone, Mail, ExternalLink, Navigation } from "lucide-react";
+import { MapPin, Phone, Mail, ExternalLink, Navigation, Globe } from "lucide-react";
 
 const ContactInfo = () => {
   const locationUrl = "https://maps.google.com/maps/dir//Kauvery+Hospital+-+Radial+Road+2%2F473,+200+Feet+Radial+Rd,+Ganapathy+Nagar,+Kovilambakkam+Chennai,+Tamil+Nadu+600129+India/@12.9482448,80.1896242,16z/data=!4m5!4m4!1m0!1m2!1m1!1s0x3a525d054c8b23ef:0x126b948e5ee9888c";
@@ -114,6 +114,76 @@ const ContactInfo = () => {
                   <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
                   <p>Saturday: 9:00 AM - 1:00 PM</p>
                   <p>Sunday: Closed (Emergency services available)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Add International Relations section */}
+          <div className="mt-8 bg-medical-blue text-white p-6 rounded-lg shadow-sm">
+            <div className="flex items-center gap-3 mb-4">
+              <Globe size={24} className="text-medical-gold" />
+              <h3 className="text-xl font-bold">International Relations & Inquiries</h3>
+            </div>
+            
+            <p className="mb-4 text-gray-200">
+              For all inquiries originating from outside India, including prospective patients, 
+              international referrers, potential partners, or collaboration requests, please contact:
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-medical-blue-dark p-4 rounded-lg">
+              <div>
+                <h4 className="font-bold text-xl mb-3 text-medical-gold">Dr. PT Abdul Rahman</h4>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2">
+                    <ExternalLink size={16} className="text-medical-gold flex-shrink-0" />
+                    <a 
+                      href="http://www.ptabdulrahman.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-white hover:text-medical-gold hover:underline transition-colors"
+                    >
+                      www.ptabdulrahman.com
+                    </a>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Mail size={16} className="text-medical-gold flex-shrink-0 mt-1" />
+                    <div>
+                      <a 
+                        href="mailto:6505422@gmail.com" 
+                        className="text-white hover:text-medical-gold hover:underline transition-colors block"
+                      >
+                        6505422@gmail.com
+                      </a>
+                      <a 
+                        href="mailto:mail@ptabdulrahman.com" 
+                        className="text-white hover:text-medical-gold hover:underline transition-colors block"
+                      >
+                        mail@ptabdulrahman.com
+                      </a>
+                    </div>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Phone size={16} className="text-medical-gold flex-shrink-0" />
+                    <a 
+                      href="tel:+971506505422" 
+                      className="text-white hover:text-medical-gold hover:underline transition-colors"
+                    >
+                      +971506505422
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <p className="text-gray-200 mb-3">
+                  Please specify the nature of your inquiry in your communication.
+                </p>
+                <div className="bg-medical-blue bg-opacity-50 p-4 rounded-lg">
+                  <h5 className="font-semibold mb-2 text-medical-gold">Office Hours:</h5>
+                  <p className="text-white">
+                    Monday - Saturday<br />
+                    9:00 AM - 5:00 PM UAE Time (GMT+4)
+                  </p>
                 </div>
               </div>
             </div>

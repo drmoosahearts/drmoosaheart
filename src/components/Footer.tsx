@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { Heart, Phone, Mail, MapPin } from "lucide-react";
+import { Heart, Phone, Mail, MapPin, Globe } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -11,11 +11,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10 md:mb-12">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img 
-                src="/lovable-uploads/c3c9eb4d-5b2d-4995-9c87-f4c88209fdd4.png" 
-                alt="Dr. Moosa Heart Logo" 
-                className="w-10 h-10"
-              />
+              <div className="bg-white rounded-full p-2 flex items-center justify-center">
+                <Heart className="h-6 w-6 text-medical-blue" />
+              </div>
               <h3 className="text-lg md:text-xl font-bold">
                 Dr. M.K. Moosa Kunhi
               </h3>
@@ -86,6 +84,14 @@ const Footer = () => {
                 <a href="mailto:doctormoosa@yahoo.com" className="text-gray-300 hover:text-medical-gold transition-colors text-sm md:text-base overflow-hidden text-ellipsis">
                   doctormoosa@yahoo.com
                 </a>
+              </li>
+              <li className="flex items-start gap-2 mt-4 pt-4 border-t border-medical-blue-light">
+                <Globe size={18} className="text-medical-gold flex-shrink-0 mt-1" />
+                <div className="text-gray-300 text-sm">
+                  <span className="font-semibold block mb-1">International Relations:</span>
+                  <span>Dr. PT Abdul Rahman</span>
+                  <a href="http://www.ptabdulrahman.com" target="_blank" rel="noopener noreferrer" className="block text-medical-gold hover:underline">www.ptabdulrahman.com</a>
+                </div>
               </li>
             </ul>
           </div>
