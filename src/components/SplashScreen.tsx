@@ -43,16 +43,22 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
         <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 font-playfair">
           Dr. M.K. Moosa Kunhi
         </h1>
-        <dotlottie-player 
-          src="https://lottie.host/85bedc86-399c-46a1-8d59-192e512c3d46/VPEoqhRMXz.lottie" 
-          background="transparent" 
-          speed="1" 
-          style={{ width: "280px", height: "280px", maxWidth: "100%" }} 
-          loop 
-          autoplay
-          className="mx-auto"
-        ></dotlottie-player>
-        <p className="text-white text-lg md:text-xl">Cardiac Surgery Specialist</p>
+        
+        {/* Modern animation replacing the purple poster */}
+        <div className="relative mx-auto w-64 h-64 md:w-80 md:h-80">
+          <div className="absolute inset-0 rounded-full bg-medical-teal opacity-20 animate-pulse"></div>
+          <div className="absolute inset-4 rounded-full bg-medical-teal opacity-30 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+          <div className="absolute inset-8 rounded-full bg-medical-teal opacity-40 animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="text-white text-4xl">
+              <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="animate-heartbeat">
+                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        
+        <p className="text-white text-lg md:text-xl mt-4">Cardiac Surgery Specialist</p>
       </div>
     </div>
   );

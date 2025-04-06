@@ -8,81 +8,6 @@ import ContactInfo from "@/components/ContactInfo";
 import MediaCoverage from "@/components/MediaCoverage";
 import SurgicalGallery from "@/components/SurgicalGallery";
 import { useEffect } from "react";
-import { Quote } from "lucide-react";
-
-// New component for Testimonials section
-const Testimonials = () => {
-  return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="section-title after:left-1/2 after:-translate-x-1/2">Recognition & Leadership</h2>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-            Dr. Moosa Kunhi has been recognized for his trailblazing contributions to cardiac surgery and continues to lead prestigious medical institutions.
-          </p>
-        </div>
-
-        <div className="flex flex-col lg:flex-row items-center gap-12">
-          <div className="lg:w-1/3">
-            <div className="rounded-lg overflow-hidden shadow-xl">
-              <img 
-                src="/lovable-uploads/61ee55a5-fad0-419a-8d12-fccae88fba4c.png" 
-                alt="Dr. Moosa Kunhi giving a speech" 
-                className="w-full h-auto"
-              />
-            </div>
-          </div>
-          <div className="lg:w-2/3">
-            <div className="bg-medical-gray rounded-lg p-8 relative">
-              <Quote className="absolute top-4 left-4 h-12 w-12 text-medical-teal opacity-20" />
-              <div className="ml-10">
-                <p className="text-xl text-gray-700 italic mb-6">
-                  "At SIMS Hospital, Nungambakkam, Dr. Moosa leads the Cardiothoracic Surgery & Heart Transplant Centre. 
-                  With his clinical expertise and meticulous treatment planning ability, he aims to make Cardiac surgery 
-                  affordable to masses and turn the centre into a preferred choice for a wide range of Cardiac procedures."
-                </p>
-                <div>
-                  <p className="font-bold text-medical-blue-dark">SIMS Hospitals, Nungambakkam</p>
-                  <p className="text-medical-teal">Cardiothoracic Surgery & Heart Transplant Centre</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="mt-8">
-              <h3 className="text-xl font-bold text-medical-blue-dark mb-4">Awards & Recognitions</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                <div className="flex items-start">
-                  <span className="text-medical-gold mr-2">●</span>
-                  <span>Bharat Excellence Award (India), 2011</span>
-                </div>
-                <div className="flex items-start">
-                  <span className="text-medical-gold mr-2">●</span>
-                  <span>The Red Cross Society Award (India), 2003</span>
-                </div>
-                <div className="flex items-start">
-                  <span className="text-medical-gold mr-2">●</span>
-                  <span>Mother Teresa Award (India), 2003</span>
-                </div>
-                <div className="flex items-start">
-                  <span className="text-medical-gold mr-2">●</span>
-                  <span>N. S. Das Puraskaram (India), 2001</span>
-                </div>
-                <div className="flex items-start">
-                  <span className="text-medical-gold mr-2">●</span>
-                  <span>Lifetime Achievement Award, 2011</span>
-                </div>
-                <div className="flex items-start">
-                  <span className="text-medical-gold mr-2">●</span>
-                  <span>Certificate of Excellence, 2017</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
 
 const Index = () => {
   // Set page title and meta description for SEO
@@ -102,7 +27,7 @@ const Index = () => {
       <MediaCoverage />
       <SurgicalGallery />
       <Achievements />
-      <Testimonials />
+      {/* Testimonials section removed as requested */}
       <CallToAction />
       <ContactInfo />
     </div>
