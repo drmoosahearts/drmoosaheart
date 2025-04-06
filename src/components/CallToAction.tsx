@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { PhoneCall, Calendar, Globe, ExternalLink } from "lucide-react";
+import { PhoneCall, Calendar, Globe, ExternalLink, Mail, Phone } from "lucide-react";
 
 const CallToAction = () => {
   return (

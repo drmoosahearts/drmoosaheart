@@ -1,5 +1,4 @@
-
-import { MapPin, Phone, Mail, Calendar, Clock, ArrowRight, Globe, ExternalLink } from "lucide-react";
+import { MapPin, Phone, Mail, Calendar, Clock, ArrowRight, Globe, ExternalLink, MapIcon } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -14,7 +13,6 @@ const ContactPage = () => {
     message: "",
   });
 
-  // Set page title and meta description for SEO
   useEffect(() => {
     document.title = "Contact Dr. M.K. Moosa Kunhi - Appointment Booking";
     const metaDescription = document.querySelector('meta[name="description"]');
@@ -31,16 +29,13 @@ const ContactPage = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // In a real application, this would send the data to a server
     console.log("Form submitted:", formData);
     
-    // Show success message
     toast({
       title: "Appointment Request Submitted",
       description: "We will contact you shortly to confirm your appointment.",
     });
     
-    // Reset form
     setFormData({
       name: "",
       email: "",
@@ -93,7 +88,7 @@ const ContactPage = () => {
                         rel="noopener noreferrer"
                         className="text-medical-blue hover:underline flex items-center mt-1 gap-1"
                       >
-                        <Navigation size={14} />
+                        <MapIcon size={14} />
                         <span>Get Directions</span>
                       </a>
                     </div>
