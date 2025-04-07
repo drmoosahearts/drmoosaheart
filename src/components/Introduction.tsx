@@ -1,28 +1,20 @@
-
 import { Heart, Award, Users } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const Introduction = () => {
-  const highlights = [
-    {
-      icon: <Heart className="h-12 w-12 text-medical-teal" />,
-      title: "Cardiac Excellence",
-      description: "Pioneer of beating-heart bypass surgery, making complex procedures safer and more affordable."
-    },
-    {
-      icon: <Award className="h-12 w-12 text-medical-teal" />,
-      title: "World-Class Surgeon",
-      description: "Over 35 years of experience with 16,000+ successful heart operations and a 99.7% success rate."
-    },
-    {
-      icon: <Users className="h-12 w-12 text-medical-teal" />,
-      title: "Patient-Centered Care",
-      description: "Dedicated to making advanced cardiac care accessible to all patients, regardless of economic status."
-    }
-  ];
-
-  return (
-    <section className="py-16 bg-white" id="introduction">
+  const highlights = [{
+    icon: <Heart className="h-12 w-12 text-medical-teal" />,
+    title: "Cardiac Excellence",
+    description: "Pioneer of beating-heart bypass surgery, making complex procedures safer and more affordable."
+  }, {
+    icon: <Award className="h-12 w-12 text-medical-teal" />,
+    title: "World-Class Surgeon",
+    description: "Over 35 years of experience with 16,000+ successful heart operations and a 99.7% success rate."
+  }, {
+    icon: <Users className="h-12 w-12 text-medical-teal" />,
+    title: "Patient-Centered Care",
+    description: "Dedicated to making advanced cardiac care accessible to all patients, regardless of economic status."
+  }];
+  return <section className="py-16 bg-white" id="introduction">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-medical-blue mb-6 text-center">Meet Dr. M.K. Moosa Kunhi</h2>
@@ -31,11 +23,7 @@ const Introduction = () => {
           <div className="flex flex-col md:flex-row gap-8 items-center">
             <div className="md:w-1/3">
               <div className="w-48 h-48 rounded-sm overflow-hidden border-4 border-white shadow-lg mx-auto">
-                <img 
-                  src="/lovable-uploads/8a33f6a2-57ea-42bc-b912-d401ecb5ef1f.png" 
-                  alt="Dr. M.K. Moosa Kunhi" 
-                  className="w-full h-full object-cover"
-                />
+                <img alt="Dr. M.K. Moosa Kunhi" className="w-full h-full object-cover" src="/lovable-uploads/371c975d-3f6b-492b-9a6c-01c04b81a4a7.jpg" />
               </div>
             </div>
             <div className="md:w-2/3">
@@ -56,16 +44,11 @@ const Introduction = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-          {highlights.map((item, index) => (
-            <div 
-              key={index} 
-              className="bg-medical-gray p-6 rounded-sm hover:shadow-md transition-shadow duration-300 text-center"
-            >
+          {highlights.map((item, index) => <div key={index} className="bg-medical-gray p-6 rounded-sm hover:shadow-md transition-shadow duration-300 text-center">
               <div className="flex justify-center mb-4">{item.icon}</div>
               <h3 className="text-xl font-bold text-medical-blue-dark mb-3">{item.title}</h3>
               <p className="text-gray-700">{item.description}</p>
-            </div>
-          ))}
+            </div>)}
         </div>
 
         <div className="mt-16 p-6 bg-medical-gray rounded-sm">
@@ -75,8 +58,6 @@ const Introduction = () => {
           </p>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Introduction;
