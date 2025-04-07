@@ -11,7 +11,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Globe } from "lucide-react";
 
-const Index = () => {
+const Index: React.FC = () => {
   // Set page title and meta description for SEO
   useEffect(() => {
     document.title = "Dr. M.K. Moosa Kunhi - Renowned Cardiac Surgeon in India";

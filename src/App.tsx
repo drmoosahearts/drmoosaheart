@@ -18,9 +18,9 @@ import SplashScreen from "./components/SplashScreen";
 
 const queryClient = new QueryClient();
 
-const App = () => {
-  const [showSplash, setShowSplash] = useState(true);
-  const [isPageLoaded, setIsPageLoaded] = useState(false);
+const App: React.FC = () => {
+  const [showSplash, setShowSplash] = useState<boolean>(true);
+  const [isPageLoaded, setIsPageLoaded] = useState<boolean>(false);
 
   // Add the Lottie script
   useEffect(() => {
@@ -30,9 +30,11 @@ const App = () => {
     document.body.appendChild(script);
 
     // Mark page as loaded
-    window.addEventListener('load', () => {
+    const handleLoad = (): void => {
       setIsPageLoaded(true);
-    });
+    };
+    
+    window.addEventListener('load', handleLoad);
 
     // If page is already loaded (e.g. cached)
     if (document.readyState === 'complete') {
@@ -41,6 +43,7 @@ const App = () => {
 
     return () => {
       document.body.removeChild(script);
+      window.removeEventListener('load', handleLoad);
     };
   }, []);
 

@@ -2,8 +2,15 @@
 import { ArrowRight, Heart, Activity, Baby, Minimize2, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const Services = () => {
-  const services = [
+interface ServiceItem {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  link: string;
+}
+
+const Services: React.FC = () => {
+  const services: ServiceItem[] = [
     {
       icon: <Heart className="h-10 w-10 text-white" />,
       title: "Bypass & Beating Heart Surgery",

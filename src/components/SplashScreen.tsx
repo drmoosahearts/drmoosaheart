@@ -6,7 +6,7 @@ interface SplashScreenProps {
 }
 
 const SplashScreen = ({ onComplete }: SplashScreenProps) => {
-  const [isFading, setIsFading] = useState(false);
+  const [isFading, setIsFading] = useState<boolean>(false);
 
   useEffect(() => {
     // Set a timeout to start fading the splash screen after 4 seconds

@@ -2,10 +2,16 @@
 import { useState } from "react";
 import { ArrowLeft, ArrowRight, X } from "lucide-react";
 
+interface SurgicalImage {
+  src: string;
+  alt: string;
+  secondaryImage?: string;
+}
+
 const SurgicalGallery = () => {
   const [activeImage, setActiveImage] = useState<string | null>(null);
   
-  const surgicalImages = [
+  const surgicalImages: SurgicalImage[] = [
     {
       src: "/lovable-uploads/d930c800-b764-4b79-8124-b2548b232add.png",
       alt: "Dr. Moosa during heart surgery with surgical loupe"
@@ -32,12 +38,12 @@ const SurgicalGallery = () => {
     }
   ];
 
-  const openLightbox = (imageSrc: string) => {
+  const openLightbox = (imageSrc: string): void => {
     setActiveImage(imageSrc);
     document.body.style.overflow = "hidden";
   };
 
-  const closeLightbox = () => {
+  const closeLightbox = (): void => {
     setActiveImage(null);
     document.body.style.overflow = "auto";
   };
