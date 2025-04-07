@@ -1,4 +1,3 @@
-
 import { useState, useRef, useEffect } from "react";
 import { useInView } from "framer-motion";
 import { Newspaper, Award, ExternalLink, Video, Globe, Search, ArrowLeftCircle, ArrowRightCircle } from "lucide-react";

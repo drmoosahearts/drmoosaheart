@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ExternalLink, Mail, Phone, Globe, MapPin, Heart, Award } from "lucide-react";
