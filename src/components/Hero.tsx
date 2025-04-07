@@ -66,7 +66,7 @@ const Hero: React.FC = () => {
               </div>
               <div className="absolute bottom-0 left-0 right-0 bg-medical-blue bg-opacity-90 p-3 text-white">
                 <p className="text-center text-sm">Dr. M.K. Moosa Kunhi</p>
-                <p className="text-center text-xs">Cardiac Surgery Specialist</p>
+                <p className="text-center text-xs font-thin">Sr. Consultant Cardiovascular Surgeon</p>
               </div>
             </div>
           </div>
