@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap');
 
 @tailwind base;
@@ -53,10 +52,17 @@
 
   body {
     @apply bg-background text-foreground font-lato overflow-x-hidden;
+    -webkit-tap-highlight-color: transparent;
+    text-rendering: optimizeSpeed;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-playfair font-semibold text-medical-blue-dark;
+  }
+  
+  img {
+    @apply max-w-full h-auto;
+    content-visibility: auto;
   }
 }
 
@@ -85,18 +91,15 @@
     @apply text-lg md:text-xl lg:text-2xl font-semibold text-medical-teal mb-3 md:mb-4;
   }
   
-  /* Touch-friendly improvements */
   .touch-manipulation {
     touch-action: manipulation;
   }
   
-  /* Ensure tap targets are large enough */
   .tap-target {
-    @apply min-h-[44px] min-w-[44px];
+    @apply min-h-[48px] min-w-[48px];
   }
 }
 
-/* Animations */
 @keyframes heartbeat {
   0% {
     stroke-dashoffset: 1000;
@@ -125,6 +128,7 @@
 
 .animate-heartbeat {
   animation: heartbeat 2s ease-in-out forwards;
+  will-change: d, stroke-dashoffset;
 }
 
 @keyframes reveal-line {
@@ -172,7 +176,6 @@
   animation: accordion-up 0.2s ease-out;
 }
 
-/* Gallery image hover effect */
 .gallery-item {
   @apply overflow-hidden relative;
 }
@@ -193,7 +196,6 @@
   @apply opacity-20;
 }
 
-/* Handle mobile taps */
 @media (hover: none) {
   .gallery-item::after {
     @apply opacity-10;
@@ -204,7 +206,6 @@
   }
 }
 
-/* Media query to adjust font sizes and spacing for small screens */
 @media (max-width: 360px) {
   .btn-primary, .btn-secondary, .btn-outline {
     @apply py-2 px-3 text-sm;
@@ -216,5 +217,18 @@
   
   .section-subtitle {
     @apply text-lg;
+  }
+}
+
+@media (max-width: 768px) {
+  .reduce-animation {
+    animation-duration: 0.3s !important;
+    transition-duration: 0.3s !important;
+  }
+  
+  .container {
+    width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
   }
 }

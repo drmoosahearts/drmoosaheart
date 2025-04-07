@@ -9,15 +9,15 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
   const [isFading, setIsFading] = useState<boolean>(false);
 
   useEffect(() => {
-    // Set a timeout to start fading the splash screen after 4 seconds
+    // Set a timeout to start fading the splash screen after 2 seconds (reduced from 4s)
     const fadeTimeout = setTimeout(() => {
       setIsFading(true);
-    }, 4000);
+    }, 2000);
 
-    // Set a timeout to complete the animation after fade-out (4s + 1s for fade)
+    // Set a timeout to complete the animation after fade-out (2s + 0.5s for fade)
     const completeTimeout = setTimeout(() => {
       onComplete();
-    }, 5000);
+    }, 2500);
 
     // Clean up timers
     return () => {
@@ -28,7 +28,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
 
   return (
     <div 
-      className={`fixed inset-0 bg-medical-blue flex items-center justify-center z-50 transition-opacity duration-1000 ${
+      className={`fixed inset-0 bg-medical-blue flex items-center justify-center z-50 transition-opacity duration-500 ${
         isFading ? 'opacity-0' : 'opacity-100'
       }`}
     >
