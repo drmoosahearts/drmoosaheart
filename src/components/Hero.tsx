@@ -71,7 +71,7 @@ const Hero: React.FC = () => {
                   alt="Dr. M.K. Moosa Kunhi" 
                   className="w-full h-full object-cover"
                   loading="eager" // Priority image for LCP
-                  fetchpriority="high"
+                  fetchPriority="high"
                 />
               </div>
               <div className="absolute bottom-0 left-0 right-0 bg-medical-blue bg-opacity-90 p-3 text-white">
