@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10 md:mb-12">
           <div>
-            <div className="flex items-center gap-3 mb-4 text-zinc-50">
+            <div className="flex items-center gap-3 mb-4 text-gray-50">
               <div className="bg-white rounded-full p-2 flex items-center justify-center">
                 <Heart className="h-6 w-6 text-medical-blue" />
               </div>

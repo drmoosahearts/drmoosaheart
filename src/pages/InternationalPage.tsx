@@ -298,7 +298,7 @@ const InternationalPage = () => {
 
       {/* Contact Section */}
       <section id="contact" className="py-16 md:py-24 bg-medical-teal text-white">
-        <div className="container mx-auto px-4">
+        <div className="container px-4 mx-0 my-0 py-[65px] rounded-full bg-slate-50">
           <motion.div initial="hidden" whileInView="visible" viewport={{
           once: true,
           margin: "-100px"
@@ -327,8 +327,8 @@ const InternationalPage = () => {
                   </div>
                 </div>
                 <div className="md:w-2/3 md:pl-6">
-                  <h3 className="text-2xl font-bold text-medical-blue-dark mb-2">PT Abdul Rahman</h3>
-                  <p className="text-lg text-medical-teal mb-4 font-medium">Senior Liaison, International Affairs</p>
+                  <h3 className="text-2xl font-bold text-medical-blue-dark mb-2">Dr. PT Abdul Rahman</h3>
+                  <p className="text-lg text-medical-teal font-medium mb-4">International Patient Coordinator (GCC Region)</p>
                   
                   <ul className="space-y-3">
                     <li className="flex items-center">
