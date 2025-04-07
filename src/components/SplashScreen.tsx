@@ -1,13 +1,11 @@
-
 import { useEffect, useState } from 'react';
-
 interface SplashScreenProps {
   onComplete: () => void;
 }
-
-const SplashScreen = ({ onComplete }: SplashScreenProps) => {
+const SplashScreen = ({
+  onComplete
+}: SplashScreenProps) => {
   const [isFading, setIsFading] = useState<boolean>(false);
-
   useEffect(() => {
     // Set a timeout to start fading the splash screen after 2 seconds (reduced from 4s)
     const fadeTimeout = setTimeout(() => {
@@ -25,23 +23,21 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
       clearTimeout(completeTimeout);
     };
   }, [onComplete]);
-
-  return (
-    <div 
-      className={`fixed inset-0 bg-medical-blue flex items-center justify-center z-50 transition-opacity duration-500 ${
-        isFading ? 'opacity-0' : 'opacity-100'
-      }`}
-    >
+  return <div className={`fixed inset-0 bg-medical-blue flex items-center justify-center z-50 transition-opacity duration-500 ${isFading ? 'opacity-0' : 'opacity-100'}`}>
       <div className="w-full max-w-lg mx-auto text-center px-4">
-        <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 font-playfair">
+        <h1 className="text-3xl font-bold text-white mb-4 md:mb-6 font-playfair md:text-3xl">
           Dr. M.K. Moosa Kunhi
         </h1>
         
         {/* Modern animation replacing the logo */}
         <div className="relative mx-auto w-64 h-64 md:w-80 md:h-80">
           <div className="absolute inset-0 rounded-full bg-medical-teal opacity-20 animate-pulse"></div>
-          <div className="absolute inset-4 rounded-full bg-medical-teal opacity-30 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-          <div className="absolute inset-8 rounded-full bg-medical-teal opacity-40 animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute inset-4 rounded-full bg-medical-teal opacity-30 animate-pulse" style={{
+          animationDelay: '0.5s'
+        }}></div>
+          <div className="absolute inset-8 rounded-full bg-medical-teal opacity-40 animate-pulse" style={{
+          animationDelay: '1s'
+        }}></div>
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-white text-4xl">
               <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="animate-heartbeat">
@@ -53,8 +49,6 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
         
         <p className="text-white text-lg md:text-xl mt-4">Cardiac Surgery Specialist</p>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default SplashScreen;
