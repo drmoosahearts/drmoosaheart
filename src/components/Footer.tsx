@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10 md:mb-12">
           <div>
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center gap-3 mb-4 text-zinc-50">
               <div className="bg-white rounded-full p-2 flex items-center justify-center">
                 <Heart className="h-6 w-6 text-medical-blue" />
               </div>
@@ -84,7 +84,7 @@ const Footer = () => {
               <li className="flex items-start gap-2 mt-4 pt-4 border-t border-medical-blue-light">
                 <Globe size={18} className="text-medical-gold flex-shrink-0 mt-1" />
                 <div className="text-gray-300 text-sm">
-                  <span className="font-semibold block mb-1">International Affairs:</span>
+                  <span className="font-semibold block mb-1">International Relations:</span>
                   <span>Dr. PT Abdul Rahman</span>
                   <a href="http://www.ptabdulrahman.com" target="_blank" rel="noopener noreferrer" className="block text-medical-gold hover:underline">www.ptabdulrahman.com</a>
                 </div>
