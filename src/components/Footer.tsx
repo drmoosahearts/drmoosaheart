@@ -1,12 +1,8 @@
-
 import { Link } from "react-router-dom";
 import { Heart, Phone, Mail, MapPin, Globe } from "lucide-react";
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
-  return (
-    <footer className="bg-medical-blue text-white pt-12 md:pt-16 pb-6 md:pb-8">
+  return <footer className="bg-medical-blue text-white pt-12 md:pt-16 pb-6 md:pb-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10 md:mb-12">
           <div>
@@ -88,7 +84,7 @@ const Footer = () => {
               <li className="flex items-start gap-2 mt-4 pt-4 border-t border-medical-blue-light">
                 <Globe size={18} className="text-medical-gold flex-shrink-0 mt-1" />
                 <div className="text-gray-300 text-sm">
-                  <span className="font-semibold block mb-1">International Relations:</span>
+                  <span className="font-semibold block mb-1">International Affairs:</span>
                   <span>Dr. PT Abdul Rahman</span>
                   <a href="http://www.ptabdulrahman.com" target="_blank" rel="noopener noreferrer" className="block text-medical-gold hover:underline">www.ptabdulrahman.com</a>
                 </div>
@@ -104,8 +100,6 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
