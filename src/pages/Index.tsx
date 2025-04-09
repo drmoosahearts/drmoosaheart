@@ -9,7 +9,7 @@ import MediaCoverage from "@/components/MediaCoverage";
 import SurgicalGallery from "@/components/SurgicalGallery";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Globe } from "lucide-react";
+import { Globe, Plane } from "lucide-react";
 
 const Index: React.FC = () => {
   // Set page title and meta description for SEO
@@ -41,13 +41,22 @@ const Index: React.FC = () => {
               </p>
             </div>
             <div className="md:w-1/3 flex justify-center">
-              <Link 
-                to="/international" 
-                className="inline-flex items-center gap-2 bg-white text-medical-teal px-6 py-3 rounded-sm hover:bg-gray-100 transition-colors font-medium"
-              >
-                <Globe size={20} />
-                GCC Patient Information
-              </Link>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link 
+                  to="/international" 
+                  className="inline-flex items-center gap-2 bg-white text-medical-teal px-6 py-3 rounded-sm hover:bg-gray-100 transition-colors font-medium"
+                >
+                  <Globe size={20} />
+                  GCC Patient Info
+                </Link>
+                <Link 
+                  to="/medical-tourism" 
+                  className="inline-flex items-center gap-2 bg-medical-blue text-white px-6 py-3 rounded-sm hover:bg-medical-blue-dark transition-colors font-medium"
+                >
+                  <Plane size={20} />
+                  Medical Tourism
+                </Link>
+              </div>
             </div>
           </div>
         </div>

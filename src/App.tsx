@@ -11,6 +11,7 @@ import ServicesPage from "./pages/ServicesPage";
 import AchievementsPage from "./pages/AchievementsPage";
 import ContactPage from "./pages/ContactPage";
 import InternationalPage from "./pages/InternationalPage";
+import MedicalTourismPage from "./pages/MedicalTourismPage";
 import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -74,6 +75,7 @@ const App: React.FC = () => {
                   <Route path="/achievements" element={<AchievementsPage />} />
                   <Route path="/contact" element={<ContactPage />} />
                   <Route path="/international" element={<InternationalPage />} />
+                  <Route path="/medical-tourism" element={<MedicalTourismPage />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </Suspense>
