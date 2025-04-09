@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -6,7 +5,7 @@ import {
   FileText, Users, Video, Plane, Stethoscope, Heart, 
   BedDouble, ArrowRight, Globe, Phone, Mail, MapPin,
   Clock, Languages, DollarSign, Calendar, Shield, Award, 
-  HeartPulse, User, Building
+  HeartPulse, User, Building, CheckCircle
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -19,11 +18,11 @@ const MedicalTourismPage = () => {
   
   // Set SEO meta tags
   useEffect(() => {
-    document.title = "10 Reasons Why International Patients Trust India for Medical Tourism | Dr. M.K. Moosa Kunhi";
+    document.title = "Medical Tourism in India | Dr. M.K. Moosa Kunhi";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute("content", 
-        "Discover why patients from around the world choose Dr. M.K. Moosa Kunhi in India for affordable, world-class cardiac surgery with comprehensive support services.");
+        "Discover why patients from around the world choose India for medical tourism and Dr. M.K. Moosa Kunhi for world-class cardiac surgery with comprehensive support services.");
     }
   }, []);
 
@@ -109,7 +108,7 @@ const MedicalTourismPage = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-3xl md:text-5xl font-bold mb-4 font-playfair">
-              10 Reasons Why International Patients Trust India for Medical Tourism
+              Medical Tourism in India
             </h1>
             <p className="text-lg md:text-xl mb-8 text-white/90">
               World-Class Heart Surgery by Dr. M.K. Moosa Kunhi for Patients from Europe, Africa, Asia and the Middle East
@@ -132,6 +131,56 @@ const MedicalTourismPage = () => {
             <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="#f8f9fa" />
             <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="#f8f9fa" />
           </svg>
+        </div>
+      </section>
+
+      {/* What is Medical Tourism Section */}
+      <section className="py-16 md:py-20 bg-white scroll-section">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h2 className="text-2xl md:text-4xl font-bold text-medical-blue-dark mb-4 font-playfair">
+                  What is Medical Tourism?
+                </h2>
+                <p className="text-lg text-gray-700 mb-4">
+                  Medical tourism involves individuals traveling to a different country to receive medical treatments, procedures, or surgeries, often seeking cost-effectiveness, shorter wait times, or specialized care unavailable in their home country.
+                </p>
+                <p className="text-lg text-gray-700">
+                  India has emerged as a significant hub for medical tourism, attracting patients globally seeking quality care at a lower price, with specialized treatments including advanced cardiac surgery.
+                </p>
+              </div>
+              <div className="bg-medical-gray p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-bold text-medical-blue-dark mb-4">Why Choose India for Medical Care?</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-medical-teal shrink-0 mt-1" />
+                    <span className="text-gray-700">World-class medical facilities with international accreditations</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-medical-teal shrink-0 mt-1" />
+                    <span className="text-gray-700">Significant cost savings (70-80% less than Western countries)</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-medical-teal shrink-0 mt-1" />
+                    <span className="text-gray-700">Internationally trained and experienced doctors</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-medical-teal shrink-0 mt-1" />
+                    <span className="text-gray-700">Minimal wait times for procedures and consultations</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-medical-teal shrink-0 mt-1" />
+                    <span className="text-gray-700">Advanced medical technology on par with global standards</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-medical-teal shrink-0 mt-1" />
+                    <span className="text-gray-700">Comprehensive patient support for international visitors</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -201,8 +250,66 @@ const MedicalTourismPage = () => {
         </div>
       </section>
 
+      {/* Government Support Section */}
+      <section className="py-16 md:py-20 bg-medical-gray scroll-section">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h2 className="text-2xl md:text-4xl font-bold text-medical-blue-dark mb-4 font-playfair">
+                  India's Commitment to Medical Tourism
+                </h2>
+                <p className="text-lg text-gray-700 mb-4">
+                  The Indian government is actively promoting medical tourism through initiatives like "Heal in India," which aims to attract more medical tourists by:
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-medical-teal shrink-0 mt-1" />
+                    <span className="text-gray-700">Streamlining medical visa processes for patients and companions</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-medical-teal shrink-0 mt-1" />
+                    <span className="text-gray-700">Establishing standards for hospitals catering to international patients</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-medical-teal shrink-0 mt-1" />
+                    <span className="text-gray-700">Creating a network of facilitation centers for international patients</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-medical-teal shrink-0 mt-1" />
+                    <span className="text-gray-700">Developing a digital platform to connect patients with healthcare providers</span>
+                  </li>
+                </ul>
+                <div className="mt-6">
+                  <p className="text-lg text-gray-700">
+                    Dr. Moosa Kunhi works within this supportive framework to provide seamless care for international cardiac patients.
+                  </p>
+                </div>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-bold text-medical-blue-dark mb-4">Growth and Impact of Medical Tourism in India</h3>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-medical-blue">Economic Growth</h4>
+                    <p className="text-gray-700">The medical tourism industry in India is a significant contributor to the country's economy, generating foreign exchange and creating job opportunities.</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-medical-blue">Increased Foreign Patient Arrivals</h4>
+                    <p className="text-gray-700">The number of foreign patients visiting India for medical purposes has been steadily increasing, indicating the growing popularity of medical tourism in India.</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-medical-blue">Future Potential</h4>
+                    <p className="text-gray-700">With continued investments in infrastructure, technology, and services, India has the potential to become a leading global destination for medical tourism.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
-      <section className="py-16 md:py-24 bg-medical-gray scroll-section" id="cardiac-services">
+      <section className="py-16 md:py-24 bg-white scroll-section" id="cardiac-services">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h2 className="text-2xl md:text-4xl font-bold text-medical-blue-dark mb-4 font-playfair">
@@ -490,7 +597,6 @@ const MedicalTourismPage = () => {
                       {[...Array(5)].map((_, i) => (
                         <svg key={i} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
                           <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                        </svg>
                       ))}
                     </div>
                     <p className="text-gray-700 italic">
@@ -514,7 +620,6 @@ const MedicalTourismPage = () => {
                       {[...Array(5)].map((_, i) => (
                         <svg key={i} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
                           <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                        </svg>
                       ))}
                     </div>
                     <p className="text-gray-700 italic">
@@ -538,7 +643,6 @@ const MedicalTourismPage = () => {
                       {[...Array(5)].map((_, i) => (
                         <svg key={i} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
                           <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                        </svg>
                       ))}
                     </div>
                     <p className="text-gray-700 italic">
@@ -582,4 +686,3 @@ const MedicalTourismPage = () => {
 };
 
 export default MedicalTourismPage;
-
