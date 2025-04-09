@@ -48,6 +48,60 @@ const MedicalTourismPage = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // 10 reasons data with numbered format
+  const reasons = [
+    {
+      title: "Unrivalled Expertise & Experience",
+      description: "Over 16,000 successful heart surgeries including beating-heart bypass, valve repairs, congenital heart corrections, and transplants.",
+      icon: <Award className="w-6 h-6 text-medical-blue" />
+    },
+    {
+      title: "Internationally Trained & Recognized",
+      description: "Dr. Moosa trained in Germany for L-VAD and Heart Transplant, bringing global standards of excellence to cardiac care in India.",
+      icon: <Globe className="w-6 h-6 text-medical-blue" />
+    },
+    {
+      title: "Modern Facilities in Chennai",
+      description: "All treatments are conducted at Kauvery Hospital, a world-class facility known for its cardiac excellence and advanced technology.",
+      icon: <Building className="w-6 h-6 text-medical-teal" />
+    },
+    {
+      title: "Trusted by GCC Patients",
+      description: "Patients from UAE, Saudi Arabia, Qatar, Oman, Kuwait, Bahrain regularly seek care from Dr. Moosa with exceptional satisfaction rates.",
+      icon: <Users className="w-6 h-6 text-medical-teal" />
+    },
+    {
+      title: "Transparent, Cost-Effective Treatment",
+      description: "Heart surgery in India can cost up to 70% less than in GCC nations, without compromising quality or care standards.",
+      icon: <DollarSign className="w-6 h-6 text-medical-blue" />
+    },
+    {
+      title: "Comprehensive Patient Support",
+      description: "From visa guidance to translator services, our International Patient Coordinator ensures stress-free travel and stay throughout your treatment.",
+      icon: <User className="w-6 h-6 text-medical-blue" />
+    },
+    {
+      title: "Faith-Friendly & Respectful Environment",
+      description: "We respect your values: halal meals, prayer spaces, gender-sensitive care—all available to ensure your comfort during stay.",
+      icon: <MapPin className="w-6 h-6 text-medical-teal" />
+    },
+    {
+      title: "Timely Appointments",
+      description: "No waiting lists. We prioritize urgent cardiac cases and schedule treatment within days of your initial consultation.",
+      icon: <Calendar className="w-6 h-6 text-medical-teal" />
+    },
+    {
+      title: "End-to-End Case Management",
+      description: "Receive full case planning, diagnostics, surgery, rehab, and post-care—under one unified system with no fragmentation of care.",
+      icon: <Shield className="w-6 h-6 text-medical-blue" />
+    },
+    {
+      title: "GCC Liaison Support",
+      description: "Our Senior Liaison, International Affairs provides dedicated coordination, language support, and continuous follow-up for GCC patients.",
+      icon: <Languages className="w-6 h-6 text-medical-blue" />
+    }
+  ];
+
   return (
     <div className="min-h-screen" ref={containerRef}>
       {/* Hero Section */}
@@ -98,168 +152,51 @@ const MedicalTourismPage = () => {
         </div>
       </section>
 
-      {/* 10 Reasons Section */}
+      {/* 10 Reasons Section - Numbered List Format */}
       <section className="py-16 md:py-24 bg-white scroll-section">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h2 className="text-2xl md:text-4xl font-bold text-medical-blue-dark mb-4 font-playfair">
-              Why Choose Dr. Moosa Kunhi & India for Heart Treatment?
+              10 Reasons Why Choose Dr. Moosa Kunhi & India for Heart Treatment
             </h2>
             <p className="text-lg text-gray-700">
               Discover the compelling reasons that make India a global leader in cardiac healthcare
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-            {/* Reason 1 */}
-            <Card className="border-t-4 border-t-medical-blue transition-transform hover:shadow-lg">
-              <CardContent className="pt-6">
-                <div className="flex gap-4 items-start">
-                  <div className="bg-medical-blue-light/10 p-3 rounded-full">
-                    <Award className="w-6 h-6 text-medical-blue" />
+          <div className="max-w-4xl mx-auto">
+            <ol className="space-y-6">
+              {reasons.map((reason, index) => (
+                <motion.li 
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ 
+                    opacity: 1, 
+                    y: 0,
+                    transition: { delay: index * 0.1, duration: 0.5 }
+                  }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  className="bg-white rounded-lg shadow-md overflow-hidden"
+                >
+                  <div className="flex flex-col md:flex-row">
+                    <div className="bg-medical-gray md:w-16 flex justify-center items-center p-4 text-2xl font-bold text-medical-blue-dark">
+                      {index + 1}
+                    </div>
+                    <div className="p-6 flex-1">
+                      <div className="flex items-start gap-4">
+                        <div className="bg-medical-blue-light/10 p-3 rounded-full hidden md:flex">
+                          {reason.icon}
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-bold text-medical-blue-dark mb-2">{reason.title}</h3>
+                          <p className="text-gray-700">{reason.description}</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-medical-blue-dark mb-2">Unrivalled Expertise & Experience</h3>
-                    <p className="text-gray-700">Over <span className="font-bold">16,000 successful heart surgeries</span> including beating-heart bypass, valve repairs, congenital heart corrections, and transplants.</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Reason 2 */}
-            <Card className="border-t-4 border-t-medical-blue transition-transform hover:shadow-lg">
-              <CardContent className="pt-6">
-                <div className="flex gap-4 items-start">
-                  <div className="bg-medical-blue-light/10 p-3 rounded-full">
-                    <Globe className="w-6 h-6 text-medical-blue" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-medical-blue-dark mb-2">Internationally Trained & Recognized</h3>
-                    <p className="text-gray-700">Dr. Moosa trained in <span className="font-bold">Germany for L-VAD and Heart Transplant</span>, bringing global standards of excellence to cardiac care in India.</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Reason 3 */}
-            <Card className="border-t-4 border-t-medical-teal transition-transform hover:shadow-lg">
-              <CardContent className="pt-6">
-                <div className="flex gap-4 items-start">
-                  <div className="bg-medical-teal-light/10 p-3 rounded-full">
-                    <Building className="w-6 h-6 text-medical-teal" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-medical-blue-dark mb-2">Modern Facilities in Chennai</h3>
-                    <p className="text-gray-700">All treatments are conducted at <span className="font-bold">Kauvery Hospital</span>, a world-class facility known for its cardiac excellence and advanced technology.</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Reason 4 */}
-            <Card className="border-t-4 border-t-medical-teal transition-transform hover:shadow-lg">
-              <CardContent className="pt-6">
-                <div className="flex gap-4 items-start">
-                  <div className="bg-medical-teal-light/10 p-3 rounded-full">
-                    <Users className="w-6 h-6 text-medical-teal" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-medical-blue-dark mb-2">Trusted by GCC Patients</h3>
-                    <p className="text-gray-700">Patients from <span className="font-bold">UAE, Saudi Arabia, Qatar, Oman, Kuwait, Bahrain</span> regularly seek care from Dr. Moosa with exceptional satisfaction rates.</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Reason 5 */}
-            <Card className="border-t-4 border-t-medical-blue transition-transform hover:shadow-lg">
-              <CardContent className="pt-6">
-                <div className="flex gap-4 items-start">
-                  <div className="bg-medical-blue-light/10 p-3 rounded-full">
-                    <DollarSign className="w-6 h-6 text-medical-blue" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-medical-blue-dark mb-2">Transparent, Cost-Effective Treatment</h3>
-                    <p className="text-gray-700">Heart surgery in India can cost <span className="font-bold">up to 70% less</span> than in GCC nations, without compromising quality or care standards.</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Reason 6 */}
-            <Card className="border-t-4 border-t-medical-blue transition-transform hover:shadow-lg">
-              <CardContent className="pt-6">
-                <div className="flex gap-4 items-start">
-                  <div className="bg-medical-blue-light/10 p-3 rounded-full">
-                    <User className="w-6 h-6 text-medical-blue" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-medical-blue-dark mb-2">Comprehensive Patient Support</h3>
-                    <p className="text-gray-700">From <span className="font-bold">visa guidance to translator services</span>, our International Patient Coordinator ensures stress-free travel and stay throughout your treatment.</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Reason 7 */}
-            <Card className="border-t-4 border-t-medical-teal transition-transform hover:shadow-lg">
-              <CardContent className="pt-6">
-                <div className="flex gap-4 items-start">
-                  <div className="bg-medical-teal-light/10 p-3 rounded-full">
-                    <MapPin className="w-6 h-6 text-medical-teal" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-medical-blue-dark mb-2">Faith-Friendly & Respectful Environment</h3>
-                    <p className="text-gray-700">We respect your values: <span className="font-bold">halal meals, prayer spaces, gender-sensitive care</span>—all available to ensure your comfort during stay.</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Reason 8 */}
-            <Card className="border-t-4 border-t-medical-teal transition-transform hover:shadow-lg">
-              <CardContent className="pt-6">
-                <div className="flex gap-4 items-start">
-                  <div className="bg-medical-teal-light/10 p-3 rounded-full">
-                    <Calendar className="w-6 h-6 text-medical-teal" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-medical-blue-dark mb-2">Timely Appointments</h3>
-                    <p className="text-gray-700">No waiting lists. We prioritize urgent cardiac cases and schedule treatment <span className="font-bold">within days</span> of your initial consultation.</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Reason 9 */}
-            <Card className="border-t-4 border-t-medical-blue transition-transform hover:shadow-lg">
-              <CardContent className="pt-6">
-                <div className="flex gap-4 items-start">
-                  <div className="bg-medical-blue-light/10 p-3 rounded-full">
-                    <Shield className="w-6 h-6 text-medical-blue" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-medical-blue-dark mb-2">End-to-End Case Management</h3>
-                    <p className="text-gray-700">Receive full case planning, diagnostics, surgery, rehab, and post-care—under one unified system with <span className="font-bold">no fragmentation of care</span>.</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Reason 10 */}
-            <Card className="border-t-4 border-t-medical-blue transition-transform hover:shadow-lg">
-              <CardContent className="pt-6">
-                <div className="flex gap-4 items-start">
-                  <div className="bg-medical-blue-light/10 p-3 rounded-full">
-                    <Languages className="w-6 h-6 text-medical-blue" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-medical-blue-dark mb-2">GCC Liaison Support</h3>
-                    <p className="text-gray-700">Our <span className="font-bold">Senior Liaison, International Affairs</span> provides dedicated coordination, language support, and continuous follow-up for GCC patients.</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                </motion.li>
+              ))}
+            </ol>
           </div>
         </div>
       </section>
@@ -415,7 +352,7 @@ const MedicalTourismPage = () => {
               <div className="relative">
                 <div className="aspect-video bg-gray-100 rounded-md overflow-hidden shadow-lg">
                   <img 
-                    src="/lovable-uploads/67c7fe71-a496-4e33-94e3-17b108475b7d.png" 
+                    src="/lovable-uploads/b4be52b5-393a-4a20-8a34-d7d8f6aa2ba4.png" 
                     alt="Medical Tourism Journey in India" 
                     className="w-full h-full object-cover"
                   />

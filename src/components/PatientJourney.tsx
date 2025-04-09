@@ -2,8 +2,9 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { 
-  FileText, Video, Plane, Stethoscope, 
-  Heart, BedDouble, ArrowRight
+  FileText, Users, Video, Plane, Stethoscope, 
+  Heart, BedDouble, ArrowRight, Globe, DollarSign, 
+  Hotel, User, ArrowUp
 } from 'lucide-react';
 
 interface PatientJourneyProps {
@@ -18,102 +19,226 @@ const PatientJourney: React.FC<PatientJourneyProps> = ({ activeStep = 0 }) => {
     controls.start("visible");
   }, [controls]);
 
-  const steps = [
+  const journeySteps = [
     {
-      icon: <FileText className="h-8 w-8 text-white" />,
-      title: "Initial Contact",
-      description: "Submit your medical reports online for assessment by Dr. Moosa's team",
+      icon: <Users className="h-8 w-8 text-white" />,
+      title: "English-speaking Case Managers",
+      description: "Our multilingual team ensures seamless communication throughout your journey",
       color: "bg-medical-blue"
     },
     {
-      icon: <Video className="h-8 w-8 text-white" />,
-      title: "Virtual Consultation",
-      description: "Speak directly with Dr. Moosa about your condition and treatment options",
+      icon: <FileText className="h-8 w-8 text-white" />,
+      title: "Case-Document Collection",
+      description: "Submit your medical reports online for assessment by Dr. Moosa's team",
       color: "bg-medical-teal"
     },
     {
+      icon: <Video className="h-8 w-8 text-white" />,
+      title: "Pre-Arrival Medical Consultation",
+      description: "Virtual consultation with Dr. Moosa to discuss your condition and treatment plan",
+      color: "bg-medical-blue"
+    },
+    {
+      icon: <Globe className="h-8 w-8 text-white" />,
+      title: "Visa Processing",
+      description: "Our team assists with medical visa application and documentation",
+      color: "bg-medical-teal"
+    },
+    {
+      icon: <DollarSign className="h-8 w-8 text-white" />,
+      title: "Currency Exchange",
+      description: "Guidance on payment options and currency conversion for your convenience",
+      color: "bg-medical-blue"
+    },
+    {
       icon: <Plane className="h-8 w-8 text-white" />,
-      title: "Travel Planning",
-      description: "Our team assists with medical visa, flight arrangements, and accommodation",
+      title: "Airport Pickup",
+      description: "Complimentary pickup from Chennai International Airport upon arrival",
+      color: "bg-medical-teal"
+    },
+    {
+      icon: <FileText className="h-8 w-8 text-white" />,
+      title: "Insurance Options",
+      description: "Assistance with travel and medical insurance requirements",
+      color: "bg-medical-blue"
+    },
+    {
+      icon: <Hotel className="h-8 w-8 text-white" />,
+      title: "Hotel Accommodation",
+      description: "Comfortable stay arrangements near the hospital for you and your family",
+      color: "bg-medical-teal"
+    },
+    {
+      icon: <User className="h-8 w-8 text-white" />,
+      title: "Faith-Based Facility",
+      description: "Access to prayer spaces and religiously appropriate amenities",
       color: "bg-medical-blue"
     },
     {
       icon: <Stethoscope className="h-8 w-8 text-white" />,
-      title: "Medical Assessment",
-      description: "Comprehensive diagnostics and fitness tests on arrival in Chennai",
+      title: "Hospital Treatment",
+      description: "World-class cardiac procedure with Dr. Moosa's expert surgical team",
       color: "bg-medical-teal"
     },
     {
       icon: <Heart className="h-8 w-8 text-white" />,
-      title: "Surgery by Dr. Moosa",
-      description: "World-class cardiac procedure with Dr. Moosa's expert surgical team",
+      title: "Pre and Post-Operation Consultation",
+      description: "Comprehensive care before and after your procedure",
       color: "bg-medical-blue"
     },
     {
-      icon: <BedDouble className="h-8 w-8 text-white" />,
-      title: "Post-Op Recovery",
-      description: "Dedicated rehabilitation, counseling, and monitoring for optimal recovery",
+      icon: <Plane className="h-8 w-8 text-white" />,
+      title: "Airport Drop-off",
+      description: "Transportation back to the airport when you're ready to return home",
       color: "bg-medical-teal"
     },
     {
-      icon: <Plane className="h-8 w-8 text-white" />,
-      title: "Return & Follow-Up",
+      icon: <Video className="h-8 w-8 text-white" />,
+      title: "Post-Departure Medical Consultation",
       description: "Regular online check-ins and continuing care after returning home",
       color: "bg-medical-blue"
     }
   ];
 
   return (
-    <div ref={containerRef} className="relative max-w-4xl mx-auto">
-      {/* Journey Line */}
-      <div className="absolute left-4 top-10 bottom-10 w-0.5 bg-gray-200 hidden md:block"></div>
-      
-      <div className="space-y-12 md:space-y-0 md:grid md:grid-cols-7 md:gap-6">
-        {steps.map((step, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{
-              opacity: activeStep >= index ? 1 : 0.5,
-              y: 0,
-              transition: { 
-                duration: 0.5,
-                delay: index * 0.1
-              }
-            }}
-            className={`relative ${activeStep >= index ? "z-10" : "z-0"}`}
-          >
-            <div className="md:col-span-1 flex md:block">
-              <div className={`flex-shrink-0 h-16 w-16 rounded-full ${step.color} flex items-center justify-center shadow-lg relative md:ml-0 z-10 transition-all duration-300 ${activeStep >= index ? "scale-100" : "scale-90 opacity-70"}`}>
-                {step.icon}
-                <div className="absolute -right-3 top-1/2 transform -translate-y-1/2 hidden md:block">
-                  <ArrowRight className={`h-5 w-5 text-gray-400 ${index === steps.length - 1 ? "hidden" : ""}`} />
+    <div ref={containerRef} className="relative max-w-6xl mx-auto">
+      <div className="hidden lg:block">
+        {/* Desktop Version - Flow Chart Style */}
+        <div className="relative">
+          {/* Top Row */}
+          <div className="grid grid-cols-5 gap-4 mb-6">
+            {journeySteps.slice(0, 5).map((step, index) => (
+              <motion.div
+                key={`top-${index}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{
+                  opacity: activeStep >= index ? 1 : 0.5,
+                  y: 0,
+                  transition: { duration: 0.5, delay: index * 0.1 }
+                }}
+                className="flex flex-col items-center text-center"
+              >
+                <div className={`${step.color} w-16 h-16 rounded-full flex items-center justify-center mb-3`}>
+                  {step.icon}
                 </div>
-              </div>
-              <div className="ml-4 md:ml-0 md:mt-3">
-                <h3 className={`text-lg font-bold ${activeStep >= index ? "text-medical-blue-dark" : "text-gray-500"} transition-colors duration-300`}>
-                  {index + 1}. {step.title}
-                </h3>
-                <p className={`mt-1 text-sm ${activeStep >= index ? "text-gray-700" : "text-gray-400"} transition-colors duration-300`}>
-                  {step.description}
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        ))}
+                <h3 className="text-sm font-bold text-medical-blue-dark mb-1">{step.title}</h3>
+                <p className="text-xs text-gray-600">{step.description}</p>
+                {index < 4 && (
+                  <div className="absolute right-[-8px] top-8 transform translate-x-1/2">
+                    <ArrowRight className="h-5 w-5 text-medical-blue" />
+                  </div>
+                )}
+              </motion.div>
+            ))}
+          </div>
+          
+          {/* Connecting Line Right to Left */}
+          <div className="relative h-12 mx-8">
+            <div className="absolute right-0 w-[calc(100%-60px)] h-0.5 bg-medical-blue"></div>
+            <div className="absolute right-0 h-12 w-0.5 bg-medical-blue"></div>
+            <div className="absolute left-0 top-12 h-0.5 w-0.5 bg-medical-blue"></div>
+            <div className="absolute left-0 h-12 w-0.5 bg-medical-blue"></div>
+          </div>
+          
+          {/* Middle Row (Right to Left) */}
+          <div className="grid grid-cols-4 gap-4 mb-6">
+            {journeySteps.slice(5, 9).reverse().map((step, index) => (
+              <motion.div
+                key={`middle-${index}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{
+                  opacity: activeStep >= index + 5 ? 1 : 0.5,
+                  y: 0,
+                  transition: { duration: 0.5, delay: (index + 5) * 0.1 }
+                }}
+                className="flex flex-col items-center text-center"
+              >
+                <div className={`${step.color} w-16 h-16 rounded-full flex items-center justify-center mb-3`}>
+                  {step.icon}
+                </div>
+                <h3 className="text-sm font-bold text-medical-blue-dark mb-1">{step.title}</h3>
+                <p className="text-xs text-gray-600">{step.description}</p>
+                {index < 3 && (
+                  <div className="absolute left-[-8px] top-8 transform -translate-x-1/2">
+                    <ArrowRight className="h-5 w-5 text-medical-blue rotate-180" />
+                  </div>
+                )}
+              </motion.div>
+            ))}
+          </div>
+          
+          {/* Connecting Line Left to Right */}
+          <div className="relative h-12 mx-8">
+            <div className="absolute left-0 w-[calc(100%-60px)] h-0.5 bg-medical-blue"></div>
+            <div className="absolute left-0 h-12 w-0.5 bg-medical-blue"></div>
+            <div className="absolute right-0 top-12 h-0.5 w-0.5 bg-medical-blue"></div>
+            <div className="absolute right-0 h-12 w-0.5 bg-medical-blue"></div>
+          </div>
+          
+          {/* Bottom Row */}
+          <div className="grid grid-cols-4 gap-4">
+            {journeySteps.slice(9).map((step, index) => (
+              <motion.div
+                key={`bottom-${index}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{
+                  opacity: activeStep >= index + 9 ? 1 : 0.5,
+                  y: 0,
+                  transition: { duration: 0.5, delay: (index + 9) * 0.1 }
+                }}
+                className="flex flex-col items-center text-center"
+              >
+                <div className={`${step.color} w-16 h-16 rounded-full flex items-center justify-center mb-3`}>
+                  {step.icon}
+                </div>
+                <h3 className="text-sm font-bold text-medical-blue-dark mb-1">{step.title}</h3>
+                <p className="text-xs text-gray-600">{step.description}</p>
+                {index < 3 && (
+                  <div className="absolute right-[-8px] top-8 transform translate-x-1/2">
+                    <ArrowRight className="h-5 w-5 text-medical-blue" />
+                  </div>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </div>
       
-      {/* Mobile view - Arrow connections */}
-      <div className="block md:hidden space-y-1">
-        {steps.map((step, index) => (
-          index < steps.length - 1 && (
-            <div key={`arrow-${index}`} className="flex justify-center my-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-300">
-                <path d="M12 5v14M19 12l-7 7-7-7"/>
-              </svg>
-            </div>
-          )
-        ))}
+      {/* Mobile and Tablet Version - Simplified Vertical Flow */}
+      <div className="lg:hidden">
+        <div className="relative">
+          <div className="absolute left-8 top-8 bottom-0 w-0.5 bg-gray-200"></div>
+          
+          <div className="space-y-8">
+            {journeySteps.map((step, index) => (
+              <motion.div
+                key={`mobile-${index}`}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{
+                  opacity: activeStep >= index ? 1 : 0.5,
+                  x: 0,
+                  transition: { duration: 0.5, delay: index * 0.1 }
+                }}
+                className="flex items-start ml-4"
+              >
+                <div className={`${step.color} w-12 h-12 rounded-full flex items-center justify-center mr-4 z-10 flex-shrink-0`}>
+                  {React.cloneElement(step.icon as React.ReactElement, { className: "h-6 w-6 text-white" })}
+                </div>
+                <div>
+                  <h3 className="text-md font-bold text-medical-blue-dark mb-1">
+                    {index + 1}. {step.title}
+                  </h3>
+                  <p className="text-sm text-gray-600">{step.description}</p>
+                </div>
+                {index < journeySteps.length - 1 && (
+                  <div className="absolute left-8 transform translate-y-[56px]">
+                    <ArrowUp className="h-5 w-5 text-gray-300 rotate-180" />
+                  </div>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

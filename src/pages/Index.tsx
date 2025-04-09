@@ -54,7 +54,7 @@ const Index: React.FC = () => {
                   className="inline-flex items-center gap-2 bg-medical-blue text-white px-6 py-3 rounded-sm hover:bg-medical-blue-dark transition-colors font-medium"
                 >
                   <Plane size={20} />
-                  Medical Tourism
+                  10 Reasons to Choose India
                 </Link>
               </div>
             </div>
