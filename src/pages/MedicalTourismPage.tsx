@@ -23,7 +23,7 @@ const MedicalTourismPage = () => {
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute("content", 
-        "Discover why patients from GCC countries choose Dr. M.K. Moosa Kunhi in India for affordable, world-class cardiac surgery with comprehensive support services.");
+        "Discover why patients from around the world choose Dr. M.K. Moosa Kunhi in India for affordable, world-class cardiac surgery with comprehensive support services.");
     }
   }, []);
 
@@ -66,38 +66,38 @@ const MedicalTourismPage = () => {
       icon: <Building className="w-6 h-6 text-medical-teal" />
     },
     {
-      title: "Trusted by GCC Patients",
-      description: "Patients from UAE, Saudi Arabia, Qatar, Oman, Kuwait, Bahrain regularly seek care from Dr. Moosa with exceptional satisfaction rates.",
+      title: "Global Patient Network",
+      description: "Patients from Europe, Africa, Asia, and the Middle East regularly seek care from Dr. Moosa with exceptional satisfaction rates.",
       icon: <Users className="w-6 h-6 text-medical-teal" />
     },
     {
       title: "Transparent, Cost-Effective Treatment",
-      description: "Heart surgery in India can cost up to 70% less than in GCC nations, without compromising quality or care standards.",
+      description: "Heart surgery in India can cost up to 70-80% less than in Western countries and 50-60% less than in other Asian medical hubs, without compromising quality or care standards.",
       icon: <DollarSign className="w-6 h-6 text-medical-blue" />
     },
     {
-      title: "Comprehensive Patient Support",
-      description: "From visa guidance to translator services, our International Patient Coordinator ensures stress-free travel and stay throughout your treatment.",
+      title: "Comprehensive International Patient Support",
+      description: "From visa guidance to translator services in multiple languages, our International Patient Coordinator ensures stress-free travel and stay throughout your treatment.",
       icon: <User className="w-6 h-6 text-medical-blue" />
     },
     {
-      title: "Faith-Friendly & Respectful Environment",
-      description: "We respect your values: halal meals, prayer spaces, gender-sensitive care—all available to ensure your comfort during stay.",
+      title: "Cultural Sensitivity & Accommodation",
+      description: "We respect diverse values and needs: special dietary requirements, prayer spaces, gender-sensitive care, and cultural preferences are all accommodated.",
       icon: <MapPin className="w-6 h-6 text-medical-teal" />
     },
     {
       title: "Timely Appointments",
-      description: "No waiting lists. We prioritize urgent cardiac cases and schedule treatment within days of your initial consultation.",
+      description: "No long waiting lists. We prioritize urgent cardiac cases and schedule treatment within days of your initial consultation, regardless of your country of origin.",
       icon: <Calendar className="w-6 h-6 text-medical-teal" />
     },
     {
       title: "End-to-End Case Management",
-      description: "Receive full case planning, diagnostics, surgery, rehab, and post-care—under one unified system with no fragmentation of care.",
+      description: "Receive full case planning, diagnostics, surgery, rehab, and post-care—under one unified system with no fragmentation of care, ensuring continuity across borders.",
       icon: <Shield className="w-6 h-6 text-medical-blue" />
     },
     {
-      title: "GCC Liaison Support",
-      description: "Our Senior Liaison, International Affairs provides dedicated coordination, language support, and continuous follow-up for GCC patients.",
+      title: "International Affairs Liaison",
+      description: "Our dedicated international team provides coordinated support in multiple languages, specialized travel assistance, and continuous follow-up care for patients worldwide.",
       icon: <Languages className="w-6 h-6 text-medical-blue" />
     }
   ];
@@ -112,7 +112,7 @@ const MedicalTourismPage = () => {
               10 Reasons Why International Patients Trust India for Medical Tourism
             </h1>
             <p className="text-lg md:text-xl mb-8 text-white/90">
-              World-Class Heart Surgery by Dr. M.K. Moosa Kunhi for Patients from UAE, Saudi Arabia, Qatar, Oman, Kuwait, and Bahrain
+              World-Class Heart Surgery by Dr. M.K. Moosa Kunhi for Patients from Europe, Africa, Asia and the Middle East
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="#contact-section" className="bg-white text-medical-blue hover:bg-gray-100 px-6 py-3 rounded-sm font-medium inline-flex items-center justify-center">
@@ -143,7 +143,7 @@ const MedicalTourismPage = () => {
               Your Care Journey, Simplified
             </h2>
             <p className="text-lg text-gray-700">
-              We've streamlined every step of your medical journey from consultation to recovery
+              We've streamlined every step of your medical journey from consultation to recovery, no matter where you're from
             </p>
           </div>
           
@@ -160,7 +160,7 @@ const MedicalTourismPage = () => {
               10 Reasons Why Choose Dr. Moosa Kunhi & India for Heart Treatment
             </h2>
             <p className="text-lg text-gray-700">
-              Discover the compelling reasons that make India a global leader in cardiac healthcare
+              Discover the compelling reasons that make India a global leader in cardiac healthcare for international patients
             </p>
           </div>
 
@@ -209,7 +209,7 @@ const MedicalTourismPage = () => {
               Comprehensive Cardiac Services
             </h2>
             <p className="text-lg text-gray-700">
-              World-class heart procedures with exceptional outcomes
+              World-class heart procedures with exceptional outcomes for patients from across the globe
             </p>
           </div>
 
@@ -308,7 +308,7 @@ const MedicalTourismPage = () => {
                         <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
                       </svg>
                     </div>
-                    <span className="text-gray-700">JCI-accredited hospitals with international standards</span>
+                    <span className="text-gray-700">Internationally accredited hospitals with global standards</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="bg-medical-teal rounded-full p-1 mt-1 shrink-0">
@@ -340,7 +340,7 @@ const MedicalTourismPage = () => {
                         <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
                       </svg>
                     </div>
-                    <span className="text-gray-700">Direct flights from major GCC cities for easier access</span>
+                    <span className="text-gray-700">Excellent connectivity with direct flights from many international hubs</span>
                   </li>
                 </ul>
                 <div className="mt-6">
@@ -409,8 +409,8 @@ const MedicalTourismPage = () => {
                     <div className="flex items-start">
                       <Clock className="w-5 h-5 mt-1 mr-3" />
                       <div>
-                        <p>Monday - Saturday, 9:00 AM - 5:00 PM</p>
-                        <p>(Gulf Standard Time, GMT+4)</p>
+                        <p>Available for patients from all time zones</p>
+                        <p>Quick response guaranteed within 24 hours</p>
                       </div>
                     </div>
                   </div>
@@ -448,7 +448,7 @@ const MedicalTourismPage = () => {
                             <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
                           </svg>
                         </div>
-                        <span>Language interpretation & cultural needs</span>
+                        <span>Multiple language support & cultural needs</span>
                       </li>
                     </ul>
                   </div>
@@ -473,7 +473,7 @@ const MedicalTourismPage = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h2 className="text-2xl md:text-4xl font-bold text-medical-blue-dark mb-4 font-playfair">
-              Patient Success Stories from the GCC
+              Patient Success Stories from Around the World
             </h2>
             <p className="text-lg text-gray-700">
               Hear directly from our international patients about their experience
@@ -481,7 +481,7 @@ const MedicalTourismPage = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Testimonial 1 */}
+            {/* Testimonial 1 - UAE */}
             <Card className="hover:shadow-lg transition-all">
               <CardContent className="p-6">
                 <div className="flex flex-col h-full">
@@ -505,7 +505,7 @@ const MedicalTourismPage = () => {
               </CardContent>
             </Card>
             
-            {/* Testimonial 2 */}
+            {/* Testimonial 2 - UK */}
             <Card className="hover:shadow-lg transition-all">
               <CardContent className="p-6">
                 <div className="flex flex-col h-full">
@@ -522,14 +522,14 @@ const MedicalTourismPage = () => {
                     </p>
                   </div>
                   <div className="mt-auto pt-4 border-t">
-                    <p className="font-semibold text-medical-blue-dark">Mohammed A.</p>
-                    <p className="text-sm text-gray-600">Riyadh, Saudi Arabia</p>
+                    <p className="font-semibold text-medical-blue-dark">Michael B.</p>
+                    <p className="text-sm text-gray-600">London, United Kingdom</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
             
-            {/* Testimonial 3 */}
+            {/* Testimonial 3 - Nigeria */}
             <Card className="hover:shadow-lg transition-all">
               <CardContent className="p-6">
                 <div className="flex flex-col h-full">
@@ -542,12 +542,12 @@ const MedicalTourismPage = () => {
                       ))}
                     </div>
                     <p className="text-gray-700 italic">
-                      "I was nervous about traveling for heart surgery, but PT Abdul Rahman guided us through every step. The hospital respected our cultural needs and Dr. Moosa's expertise is truly world-class."
+                      "I searched for the best cardiac care globally and found Dr. Moosa. The international team guided us through every step. His expertise is truly world-class and the value is unmatched."
                     </p>
                   </div>
                   <div className="mt-auto pt-4 border-t">
-                    <p className="font-semibold text-medical-blue-dark">Fatima K.</p>
-                    <p className="text-sm text-gray-600">Doha, Qatar</p>
+                    <p className="font-semibold text-medical-blue-dark">Emmanuel O.</p>
+                    <p className="text-sm text-gray-600">Lagos, Nigeria</p>
                   </div>
                 </div>
               </CardContent>
@@ -564,7 +564,7 @@ const MedicalTourismPage = () => {
               Experience World-Class Cardiac Care in India
             </h2>
             <p className="text-lg mb-8 max-w-2xl mx-auto">
-              Let Dr. Moosa Kunhi and his expert team guide you from the GCC to India with complete care and confidence.
+              Let Dr. Moosa Kunhi and his expert team guide you to India with complete care and confidence, no matter where you're from.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="tel:+971506505422" className="bg-white text-medical-blue hover:bg-gray-100 px-6 py-3 rounded-sm font-medium inline-flex items-center justify-center gap-2">
@@ -582,3 +582,4 @@ const MedicalTourismPage = () => {
 };
 
 export default MedicalTourismPage;
+

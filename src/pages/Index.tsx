@@ -35,9 +35,9 @@ const Index: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="md:w-2/3">
-              <h2 className="text-2xl md:text-3xl font-bold mb-3">International Patients from GCC Countries</h2>
+              <h2 className="text-2xl md:text-3xl font-bold mb-3">International Patients from Around the World</h2>
               <p className="text-gray-100">
-                Dr. Moosa Kunhi provides specialized cardiac care for patients from UAE, Saudi Arabia, Qatar, Oman, Kuwait, and Bahrain. Learn more about our international patient services, cost advantages, and dedicated coordinator.
+                Dr. Moosa Kunhi provides specialized cardiac care for patients from Europe, Africa, Asia, and the Middle East. Learn more about our international patient services, cost advantages, and dedicated coordinator.
               </p>
             </div>
             <div className="md:w-1/3 flex justify-center">
@@ -47,7 +47,7 @@ const Index: React.FC = () => {
                   className="inline-flex items-center gap-2 bg-white text-medical-teal px-6 py-3 rounded-sm hover:bg-gray-100 transition-colors font-medium"
                 >
                   <Globe size={20} />
-                  GCC Patient Info
+                  International Patient Info
                 </Link>
                 <Link 
                   to="/medical-tourism" 
