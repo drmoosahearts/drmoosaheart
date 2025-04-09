@@ -1,10 +1,9 @@
-
+import React, { useEffect, useState, Suspense } from "react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useEffect, useState, Suspense } from "react";
 import Index from "./pages/Index";
 import AboutPage from "./pages/AboutPage";
 import ServicesPage from "./pages/ServicesPage";
@@ -20,8 +19,8 @@ import SplashScreen from "./components/SplashScreen";
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      refetchOnWindowFocus: false, // Improves performance on mobile
-      retry: 1, // Reduces unnecessary retries
+      refetchOnWindowFocus: false,
+      retry: 1,
     },
   },
 });
@@ -30,23 +29,19 @@ const App: React.FC = () => {
   const [showSplash, setShowSplash] = useState<boolean>(true);
   const [isPageLoaded, setIsPageLoaded] = useState<boolean>(false);
 
-  // Add the Lottie script
   useEffect(() => {
-    // Optimized script loading
     const script = document.createElement('script');
     script.src = "https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs";
     script.type = "module";
-    script.async = true; // Add async for better performance
+    script.async = true;
     document.body.appendChild(script);
 
-    // Mark page as loaded
     const handleLoad = (): void => {
       setIsPageLoaded(true);
     };
     
     window.addEventListener('load', handleLoad);
 
-    // If page is already loaded (e.g. cached)
     if (document.readyState === 'complete') {
       setIsPageLoaded(true);
     }
