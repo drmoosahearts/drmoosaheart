@@ -9,7 +9,7 @@ import MediaCoverage from "@/components/MediaCoverage";
 import SurgicalGallery from "@/components/SurgicalGallery";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Globe, Plane } from "lucide-react";
+import { Globe, Plane, Heart } from "lucide-react";
 
 const Index: React.FC = () => {
   // Set page title and meta description for SEO
@@ -30,32 +30,55 @@ const Index: React.FC = () => {
       <SurgicalGallery />
       <Achievements />
       
-      {/* International Patients Banner */}
-      <section className="py-12 bg-medical-teal text-white">
+      {/* Specialized Care Section */}
+      <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="md:w-2/3">
-              <h2 className="text-2xl md:text-3xl font-bold mb-3">International Patients from Around the World</h2>
-              <p className="text-gray-100">
-                Dr. Moosa Kunhi provides specialized cardiac care for patients from Europe, Africa, Asia, and the Middle East. Learn more about our international patient services, cost advantages, and dedicated coordinator.
-              </p>
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* CHD Banner */}
+            <div className="bg-medical-blue text-white rounded-lg overflow-hidden shadow-md">
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <Heart className="h-8 w-8 mr-3 text-medical-teal-light" />
+                  <h2 className="text-2xl md:text-3xl font-bold text-white">Congenital Heart Disease</h2>
+                </div>
+                <p className="mb-6 text-gray-100">
+                  Learn about Congenital Heart Disease in children, its impact in India, and the specialized care provided by Dr. Moosa Kunhi for pediatric cardiac patients.
+                </p>
+                <Link 
+                  to="/congenital-heart-disease" 
+                  className="inline-flex items-center gap-2 bg-white text-medical-blue px-6 py-3 rounded-sm hover:bg-gray-100 transition-colors font-medium"
+                >
+                  Learn More About CHD
+                </Link>
+              </div>
             </div>
-            <div className="md:w-1/3 flex justify-center">
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link 
-                  to="/international" 
-                  className="inline-flex items-center gap-2 bg-white text-medical-teal px-6 py-3 rounded-sm hover:bg-gray-100 transition-colors font-medium"
-                >
-                  <Globe size={20} />
-                  International Patient Info
-                </Link>
-                <Link 
-                  to="/medical-tourism" 
-                  className="inline-flex items-center gap-2 bg-medical-blue text-white px-6 py-3 rounded-sm hover:bg-medical-blue-dark transition-colors font-medium"
-                >
-                  <Plane size={20} />
-                  10 Reasons to Choose India
-                </Link>
+            
+            {/* International Patients Banner */}
+            <div className="bg-medical-teal text-white rounded-lg overflow-hidden shadow-md">
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <Globe className="h-8 w-8 mr-3 text-white" />
+                  <h2 className="text-2xl md:text-3xl font-bold text-white">International Patients</h2>
+                </div>
+                <p className="mb-6 text-gray-100">
+                  Dr. Moosa Kunhi provides specialized cardiac care for patients from Europe, Africa, Asia, and the Middle East. Learn more about our international patient services.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link 
+                    to="/international" 
+                    className="inline-flex items-center gap-2 bg-white text-medical-teal px-6 py-3 rounded-sm hover:bg-gray-100 transition-colors font-medium"
+                  >
+                    <Globe size={20} />
+                    International Patient Info
+                  </Link>
+                  <Link 
+                    to="/medical-tourism" 
+                    className="inline-flex items-center gap-2 bg-medical-blue text-white px-6 py-3 rounded-sm hover:bg-medical-blue-dark transition-colors font-medium"
+                  >
+                    <Plane size={20} />
+                    10 Reasons to Choose India
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

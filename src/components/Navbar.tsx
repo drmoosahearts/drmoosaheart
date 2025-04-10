@@ -35,6 +35,11 @@ const Navbar: React.FC = () => {
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
+              <Link to="/congenital-heart-disease" className={navigationMenuTriggerStyle()}>
+                CHD
+              </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
               <Link to="/medical-tourism" className={navigationMenuTriggerStyle()}>
                 Medical Tourism
               </Link>
