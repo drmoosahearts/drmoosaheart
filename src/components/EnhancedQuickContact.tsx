@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Phone, MessageCircle, Calendar, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -21,8 +22,8 @@ const EnhancedQuickContact: React.FC = () => {
 
   return (
     <>
-      {/* Enhanced Floating Action Buttons */}
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+      {/* Enhanced Floating Action Buttons - Desktop Only */}
+      <div className="fixed bottom-6 right-6 z-50 hidden md:flex flex-col gap-3">
         <motion.div
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -73,31 +74,33 @@ const EnhancedQuickContact: React.FC = () => {
       </div>
 
       {/* Enhanced Bottom Contact Bar (Mobile) */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-2xl z-40 md:hidden">
-        <div className="grid grid-cols-3 gap-1 p-3">
-          <button
-            onClick={handleQuickCall}
-            className="flex flex-col items-center gap-2 p-4 text-coral-600 hover:bg-coral-50 rounded-xl transition-all duration-300 min-h-[60px]"
-          >
-            <Phone className="h-6 w-6" />
-            <span className="text-xs font-medium">Emergency</span>
-          </button>
-          
-          <button
-            onClick={handleWhatsApp}
-            className="flex flex-col items-center gap-2 p-4 text-green-600 hover:bg-green-50 rounded-xl transition-all duration-300 min-h-[60px]"
-          >
-            <MessageCircle className="h-6 w-6" />
-            <span className="text-xs font-medium">WhatsApp</span>
-          </button>
-          
-          <button
-            onClick={handleAppointment}
-            className="flex flex-col items-center gap-2 p-4 text-slate-800 hover:bg-slate-50 rounded-xl transition-all duration-300 min-h-[60px]"
-          >
-            <Calendar className="h-6 w-6" />
-            <span className="text-xs font-medium">Appointment</span>
-          </button>
+      <div className="fixed bottom-0 left-0 right-0 bg-white/98 backdrop-blur-sm border-t border-gray-200 shadow-2xl z-40 md:hidden">
+        <div className="safe-area-inset-bottom">
+          <div className="grid grid-cols-3 gap-1 p-3">
+            <button
+              onClick={handleQuickCall}
+              className="flex flex-col items-center gap-2 p-3 text-coral-600 hover:bg-coral-50 rounded-xl transition-all duration-300 min-h-[64px] active:scale-95"
+            >
+              <Phone className="h-6 w-6" />
+              <span className="text-xs font-medium">Emergency</span>
+            </button>
+            
+            <button
+              onClick={handleWhatsApp}
+              className="flex flex-col items-center gap-2 p-3 text-green-600 hover:bg-green-50 rounded-xl transition-all duration-300 min-h-[64px] active:scale-95"
+            >
+              <MessageCircle className="h-6 w-6" />
+              <span className="text-xs font-medium">WhatsApp</span>
+            </button>
+            
+            <button
+              onClick={handleAppointment}
+              className="flex flex-col items-center gap-2 p-3 text-slate-800 hover:bg-slate-50 rounded-xl transition-all duration-300 min-h-[64px] active:scale-95"
+            >
+              <Calendar className="h-6 w-6" />
+              <span className="text-xs font-medium">Appointment</span>
+            </button>
+          </div>
         </div>
       </div>
 
@@ -110,20 +113,20 @@ const EnhancedQuickContact: React.FC = () => {
             exit={{ y: -100, opacity: 0 }}
             className="fixed top-0 left-0 right-0 bg-gradient-to-r from-coral-600 to-coral-500 text-white z-40 shadow-lg"
           >
-            <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-              <div className="flex items-center gap-3">
+            <div className="container mx-auto px-4 py-2 md:py-3 flex items-center justify-between">
+              <div className="flex items-center gap-2 md:gap-3">
                 <div className="animate-pulse">
-                  <Phone className="h-5 w-5" />
+                  <Phone className="h-4 w-4 md:h-5 md:w-5" />
                 </div>
-                <div>
-                  <span className="font-semibold text-sm md:text-base">
-                    Cardiac Emergency? Call immediately: 
+                <div className="flex flex-col md:flex-row md:items-center">
+                  <span className="font-semibold text-xs md:text-base">
+                    Cardiac Emergency?
                   </span>
                   <a 
                     href="tel:+919061693446" 
-                    className="ml-2 font-bold underline hover:no-underline"
+                    className="md:ml-2 font-bold underline hover:no-underline text-xs md:text-base"
                   >
-                    +91-9061693446
+                    Call: +91-9061693446
                   </a>
                 </div>
               </div>
@@ -131,7 +134,7 @@ const EnhancedQuickContact: React.FC = () => {
                 onClick={() => setIsVisible(false)}
                 className="p-1 hover:bg-coral-700 rounded-full transition-colors"
               >
-                <X className="h-5 w-5" />
+                <X className="h-4 w-4 md:h-5 md:w-5" />
               </button>
             </div>
           </motion.div>

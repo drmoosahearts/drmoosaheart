@@ -21,15 +21,15 @@ const ModernHero: React.FC = () => {
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
         <div className="absolute inset-0" style={{
-          backgroundImage: 'radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.05) 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 1px, transparent 1px)',
           backgroundSize: '60px 60px'
         }}></div>
       </div>
       
-      <div className="container mx-auto px-4 pt-20 pb-16 relative z-10">
+      <div className="container mx-auto px-4 pt-24 pb-16 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
           {/* Content Section */}
           <motion.div
@@ -43,18 +43,18 @@ const ModernHero: React.FC = () => {
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="inline-flex items-center gap-2 bg-coral-500/20 text-coral-300 px-4 py-2 rounded-full text-sm font-medium"
+                className="inline-flex items-center gap-2 bg-coral-500/20 text-coral-300 px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm border border-coral-400/30"
               >
                 <Heart className="h-4 w-4" />
                 World-Class Cardiac Surgeon
               </motion.div>
               
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
                 Expert Heart Care
                 <span className="block text-coral-400">You Can Trust</span>
               </h1>
               
-              <p className="text-xl md:text-2xl text-gray-300 max-w-2xl leading-relaxed">
+              <p className="text-xl md:text-2xl text-gray-200 max-w-2xl leading-relaxed">
                 Dr. M.K. Moosa Kunhi - Pioneer of beating heart surgery in India with over 16,000+ successful procedures and patients from 50+ countries.
               </p>
             </div>
@@ -74,7 +74,7 @@ const ModernHero: React.FC = () => {
                 href="tel:+919061693446"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="border-2 border-white/30 hover:border-white text-white hover:bg-white/10 px-8 py-4 rounded-lg font-semibold text-lg flex items-center justify-center gap-3 transition-all duration-300"
+                className="border-2 border-white/30 hover:border-white text-white hover:bg-white/10 px-8 py-4 rounded-lg font-semibold text-lg flex items-center justify-center gap-3 transition-all duration-300 backdrop-blur-sm"
               >
                 <Phone className="h-6 w-6" />
                 Emergency: +91-9061693446
@@ -93,7 +93,7 @@ const ModernHero: React.FC = () => {
                   <div className="flex justify-center mb-2 text-coral-400">
                     {stat.icon}
                   </div>
-                  <div className="text-3xl md:text-4xl font-bold">
+                  <div className="text-3xl md:text-4xl font-bold text-white">
                     {isVisible && (
                       <CountUp
                         end={stat.number}
@@ -103,7 +103,7 @@ const ModernHero: React.FC = () => {
                       />
                     )}
                   </div>
-                  <div className="text-sm text-gray-400">{stat.label}</div>
+                  <div className="text-sm text-gray-300">{stat.label}</div>
                 </div>
               ))}
             </motion.div>
@@ -124,9 +124,9 @@ const ModernHero: React.FC = () => {
               />
               
               {/* Overlay with credentials */}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
                 <h3 className="text-white text-xl font-bold mb-1">Dr. M.K. Moosa Kunhi</h3>
-                <p className="text-gray-300 text-sm">Senior Consultant Cardiovascular Surgeon</p>
+                <p className="text-gray-200 text-sm">Senior Consultant Cardiovascular Surgeon</p>
                 <p className="text-coral-400 text-sm">Board Certified • Pioneer in Beating Heart Surgery</p>
               </div>
             </div>

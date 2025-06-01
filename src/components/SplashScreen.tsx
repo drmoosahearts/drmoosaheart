@@ -1,54 +1,78 @@
+
 import { useEffect, useState } from 'react';
+import { Heart } from 'lucide-react';
+
 interface SplashScreenProps {
   onComplete: () => void;
 }
-const SplashScreen = ({
-  onComplete
-}: SplashScreenProps) => {
+
+const SplashScreen = ({ onComplete }: SplashScreenProps) => {
   const [isFading, setIsFading] = useState<boolean>(false);
+  const [progress, setProgress] = useState<number>(0);
+
   useEffect(() => {
-    // Set a timeout to start fading the splash screen after 2 seconds (reduced from 4s)
+    // Simulate loading progress
+    const progressInterval = setInterval(() => {
+      setProgress(prev => {
+        if (prev >= 100) {
+          clearInterval(progressInterval);
+          return 100;
+        }
+        return prev + 10;
+      });
+    }, 150);
+
+    // Start fading after progress completes
     const fadeTimeout = setTimeout(() => {
       setIsFading(true);
-    }, 2000);
+    }, 1800);
 
-    // Set a timeout to complete the animation after fade-out (2s + 0.5s for fade)
+    // Complete the animation
     const completeTimeout = setTimeout(() => {
       onComplete();
-    }, 2500);
+    }, 2300);
 
-    // Clean up timers
     return () => {
+      clearInterval(progressInterval);
       clearTimeout(fadeTimeout);
       clearTimeout(completeTimeout);
     };
   }, [onComplete]);
-  return <div className={`fixed inset-0 bg-medical-blue flex items-center justify-center z-50 transition-opacity duration-500 ${isFading ? 'opacity-0' : 'opacity-100'}`}>
+
+  return (
+    <div className={`fixed inset-0 bg-gradient-to-br from-medical-blue via-medical-blue-dark to-slate-900 flex items-center justify-center z-50 transition-opacity duration-500 ${isFading ? 'opacity-0' : 'opacity-100'}`}>
       <div className="w-full max-w-lg mx-auto text-center px-4">
-        <h1 className="text-3xl font-bold text-white mb-4 md:mb-6 font-playfair md:text-3xl">
-          Dr. M.K. Moosa Kunhi
-        </h1>
-        
-        {/* Modern animation replacing the logo */}
-        <div className="relative mx-auto w-64 h-64 md:w-80 md:h-80">
-          <div className="absolute inset-0 rounded-full bg-medical-teal opacity-20 animate-pulse"></div>
-          <div className="absolute inset-4 rounded-full bg-medical-teal opacity-30 animate-pulse" style={{
-          animationDelay: '0.5s'
-        }}></div>
-          <div className="absolute inset-8 rounded-full bg-medical-teal opacity-40 animate-pulse" style={{
-          animationDelay: '1s'
-        }}></div>
+        {/* Logo Animation */}
+        <div className="relative mx-auto w-32 h-32 mb-8">
+          <div className="absolute inset-0 rounded-full bg-coral-500/20 animate-pulse"></div>
+          <div className="absolute inset-2 rounded-full bg-coral-500/30 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+          <div className="absolute inset-4 rounded-full bg-coral-500/40 animate-pulse" style={{ animationDelay: '1s' }}></div>
+          
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-white text-4xl">
-              <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="animate-heartbeat">
-                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
-              </svg>
-            </div>
+            <Heart className="h-16 w-16 text-coral-400 animate-pulse" style={{ animationDelay: '0.2s' }} />
           </div>
         </div>
         
-        <p className="text-white text-lg md:text-xl mt-4">Cardiac Surgery Specialist</p>
+        {/* Title */}
+        <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 font-playfair">
+          Dr. M.K. Moosa Kunhi
+        </h1>
+        
+        <p className="text-coral-300 text-lg mb-8">Cardiac Surgery Specialist</p>
+        
+        {/* Modern Progress Bar */}
+        <div className="w-full max-w-md mx-auto">
+          <div className="bg-white/10 rounded-full h-2 overflow-hidden backdrop-blur-sm">
+            <div 
+              className="bg-gradient-to-r from-coral-400 to-coral-500 h-full rounded-full transition-all duration-300 ease-out"
+              style={{ width: `${progress}%` }}
+            ></div>
+          </div>
+          <p className="text-white/60 text-sm mt-3">Loading...</p>
+        </div>
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default SplashScreen;

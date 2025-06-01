@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState, Suspense } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -63,7 +64,7 @@ const App: React.FC = () => {
         <div className={showSplash && isPageLoaded ? 'invisible' : 'visible'}>
           <BrowserRouter>
             <Navbar />
-            <main className="min-h-screen pt-20 pb-16 md:pb-0">
+            <main className="min-h-screen pt-16 pb-20 md:pb-0">
               <Suspense fallback={<div className="flex items-center justify-center h-screen">Loading...</div>}>
                 <Routes>
                   <Route path="/" element={<Index />} />

@@ -19,27 +19,8 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      {/* Emergency Contact Bar */}
-      <div className="bg-medical-blue text-white py-2 text-sm">
-        <div className="container mx-auto px-4 flex justify-between items-center">
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2">
-              <Phone className="h-4 w-4" />
-              <span>Emergency: +91-9061693446</span>
-            </div>
-            <div className="hidden md:flex items-center gap-2">
-              <Globe className="h-4 w-4" />
-              <span>International Patients Welcome</span>
-            </div>
-          </div>
-          <div className="hidden md:block">
-            <span>24/7 Emergency Cardiac Care</span>
-          </div>
-        </div>
-      </div>
-
       {/* Main Navigation */}
-      <header className="fixed top-8 left-0 w-full bg-white shadow-lg z-50 border-b">
+      <header className="fixed top-8 left-0 w-full bg-white/95 backdrop-blur-sm shadow-lg z-50 border-b">
         <nav className="container mx-auto flex justify-between items-center py-4 px-4">
           <Link to="/" className="text-xl md:text-2xl font-bold text-medical-blue">
             Dr. M.K. Moosa Kunhi
