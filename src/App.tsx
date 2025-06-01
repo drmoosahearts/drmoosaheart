@@ -17,6 +17,7 @@ import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import SplashScreen from "./components/SplashScreen";
+import QuickContact from "./components/QuickContact";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -63,7 +64,7 @@ const App: React.FC = () => {
         <div className={showSplash && isPageLoaded ? 'invisible' : 'visible'}>
           <BrowserRouter>
             <Navbar />
-            <main className="min-h-screen pt-16">
+            <main className="min-h-screen pt-20 pb-16 md:pb-0">
               <Suspense fallback={<div className="flex items-center justify-center h-screen">Loading...</div>}>
                 <Routes>
                   <Route path="/" element={<Index />} />
@@ -79,6 +80,7 @@ const App: React.FC = () => {
               </Suspense>
             </main>
             <Footer />
+            <QuickContact />
           </BrowserRouter>
         </div>
       </TooltipProvider>
@@ -87,4 +89,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-
