@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { Phone, MessageCircle, Calendar, X, WhatsApp as WhatsAppIcon } from 'lucide-react';
+import { Phone, MessageCircle, Calendar, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const EnhancedQuickContact: React.FC = () => {
