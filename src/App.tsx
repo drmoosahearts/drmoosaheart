@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, Suspense } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -17,7 +16,7 @@ import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import SplashScreen from "./components/SplashScreen";
-import QuickContact from "./components/QuickContact";
+import EnhancedQuickContact from "./components/EnhancedQuickContact";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -80,7 +79,7 @@ const App: React.FC = () => {
               </Suspense>
             </main>
             <Footer />
-            <QuickContact />
+            <EnhancedQuickContact />
           </BrowserRouter>
         </div>
       </TooltipProvider>

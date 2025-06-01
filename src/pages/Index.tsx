@@ -1,4 +1,10 @@
-
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Globe, Plane, Heart, Award, Users, Clock } from "lucide-react";
+import ModernHero from "@/components/ModernHero";
+import SuccessStories from "@/components/SuccessStories";
+import VideoLibrary from "@/components/VideoLibrary";
+import TrustCredibility from "@/components/TrustCredibility";
 import Hero from "@/components/Hero";
 import Introduction from "@/components/Introduction";
 import Services from "@/components/Services";
@@ -10,9 +16,6 @@ import SurgicalGallery from "@/components/SurgicalGallery";
 import PatientTestimonials from "@/components/PatientTestimonials";
 import TrustSignals from "@/components/TrustSignals";
 import FAQ from "@/components/FAQ";
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Globe, Plane, Heart, Award, Users, Clock } from "lucide-react";
 
 const Index: React.FC = () => {
   // Set page title and meta description for SEO
@@ -26,7 +29,10 @@ const Index: React.FC = () => {
 
   return (
     <div className="min-h-screen">
-      <Hero />
+      <ModernHero />
+      <TrustCredibility />
+      <SuccessStories />
+      <VideoLibrary />
       <TrustSignals />
       <Introduction />
       
@@ -163,12 +169,12 @@ const Index: React.FC = () => {
           </div>
 
           {/* Emergency Contact Banner */}
-          <div className="bg-red-600 text-white rounded-lg p-6 text-center">
+          <div className="bg-coral-600 text-white rounded-lg p-6 text-center">
             <h3 className="text-xl font-bold mb-2">Cardiac Emergency?</h3>
             <p className="mb-4">Don't wait - immediate care can save lives</p>
             <a 
               href="tel:+919061693446" 
-              className="bg-white text-red-600 px-8 py-3 rounded-sm font-bold hover:bg-gray-100 transition-colors inline-flex items-center gap-2"
+              className="bg-white text-coral-600 px-8 py-3 rounded-sm font-bold hover:bg-gray-100 transition-colors inline-flex items-center gap-2"
             >
               <Clock className="h-5 w-5" />
               Call Emergency: +91-9061693446

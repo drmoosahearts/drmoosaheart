@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -74,6 +75,19 @@ export default {
 				'medical-gold-dark': '#c79a52',
 				'medical-gray': '#f8f9fa',
 				'medical-gray-dark': '#e9ecef',
+				// Modern coral accent colors
+				'coral': {
+					50: '#fef2f2',
+					100: '#fee2e2',
+					200: '#fecaca',
+					300: '#fca5a5',
+					400: '#f87171',
+					500: '#ff6b6b',
+					600: '#e53e3e',
+					700: '#c53030',
+					800: '#9b2c2c',
+					900: '#742a2a',
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -115,6 +129,8 @@ export default {
 			fontFamily: {
 				'playfair': ['"Playfair Display"', 'serif'],
 				'lato': ['Lato', 'sans-serif'],
+				'inter': ['Inter', 'sans-serif'],
+				'poppins': ['Poppins', 'sans-serif'],
 			},
 			backgroundImage: {
 				'hero-pattern': 'linear-gradient(to right, rgba(0, 69, 124, 0.8), rgba(32, 113, 122, 0.7))',
