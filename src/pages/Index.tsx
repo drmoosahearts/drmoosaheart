@@ -16,19 +16,46 @@ import SurgicalGallery from "@/components/SurgicalGallery";
 import PatientTestimonials from "@/components/PatientTestimonials";
 import TrustSignals from "@/components/TrustSignals";
 import FAQ from "@/components/FAQ";
+import SEO from "@/components/SEO";
+import BlogSection from "@/components/BlogSection";
+import EnhancedFAQ from "@/components/EnhancedFAQ";
 
 const Index: React.FC = () => {
   // Set page title and meta description for SEO
   useEffect(() => {
-    document.title = "Dr. M.K. Moosa Kunhi - World-Class Cardiac Surgeon | Chennai, India";
+    document.title = "Dr. M.K. Moosa Kunhi - World-Class Cardiac Surgeon | Chennai, India | 16,000+ Successful Surgeries";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute("content", "Dr. M.K. Moosa Kunhi - Leading cardiac surgeon with 16,000+ successful surgeries. Pioneer of beating heart surgery in India. Expert in complex cardiac procedures for international patients.");
+      metaDescription.setAttribute("content", "Dr. M.K. Moosa Kunhi - Leading cardiac surgeon with 16,000+ successful surgeries. Pioneer of beating heart surgery in India. Expert in complex cardiac procedures for international patients from 50+ countries.");
     }
   }, []);
 
+  const homePageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Dr. M.K. Moosa Kunhi - Cardiac Surgeon",
+    "url": "https://drmoosakunhi.com",
+    "description": "World-renowned cardiac surgeon specializing in beating heart surgery and complex cardiac procedures",
+    "publisher": {
+      "@type": "Person",
+      "name": "Dr. M.K. Moosa Kunhi"
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://drmoosakunhi.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  };
+
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Dr. M.K. Moosa Kunhi - World-Class Cardiac Surgeon | Chennai, India | 16,000+ Successful Surgeries"
+        description="Dr. M.K. Moosa Kunhi - Leading cardiac surgeon with 16,000+ successful surgeries. Pioneer of beating heart surgery in India. Expert in complex cardiac procedures for international patients from 50+ countries."
+        keywords="cardiac surgeon Chennai, heart surgery India, beating heart surgery, congenital heart disease, valve replacement, bypass surgery, pediatric cardiac surgery, international patients, medical tourism India, Dr Moosa Kunhi"
+        schemaData={homePageSchema}
+      />
+      
       <ModernHero />
       <TrustCredibility />
       <SuccessStories />
@@ -68,6 +95,7 @@ const Index: React.FC = () => {
       <PatientTestimonials />
       <MediaCoverage />
       <SurgicalGallery />
+      <BlogSection />
       <Achievements />
       
       {/* Enhanced Specialized Care Section - Fixed text contrast */}
@@ -183,7 +211,7 @@ const Index: React.FC = () => {
         </div>
       </section>
       
-      <FAQ />
+      <EnhancedFAQ />
       <CallToAction />
       <ContactInfo />
     </div>
