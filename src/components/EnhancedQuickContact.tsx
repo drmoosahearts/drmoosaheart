@@ -73,38 +73,38 @@ const EnhancedQuickContact: React.FC = () => {
         </motion.div>
       </div>
 
-      {/* Enhanced Bottom Contact Bar (Mobile) */}
+      {/* Enhanced Bottom Contact Bar (Mobile) - Improved spacing and accessibility */}
       <div className="fixed bottom-0 left-0 right-0 bg-white/98 backdrop-blur-sm border-t border-gray-200 shadow-2xl z-40 md:hidden">
         <div className="safe-area-inset-bottom">
-          <div className="grid grid-cols-3 gap-1 p-3">
+          <div className="grid grid-cols-3 gap-1 p-2 max-w-sm mx-auto">
             <button
               onClick={handleQuickCall}
-              className="flex flex-col items-center gap-2 p-3 text-coral-600 hover:bg-coral-50 rounded-xl transition-all duration-300 min-h-[64px] active:scale-95"
+              className="flex flex-col items-center gap-1 p-4 text-coral-600 hover:bg-coral-50 rounded-xl transition-all duration-300 min-h-[68px] active:scale-95 touch-manipulation"
             >
-              <Phone className="h-6 w-6" />
-              <span className="text-xs font-medium">Emergency</span>
+              <Phone className="h-7 w-7" />
+              <span className="text-xs font-medium leading-tight">Emergency</span>
             </button>
             
             <button
               onClick={handleWhatsApp}
-              className="flex flex-col items-center gap-2 p-3 text-green-600 hover:bg-green-50 rounded-xl transition-all duration-300 min-h-[64px] active:scale-95"
+              className="flex flex-col items-center gap-1 p-4 text-green-600 hover:bg-green-50 rounded-xl transition-all duration-300 min-h-[68px] active:scale-95 touch-manipulation"
             >
-              <MessageCircle className="h-6 w-6" />
-              <span className="text-xs font-medium">WhatsApp</span>
+              <MessageCircle className="h-7 w-7" />
+              <span className="text-xs font-medium leading-tight">WhatsApp</span>
             </button>
             
             <button
               onClick={handleAppointment}
-              className="flex flex-col items-center gap-2 p-3 text-slate-800 hover:bg-slate-50 rounded-xl transition-all duration-300 min-h-[64px] active:scale-95"
+              className="flex flex-col items-center gap-1 p-4 text-slate-800 hover:bg-slate-50 rounded-xl transition-all duration-300 min-h-[68px] active:scale-95 touch-manipulation"
             >
-              <Calendar className="h-6 w-6" />
-              <span className="text-xs font-medium">Appointment</span>
+              <Calendar className="h-7 w-7" />
+              <span className="text-xs font-medium leading-tight">Appointment</span>
             </button>
           </div>
         </div>
       </div>
 
-      {/* Enhanced Emergency Banner */}
+      {/* Enhanced Emergency Banner - Improved mobile design */}
       <AnimatePresence>
         {isVisible && (
           <motion.div
@@ -113,18 +113,18 @@ const EnhancedQuickContact: React.FC = () => {
             exit={{ y: -100, opacity: 0 }}
             className="fixed top-0 left-0 right-0 bg-gradient-to-r from-coral-600 to-coral-500 text-white z-40 shadow-lg"
           >
-            <div className="container mx-auto px-4 py-2 md:py-3 flex items-center justify-between">
-              <div className="flex items-center gap-2 md:gap-3">
-                <div className="animate-pulse">
+            <div className="container mx-auto px-3 py-2 md:py-3 flex items-center justify-between">
+              <div className="flex items-center gap-2 md:gap-3 flex-1 min-w-0">
+                <div className="animate-pulse flex-shrink-0">
                   <Phone className="h-4 w-4 md:h-5 md:w-5" />
                 </div>
-                <div className="flex flex-col md:flex-row md:items-center">
-                  <span className="font-semibold text-xs md:text-base">
+                <div className="flex flex-col sm:flex-row sm:items-center min-w-0">
+                  <span className="font-semibold text-xs md:text-base whitespace-nowrap">
                     Cardiac Emergency?
                   </span>
                   <a 
                     href="tel:+919061693446" 
-                    className="md:ml-2 font-bold underline hover:no-underline text-xs md:text-base"
+                    className="sm:ml-2 font-bold underline hover:no-underline text-xs md:text-base truncate"
                   >
                     Call: +91-9061693446
                   </a>
@@ -132,7 +132,8 @@ const EnhancedQuickContact: React.FC = () => {
               </div>
               <button
                 onClick={() => setIsVisible(false)}
-                className="p-1 hover:bg-coral-700 rounded-full transition-colors"
+                className="p-1 hover:bg-coral-700 rounded-full transition-colors flex-shrink-0 ml-2"
+                aria-label="Close emergency banner"
               >
                 <X className="h-4 w-4 md:h-5 md:w-5" />
               </button>

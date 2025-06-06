@@ -19,10 +19,10 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      {/* Main Navigation */}
+      {/* Main Navigation - Fixed positioning relative to emergency banner */}
       <header className="fixed top-8 left-0 w-full bg-white/95 backdrop-blur-sm shadow-lg z-50 border-b">
-        <nav className="container mx-auto flex justify-between items-center py-4 px-4">
-          <Link to="/" className="text-xl md:text-2xl font-bold text-medical-blue">
+        <nav className="container mx-auto flex justify-between items-center py-3 md:py-4 px-4">
+          <Link to="/" className="text-lg md:text-2xl font-bold text-medical-blue">
             Dr. M.K. Moosa Kunhi
             <div className="text-xs text-gray-600 font-normal">Cardiac Surgeon</div>
           </Link>
@@ -74,7 +74,7 @@ const Navbar: React.FC = () => {
           <div className="hidden md:flex items-center gap-4">
             <Link 
               to="/contact#appointment" 
-              className="bg-medical-teal hover:bg-medical-teal-dark text-white px-6 py-2 rounded-sm transition-colors font-medium"
+              className="bg-medical-teal hover:bg-medical-teal-dark text-white px-4 md:px-6 py-2 md:py-3 rounded-sm transition-colors font-medium text-sm md:text-base"
             >
               Book Consultation
             </Link>
@@ -84,6 +84,7 @@ const Navbar: React.FC = () => {
           <button 
             onClick={toggleMobileMenu}
             className="lg:hidden p-2 text-medical-blue"
+            aria-label="Toggle mobile menu"
           >
             {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -95,49 +96,49 @@ const Navbar: React.FC = () => {
             <div className="container mx-auto py-4 px-4 space-y-2">
               <Link 
                 to="/" 
-                className="block py-2 text-medical-blue hover:bg-gray-50 rounded px-2"
+                className="block py-3 text-medical-blue hover:bg-gray-50 rounded px-3 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Home
               </Link>
               <Link 
                 to="/about" 
-                className="block py-2 text-medical-blue hover:bg-gray-50 rounded px-2"
+                className="block py-3 text-medical-blue hover:bg-gray-50 rounded px-3 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 About
               </Link>
               <Link 
                 to="/services" 
-                className="block py-2 text-medical-blue hover:bg-gray-50 rounded px-2"
+                className="block py-3 text-medical-blue hover:bg-gray-50 rounded px-3 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Services
               </Link>
               <Link 
                 to="/congenital-heart-disease" 
-                className="block py-2 text-medical-blue hover:bg-gray-50 rounded px-2"
+                className="block py-3 text-medical-blue hover:bg-gray-50 rounded px-3 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Congenital Heart Disease
               </Link>
               <Link 
                 to="/medical-tourism" 
-                className="block py-2 text-medical-blue hover:bg-gray-50 rounded px-2"
+                className="block py-3 text-medical-blue hover:bg-gray-50 rounded px-3 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Medical Tourism
               </Link>
               <Link 
                 to="/achievements" 
-                className="block py-2 text-medical-blue hover:bg-gray-50 rounded px-2"
+                className="block py-3 text-medical-blue hover:bg-gray-50 rounded px-3 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Achievements
               </Link>
               <Link 
                 to="/contact" 
-                className="block py-2 text-medical-blue hover:bg-gray-50 rounded px-2"
+                className="block py-3 text-medical-blue hover:bg-gray-50 rounded px-3 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Contact
@@ -145,7 +146,7 @@ const Navbar: React.FC = () => {
               <div className="pt-4 border-t">
                 <Link 
                   to="/contact#appointment" 
-                  className="block bg-medical-teal hover:bg-medical-teal-dark text-white px-6 py-3 rounded-sm text-center font-medium"
+                  className="block bg-medical-teal hover:bg-medical-teal-dark text-white px-6 py-3 rounded-sm text-center font-medium transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Book Consultation

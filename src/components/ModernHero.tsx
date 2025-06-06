@@ -61,14 +61,15 @@ const ModernHero: React.FC = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <motion.button
+              <motion.a
+                href="/contact#appointment"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-coral-500 hover:bg-coral-600 text-white px-8 py-4 rounded-lg font-semibold text-lg flex items-center justify-center gap-3 transition-all duration-300 shadow-xl hover:shadow-coral-500/25"
               >
                 <Calendar className="h-6 w-6" />
                 Book Consultation
-              </motion.button>
+              </motion.a>
               
               <motion.a
                 href="tel:+919061693446"
@@ -121,6 +122,8 @@ const ModernHero: React.FC = () => {
                 src="/lovable-uploads/05d7320c-e4e0-491d-9894-1d69ac45d77f.png"
                 alt="Dr. M.K. Moosa Kunhi"
                 className="w-full h-auto"
+                loading="eager"
+                fetchPriority="high"
               />
               
               {/* Overlay with credentials */}
