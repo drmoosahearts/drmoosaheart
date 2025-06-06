@@ -1,90 +1,74 @@
 
-import React, { useEffect, useState, Suspense } from "react";
+import { Toaster } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
+import { HelmetProvider } from 'react-helmet-async';
 import Index from "./pages/Index";
 import AboutPage from "./pages/AboutPage";
 import ServicesPage from "./pages/ServicesPage";
+import CongenitalHeartDiseasePage from "./pages/CongenitalHeartDiseasePage";
+import MedicalTourismPage from "./pages/MedicalTourismPage";
+import InternationalPage from "./pages/InternationalPage";
 import AchievementsPage from "./pages/AchievementsPage";
 import ContactPage from "./pages/ContactPage";
-import InternationalPage from "./pages/InternationalPage";
-import MedicalTourismPage from "./pages/MedicalTourismPage";
-import CongenitalHeartDiseasePage from "./pages/CongenitalHeartDiseasePage";
+import BlogPage from "./pages/BlogPage";
+import ProceduresPage from "./pages/ProceduresPage";
+import CostCalculatorPage from "./pages/CostCalculatorPage";
 import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import SplashScreen from "./components/SplashScreen";
-import EnhancedQuickContact from "./components/EnhancedQuickContact";
+import { useState, useEffect } from 'react';
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      refetchOnWindowFocus: false,
-      retry: 1,
-    },
-  },
-});
+const queryClient = new QueryClient();
 
-const App: React.FC = () => {
-  const [showSplash, setShowSplash] = useState<boolean>(true);
-  const [isPageLoaded, setIsPageLoaded] = useState<boolean>(false);
+const App = () => {
+  const [showSplash, setShowSplash] = useState(true);
 
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = "https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs";
-    script.type = "module";
-    script.async = true;
-    document.body.appendChild(script);
+    const timer = setTimeout(() => {
+      setShowSplash(false);
+    }, 2000);
 
-    const handleLoad = (): void => {
-      setIsPageLoaded(true);
-    };
-    
-    window.addEventListener('load', handleLoad);
-
-    if (document.readyState === 'complete') {
-      setIsPageLoaded(true);
-    }
-
-    return () => {
-      document.body.removeChild(script);
-      window.removeEventListener('load', handleLoad);
-    };
+    return () => clearTimeout(timer);
   }, []);
 
+  if (showSplash) {
+    return <SplashScreen />;
+  }
+
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        {showSplash && isPageLoaded && <SplashScreen onComplete={() => setShowSplash(false)} />}
-        <div className={showSplash && isPageLoaded ? 'invisible' : 'visible'}>
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
           <BrowserRouter>
-            <Navbar />
-            <main className="min-h-screen pt-16 pb-20 md:pb-0">
-              <Suspense fallback={<div className="flex items-center justify-center h-screen">Loading...</div>}>
+            <div className="min-h-screen flex flex-col">
+              <Navbar />
+              <main className="flex-grow">
                 <Routes>
                   <Route path="/" element={<Index />} />
                   <Route path="/about" element={<AboutPage />} />
                   <Route path="/services" element={<ServicesPage />} />
+                  <Route path="/procedures" element={<ProceduresPage />} />
+                  <Route path="/congenital-heart-disease" element={<CongenitalHeartDiseasePage />} />
+                  <Route path="/medical-tourism" element={<MedicalTourismPage />} />
+                  <Route path="/international" element={<InternationalPage />} />
                   <Route path="/achievements" element={<AchievementsPage />} />
                   <Route path="/contact" element={<ContactPage />} />
-                  <Route path="/international" element={<InternationalPage />} />
-                  <Route path="/medical-tourism" element={<MedicalTourismPage />} />
-                  <Route path="/congenital-heart-disease" element={<CongenitalHeartDiseasePage />} />
+                  <Route path="/blog" element={<BlogPage />} />
+                  <Route path="/blog/:slug" element={<BlogPage />} />
+                  <Route path="/cost-calculator" element={<CostCalculatorPage />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
-              </Suspense>
-            </main>
-            <Footer />
-            <EnhancedQuickContact />
+              </main>
+              <Footer />
+            </div>
           </BrowserRouter>
-        </div>
-      </TooltipProvider>
-    </QueryClientProvider>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </HelmetProvider>
   );
 };
 
