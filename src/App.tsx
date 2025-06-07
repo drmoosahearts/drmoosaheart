@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -22,6 +21,11 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import SplashScreen from "./components/SplashScreen";
 import ErrorBoundary from "./components/ErrorBoundary";
+import SymptomChecker from "./components/SymptomChecker";
+import MedicalTourismPackages from "./components/MedicalTourismPackages";
+import InteractiveHeartModel from "./components/InteractiveHeartModel";
+import VirtualHospitalTour from "./components/VirtualHospitalTour";
+import TelemedicineConsultation from "./components/TelemedicineConsultation";
 import { useState, useEffect } from 'react';
 
 const queryClient = new QueryClient();
@@ -69,6 +73,11 @@ const App = () => {
                     <Route path="/blog" element={<BlogListPage />} />
                     <Route path="/blog/:slug" element={<BlogPage />} />
                     <Route path="/cost-calculator" element={<CostCalculatorPage />} />
+                    <Route path="/symptom-checker" element={<SymptomChecker />} />
+                    <Route path="/medical-packages" element={<MedicalTourismPackages />} />
+                    <Route path="/heart-anatomy" element={<InteractiveHeartModel />} />
+                    <Route path="/virtual-tour" element={<VirtualHospitalTour />} />
+                    <Route path="/telemedicine" element={<TelemedicineConsultation />} />
                     <Route path="*" element={<NotFound />} />
                   </Routes>
                 </main>
