@@ -10,9 +10,11 @@ import ServicesPage from "./pages/ServicesPage";
 import CongenitalHeartDiseasePage from "./pages/CongenitalHeartDiseasePage";
 import MedicalTourismPage from "./pages/MedicalTourismPage";
 import InternationalPage from "./pages/InternationalPage";
+import CountryLandingPage from "./pages/CountryLandingPage";
 import AchievementsPage from "./pages/AchievementsPage";
 import ContactPage from "./pages/ContactPage";
 import BlogPage from "./pages/BlogPage";
+import BlogListPage from "./pages/BlogListPage";
 import ProceduresPage from "./pages/ProceduresPage";
 import CostCalculatorPage from "./pages/CostCalculatorPage";
 import NotFound from "./pages/NotFound";
@@ -61,9 +63,10 @@ const App = () => {
                     <Route path="/congenital-heart-disease" element={<CongenitalHeartDiseasePage />} />
                     <Route path="/medical-tourism" element={<MedicalTourismPage />} />
                     <Route path="/international" element={<InternationalPage />} />
+                    <Route path="/international/:country" element={<CountryLandingPage />} />
                     <Route path="/achievements" element={<AchievementsPage />} />
                     <Route path="/contact" element={<ContactPage />} />
-                    <Route path="/blog" element={<BlogPage />} />
+                    <Route path="/blog" element={<BlogListPage />} />
                     <Route path="/blog/:slug" element={<BlogPage />} />
                     <Route path="/cost-calculator" element={<CostCalculatorPage />} />
                     <Route path="*" element={<NotFound />} />

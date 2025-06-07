@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Calculator, DollarSign, CreditCard, Globe, Info, Download } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -267,7 +266,7 @@ const IntelligentCostCalculator = () => {
                 <Checkbox
                   id="insurance"
                   checked={hasInsurance}
-                  onCheckedChange={setHasInsurance}
+                  onCheckedChange={(checked) => setHasInsurance(checked === true)}
                 />
                 <label htmlFor="insurance" className="text-sm font-medium">
                   I have medical insurance
@@ -278,7 +277,7 @@ const IntelligentCostCalculator = () => {
                 <Checkbox
                   id="accommodation"
                   checked={needsAccommodation}
-                  onCheckedChange={setNeedsAccommodation}
+                  onCheckedChange={(checked) => setNeedsAccommodation(checked === true)}
                 />
                 <label htmlFor="accommodation" className="text-sm font-medium">
                   Need accommodation
