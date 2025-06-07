@@ -12,7 +12,7 @@ const ProceduresPage: React.FC = () => {
       description: 'Revolutionary cardiac surgery performed without stopping the heart',
       icon: Heart,
       features: ['No heart-lung machine', 'Faster recovery', 'Lower complications', 'Suitable for high-risk patients'],
-      image: '/lovable-uploads/beating-heart-surgery.jpg'
+      image: '/lovable-uploads/371c975d-3f6b-492b-9a6c-01c04b81a4a7.jpg'
     },
     {
       id: 'valve-replacement',
@@ -20,7 +20,7 @@ const ProceduresPage: React.FC = () => {
       description: 'Advanced techniques for heart valve disorders',
       icon: Activity,
       features: ['Minimally invasive options', 'Tissue and mechanical valves', 'Transcatheter procedures', 'Long-term durability'],
-      image: '/lovable-uploads/valve-surgery.jpg'
+      image: '/lovable-uploads/371c975d-3f6b-492b-9a6c-01c04b81a4a7.jpg'
     },
     {
       id: 'bypass-surgery',
@@ -28,7 +28,7 @@ const ProceduresPage: React.FC = () => {
       description: 'CABG procedures for coronary artery disease',
       icon: Stethoscope,
       features: ['Multiple vessel treatment', 'Arterial grafts preferred', 'Off-pump options', 'Excellent outcomes'],
-      image: '/lovable-uploads/bypass-surgery.jpg'
+      image: '/lovable-uploads/371c975d-3f6b-492b-9a6c-01c04b81a4a7.jpg'
     },
     {
       id: 'congenital-surgery',
@@ -36,7 +36,7 @@ const ProceduresPage: React.FC = () => {
       description: 'Specialized care for congenital heart defects',
       icon: Shield,
       features: ['Pediatric and adult CHD', 'Complex reconstructions', 'Single-stage repairs', 'Family-centered care'],
-      image: '/lovable-uploads/congenital-surgery.jpg'
+      image: '/lovable-uploads/371c975d-3f6b-492b-9a6c-01c04b81a4a7.jpg'
     }
   ];
 
@@ -136,7 +136,7 @@ const ProceduresPage: React.FC = () => {
                     </div>
                     
                     <Link
-                      to={`/procedures/${procedure.id}`}
+                      to="/contact"
                       className="inline-flex items-center gap-2 bg-medical-blue text-white px-6 py-3 rounded-lg hover:bg-medical-blue-dark transition-colors font-medium"
                     >
                       Learn More About {procedure.title}
