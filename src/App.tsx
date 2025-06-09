@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -26,6 +27,9 @@ import MedicalTourismPackages from "./components/MedicalTourismPackages";
 import InteractiveHeartModel from "./components/InteractiveHeartModel";
 import VirtualHospitalTour from "./components/VirtualHospitalTour";
 import TelemedicineConsultation from "./components/TelemedicineConsultation";
+import AdvancedAppointmentBooking from "./components/AdvancedAppointmentBooking";
+import IntelligentCostCalculator from "./components/IntelligentCostCalculator";
+import ComprehensiveContactSystem from "./components/ComprehensiveContactSystem";
 import { useState, useEffect } from 'react';
 
 const queryClient = new QueryClient();

@@ -1,0 +1,36 @@
+
+{
+  "name": "Dr. M.K. Moosa Kunhi - Cardiac Surgeon",
+  "short_name": "Dr. Moosa Kunhi",
+  "description": "Leading cardiac surgeon with 16,000+ successful surgeries. Expert in beating heart surgery and complex cardiac procedures.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1e40af",
+  "theme_color": "#1e40af",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/lovable-uploads/61ee55a5-fad0-419a-8d12-fccae88fba4c.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/lovable-uploads/61ee55a5-fad0-419a-8d12-fccae88fba4c.png", 
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["medical", "health", "healthcare"],
+  "lang": "en",
+  "scope": "/",
+  "screenshots": [
+    {
+      "src": "/lovable-uploads/371c975d-3f6b-492b-9a6c-01c04b81a4a7.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide"
+    }
+  ]
+}
