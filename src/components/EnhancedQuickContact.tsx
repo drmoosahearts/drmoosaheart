@@ -23,7 +23,7 @@ const EnhancedQuickContact: React.FC = () => {
   return (
     <>
       {/* Enhanced Floating Action Buttons - Desktop Only */}
-      <div className="fixed bottom-6 right-6 z-50 hidden md:flex flex-col gap-3">
+      <div className="fixed bottom-4 md:bottom-6 right-4 md:right-6 z-50 hidden md:flex flex-col gap-3">
         <motion.div
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -34,11 +34,11 @@ const EnhancedQuickContact: React.FC = () => {
             onClick={handleWhatsApp}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-xl transition-all duration-300 relative group"
+            className="bg-green-500 hover:bg-green-600 text-white p-3 md:p-4 rounded-full shadow-xl transition-all duration-300 relative group"
             title="WhatsApp Consultation"
           >
-            <MessageCircle className="h-6 w-6" />
-            <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-1 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+            <MessageCircle className="h-5 w-5 md:h-6 md:w-6" />
+            <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-1 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity hidden lg:block">
               WhatsApp Chat
             </div>
           </motion.button>
@@ -48,11 +48,11 @@ const EnhancedQuickContact: React.FC = () => {
             onClick={handleQuickCall}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="bg-coral-500 hover:bg-coral-600 text-white p-4 rounded-full shadow-xl transition-all duration-300 relative group animate-pulse"
+            className="bg-coral-500 hover:bg-coral-600 text-white p-3 md:p-4 rounded-full shadow-xl transition-all duration-300 relative group animate-pulse"
             title="Emergency Call"
           >
-            <Phone className="h-6 w-6" />
-            <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-1 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+            <Phone className="h-5 w-5 md:h-6 md:w-6" />
+            <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-1 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity hidden lg:block">
               Emergency Call
             </div>
           </motion.button>
@@ -62,11 +62,11 @@ const EnhancedQuickContact: React.FC = () => {
             onClick={handleAppointment}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="bg-slate-800 hover:bg-slate-900 text-white p-4 rounded-full shadow-xl transition-all duration-300 relative group"
+            className="bg-slate-800 hover:bg-slate-900 text-white p-3 md:p-4 rounded-full shadow-xl transition-all duration-300 relative group"
             title="Book Appointment"
           >
-            <Calendar className="h-6 w-6" />
-            <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-1 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+            <Calendar className="h-5 w-5 md:h-6 md:w-6" />
+            <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-1 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity hidden lg:block">
               Book Appointment
             </div>
           </motion.button>
@@ -79,25 +79,25 @@ const EnhancedQuickContact: React.FC = () => {
           <div className="grid grid-cols-3 gap-1 p-2 max-w-sm mx-auto">
             <button
               onClick={handleQuickCall}
-              className="flex flex-col items-center gap-1 p-4 text-coral-600 hover:bg-coral-50 rounded-xl transition-all duration-300 min-h-[68px] active:scale-95 touch-manipulation"
+              className="flex flex-col items-center gap-1 p-3 text-coral-600 hover:bg-coral-50 rounded-xl transition-all duration-300 min-h-[64px] active:scale-95 touch-manipulation"
             >
-              <Phone className="h-7 w-7" />
+              <Phone className="h-6 w-6" />
               <span className="text-xs font-medium leading-tight">Emergency</span>
             </button>
             
             <button
               onClick={handleWhatsApp}
-              className="flex flex-col items-center gap-1 p-4 text-green-600 hover:bg-green-50 rounded-xl transition-all duration-300 min-h-[68px] active:scale-95 touch-manipulation"
+              className="flex flex-col items-center gap-1 p-3 text-green-600 hover:bg-green-50 rounded-xl transition-all duration-300 min-h-[64px] active:scale-95 touch-manipulation"
             >
-              <MessageCircle className="h-7 w-7" />
+              <MessageCircle className="h-6 w-6" />
               <span className="text-xs font-medium leading-tight">WhatsApp</span>
             </button>
             
             <button
               onClick={handleAppointment}
-              className="flex flex-col items-center gap-1 p-4 text-slate-800 hover:bg-slate-50 rounded-xl transition-all duration-300 min-h-[68px] active:scale-95 touch-manipulation"
+              className="flex flex-col items-center gap-1 p-3 text-slate-800 hover:bg-slate-50 rounded-xl transition-all duration-300 min-h-[64px] active:scale-95 touch-manipulation"
             >
-              <Calendar className="h-7 w-7" />
+              <Calendar className="h-6 w-6" />
               <span className="text-xs font-medium leading-tight">Appointment</span>
             </button>
           </div>
@@ -132,7 +132,7 @@ const EnhancedQuickContact: React.FC = () => {
               </div>
               <button
                 onClick={() => setIsVisible(false)}
-                className="p-1 hover:bg-coral-700 rounded-full transition-colors flex-shrink-0 ml-2"
+                className="p-1 hover:bg-coral-700 rounded-full transition-colors flex-shrink-0 ml-2 touch-manipulation"
                 aria-label="Close emergency banner"
               >
                 <X className="h-4 w-4 md:h-5 md:w-5" />

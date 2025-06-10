@@ -16,14 +16,14 @@ const ModernLoading: React.FC<ModernLoadingProps> = ({
 }) => {
   const sizeClasses = {
     sm: 'w-4 h-4',
-    md: 'w-8 h-8',
-    lg: 'w-12 h-12'
+    md: 'w-6 h-6 md:w-8 md:h-8',
+    lg: 'w-8 h-8 md:w-12 md:h-12'
   };
 
   const containerClasses = {
-    sm: 'gap-2 text-sm',
-    md: 'gap-3 text-base',
-    lg: 'gap-4 text-lg'
+    sm: 'gap-2 text-xs md:text-sm',
+    md: 'gap-2 md:gap-3 text-sm md:text-base',
+    lg: 'gap-3 md:gap-4 text-base md:text-lg'
   };
 
   const renderSpinner = () => (
@@ -47,7 +47,7 @@ const ModernLoading: React.FC<ModernLoadingProps> = ({
       {[0, 1, 2].map((index) => (
         <motion.div
           key={index}
-          className={`w-2 h-2 bg-coral-500 rounded-full`}
+          className="w-1.5 h-1.5 md:w-2 md:h-2 bg-coral-500 rounded-full"
           animate={{ y: [0, -8, 0] }}
           transition={{
             duration: 0.6,
@@ -102,7 +102,7 @@ const ModernLoading: React.FC<ModernLoadingProps> = ({
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="font-medium text-center"
+          className="font-medium text-center px-4"
         >
           {message}
         </motion.p>

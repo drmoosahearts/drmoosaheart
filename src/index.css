@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap');
 
 @tailwind base;
@@ -74,7 +75,11 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-gradient-to-r from-medical-blue to-medical-blue-dark hover:from-medical-blue-dark hover:to-medical-blue text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-medical-blue-light focus:ring-opacity-50 touch-manipulation shadow-lg hover:shadow-xl hover:-translate-y-1 relative overflow-hidden;
+    @apply bg-gradient-to-r from-medical-blue to-medical-blue-dark hover:from-medical-blue-dark hover:to-medical-blue text-white font-semibold py-2 px-4 md:py-3 md:px-6 rounded-lg md:rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-medical-blue-light focus:ring-opacity-50 touch-manipulation shadow-lg hover:shadow-xl hover:-translate-y-1 relative overflow-hidden;
+  }
+  
+  .btn-primary {
+    position: relative;
   }
   
   .btn-primary::before {
@@ -86,7 +91,11 @@
   }
   
   .btn-secondary {
-    @apply bg-gradient-to-r from-medical-teal to-medical-teal-dark hover:from-medical-teal-dark hover:to-medical-teal text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-medical-teal-light focus:ring-opacity-50 touch-manipulation shadow-lg hover:shadow-xl hover:-translate-y-1 relative overflow-hidden;
+    @apply bg-gradient-to-r from-medical-teal to-medical-teal-dark hover:from-medical-teal-dark hover:to-medical-teal text-white font-semibold py-2 px-4 md:py-3 md:px-6 rounded-lg md:rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-medical-teal-light focus:ring-opacity-50 touch-manipulation shadow-lg hover:shadow-xl hover:-translate-y-1 relative overflow-hidden;
+  }
+  
+  .btn-secondary {
+    position: relative;
   }
   
   .btn-secondary::before {
@@ -98,11 +107,11 @@
   }
   
   .btn-outline {
-    @apply border-2 border-medical-blue text-medical-blue hover:bg-medical-blue hover:text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-medical-blue-light focus:ring-opacity-50 touch-manipulation hover:shadow-lg hover:-translate-y-1 relative overflow-hidden;
+    @apply border-2 border-medical-blue text-medical-blue hover:bg-medical-blue hover:text-white font-semibold py-2 px-4 md:py-3 md:px-6 rounded-lg md:rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-medical-blue-light focus:ring-opacity-50 touch-manipulation hover:shadow-lg hover:-translate-y-1 relative overflow-hidden;
   }
 
   .section-title {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 mb-6 relative;
+    @apply text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-800 mb-4 md:mb-6 relative;
     background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -110,11 +119,11 @@
   }
 
   .section-title::after {
-    @apply content-[''] absolute -bottom-4 left-0 w-24 h-1.5 bg-gradient-to-r from-coral-500 to-coral-600 rounded-full;
+    @apply content-[''] absolute -bottom-2 md:-bottom-4 left-0 w-16 md:w-24 h-1 md:h-1.5 bg-gradient-to-r from-coral-500 to-coral-600 rounded-full;
   }
 
   .section-subtitle {
-    @apply text-xl md:text-2xl lg:text-3xl font-semibold text-medical-teal mb-4;
+    @apply text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold text-medical-teal mb-3 md:mb-4;
   }
   
   .touch-manipulation {
@@ -122,7 +131,7 @@
   }
   
   .tap-target {
-    @apply min-h-[48px] min-w-[48px];
+    @apply min-h-[44px] min-w-[44px] md:min-h-[48px] md:min-w-[48px];
   }
 
   .glassmorphism {
@@ -144,8 +153,8 @@
   /* Modern Asymmetrical Grid Patterns */
   .asymmetric-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem md:gap-2rem;
     position: relative;
   }
 
@@ -161,12 +170,12 @@
   }
 
   .asymmetric-card {
-    @apply relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all duration-300 shadow-lg hover:shadow-xl;
+    @apply relative bg-white/10 backdrop-blur-md border border-white/20 rounded-xl md:rounded-2xl p-4 md:p-6 hover:bg-white/15 transition-all duration-300 shadow-lg hover:shadow-xl;
     transform: translateY(0);
   }
 
   .asymmetric-card:nth-child(even) {
-    transform: translateY(2rem);
+    transform: translateY(1rem) md:translateY(2rem);
   }
 
   .asymmetric-card:hover {
@@ -178,22 +187,15 @@
     background-image: 
       radial-gradient(circle at 25% 25%, rgba(255, 107, 107, 0.1) 2px, transparent 2px),
       radial-gradient(circle at 75% 75%, rgba(0, 69, 124, 0.1) 2px, transparent 2px);
-    background-size: 60px 60px, 40px 40px;
-    background-position: 0 0, 30px 30px;
+    background-size: 40px 40px, 30px 30px;
+    background-position: 0 0, 20px 20px;
   }
 
   .modern-pattern-2 {
     background-image: 
       linear-gradient(45deg, rgba(255, 107, 107, 0.05) 25%, transparent 25%),
       linear-gradient(-45deg, rgba(0, 69, 124, 0.05) 25%, transparent 25%);
-    background-size: 30px 30px;
-  }
-
-  .modern-pattern-3 {
-    background-image: 
-      linear-gradient(30deg, rgba(255, 107, 107, 0.1) 12%, transparent 12.5%, transparent 87%, rgba(255, 107, 107, 0.1) 87.5%, rgba(255, 107, 107, 0.1)),
-      linear-gradient(150deg, rgba(255, 107, 107, 0.1) 12%, transparent 12.5%, transparent 87%, rgba(255, 107, 107, 0.1) 87.5%, rgba(255, 107, 107, 0.1));
-    background-size: 40px 40px;
+    background-size: 20px 20px;
   }
 
   .floating-elements {
@@ -204,36 +206,36 @@
   .floating-elements::after {
     content: '';
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    filter: blur(40px);
+    filter: blur(30px);
     z-index: -1;
     animation: float 8s ease-in-out infinite;
   }
 
   .floating-elements::before {
     background: linear-gradient(45deg, rgba(255, 107, 107, 0.3), rgba(0, 69, 124, 0.3));
-    top: -50px;
-    left: -50px;
+    top: -30px;
+    left: -30px;
     animation-delay: 0s;
   }
 
   .floating-elements::after {
     background: linear-gradient(135deg, rgba(0, 69, 124, 0.3), rgba(255, 107, 107, 0.3));
-    bottom: -50px;
-    right: -50px;
+    bottom: -30px;
+    right: -30px;
     animation-delay: 4s;
   }
 
   /* Interactive Hover Effects */
   .interactive-card {
-    @apply relative overflow-hidden transition-all duration-500 hover:scale-105 hover:z-10;
+    @apply relative overflow-hidden transition-all duration-300 hover:scale-102 hover:z-10;
     transform-style: preserve-3d;
   }
 
   .interactive-card::before {
-    @apply content-[''] absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent opacity-0 transition-opacity duration-500;
+    @apply content-[''] absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent opacity-0 transition-opacity duration-300;
   }
 
   .interactive-card:hover::before {
@@ -242,8 +244,8 @@
 
   .interactive-card:hover {
     box-shadow: 
-      0 25px 50px -12px rgba(0, 0, 0, 0.25),
-      0 0 40px rgba(255, 107, 107, 0.3);
+      0 15px 30px -8px rgba(0, 0, 0, 0.2),
+      0 0 30px rgba(255, 107, 107, 0.25);
   }
 
   /* Modern Navigation Styles */
@@ -277,116 +279,13 @@
   .mobile-menu-item:hover::before {
     @apply scale-y-100;
   }
-
-  /* Advanced Interactive Elements */
-  .shimmer-effect {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .shimmer-effect::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-    transition: left 0.5s;
-  }
-
-  .shimmer-effect:hover::before {
-    left: 100%;
-  }
-
-  /* Modern Focus States */
-  .focus-ring {
-    @apply focus:outline-none focus:ring-2 focus:ring-coral-500 focus:ring-opacity-50 focus:ring-offset-2;
-  }
-
-  /* Enhanced Accessibility */
-  .sr-only {
-    @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
-    clip: rect(0, 0, 0, 0);
-  }
-
-  /* Performance Optimized Animations */
-  .will-change-transform {
-    will-change: transform;
-  }
-
-  .will-change-opacity {
-    will-change: opacity;
-  }
-
-  .will-change-scroll {
-    will-change: scroll-position;
-  }
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0px) rotate(0deg); }
-  25% { transform: translateY(-10px) rotate(1deg); }
-  50% { transform: translateY(-5px) rotate(-1deg); }
-  75% { transform: translateY(-15px) rotate(1deg); }
-}
-
-@keyframes heartbeat {
-  0% {
-    stroke-dashoffset: 1000;
-  }
-  50% {
-    stroke-dashoffset: 0;
-  }
-  60% {
-    stroke-dashoffset: 0;
-    d: path("M0,50 L200,50 L220,50 L240,20 L260,80 L280,50 L300,50 L1000,50");
-  }
-  70% {
-    d: path("M0,50 L200,50 L220,50 L240,30 L260,70 L280,50 L300,50 L1000,50");
-  }
-  80% {
-    d: path("M0,50 L200,50 L220,50 L240,40 L260,60 L280,50 L300,50 L1000,50");
-  }
-  90% {
-    d: path("M0,50 L200,50 L220,50 L240,45 L260,55 L280,50 L300,50 L1000,50");
-  }
-  100% {
-    d: path("M0,50 L1000,50");
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(255, 107, 107, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(255, 107, 107, 0.6); }
-}
-
-.animate-heartbeat {
-  animation: heartbeat 2s ease-in-out forwards;
-  will-change: d, stroke-dashoffset;
-}
-
-.animate-shimmer {
-  animation: shimmer 2s infinite;
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
-}
-
-@keyframes reveal-line {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+  25% { transform: translateY(-8px) rotate(0.5deg); }
+  50% { transform: translateY(-4px) rotate(-0.5deg); }
+  75% { transform: translateY(-12px) rotate(0.5deg); }
 }
 
 @keyframes fade-in {
@@ -425,47 +324,48 @@
   animation: accordion-up 0.2s ease-out;
 }
 
-.gallery-item {
-  @apply overflow-hidden relative transform transition-all duration-500 hover:scale-105 hover:z-10;
-}
-
-.gallery-item::before {
-  @apply content-[''] absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 z-10;
-}
-
-.gallery-item:hover::before {
-  @apply opacity-100;
-}
-
-.gallery-item img {
-  @apply transition-transform duration-700 ease-out;
-}
-
-.gallery-item:hover img {
-  @apply transform scale-110;
-}
-
-@media (hover: none) {
-  .gallery-item::before {
-    @apply opacity-50;
+/* Mobile Responsive Optimizations */
+@media (max-width: 640px) {
+  .container {
+    @apply px-4;
   }
   
-  .gallery-item img {
-    @apply transform scale-105;
+  .section-title {
+    @apply text-2xl leading-tight;
+  }
+  
+  .section-subtitle {
+    @apply text-lg;
+  }
+  
+  .asymmetric-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .asymmetric-card:nth-child(even) {
+    transform: translateY(0);
+  }
+  
+  .floating-elements::before,
+  .floating-elements::after {
+    width: 40px;
+    height: 40px;
+    filter: blur(20px);
   }
 }
 
 @media (max-width: 360px) {
   .btn-primary, .btn-secondary, .btn-outline {
-    @apply py-2 px-4 text-sm;
+    @apply py-2 px-3 text-sm;
   }
   
   .section-title {
-    @apply text-3xl;
+    @apply text-xl;
   }
   
   .section-subtitle {
-    @apply text-lg;
+    @apply text-base;
   }
 }
 
@@ -473,12 +373,6 @@
   .reduce-animation {
     animation-duration: 0.3s !important;
     transition-duration: 0.3s !important;
-  }
-  
-  .container {
-    width: 100% !important;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
   }
 }
 
@@ -488,130 +382,7 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-}
-
-/* Enhanced Animations */
-@keyframes modernSlideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-30px) scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-  }
-}
-
-@keyframes modernFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px) scale(0.98);
-    filter: blur(4px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: blur(0);
-  }
-}
-
-@keyframes modernBounce {
-  0%, 20%, 53%, 80%, 100% {
-    transform: translate3d(0, 0, 0);
-  }
-  40%, 43% {
-    transform: translate3d(0, -8px, 0);
-  }
-  70% {
-    transform: translate3d(0, -4px, 0);
-  }
-  90% {
-    transform: translate3d(0, -2px, 0);
-  }
-}
-
-@keyframes modernPulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 20px rgba(255, 107, 107, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
-  }
-}
-
-.animate-modern-slide-in {
-  animation: modernSlideIn 0.6s ease-out;
-}
-
-.animate-modern-fade-in {
-  animation: modernFadeIn 0.8s ease-out;
-}
-
-.animate-modern-bounce {
-  animation: modernBounce 1s ease-in-out;
-}
-
-.animate-modern-pulse {
-  animation: modernPulse 2s infinite;
-}
-
-/* Enhanced Modern Animations */
-@keyframes modernShimmer {
-  0% { 
-    transform: translateX(-100%) skewX(-15deg);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% { 
-    transform: translateX(200%) skewX(-15deg);
-    opacity: 0;
-  }
-}
-
-@keyframes modernGlow {
-  0%, 100% { 
-    box-shadow: 0 0 20px rgba(255, 107, 107, 0.3);
-    filter: brightness(1);
-  }
-  50% { 
-    box-shadow: 0 0 40px rgba(255, 107, 107, 0.6);
-    filter: brightness(1.1);
-  }
-}
-
-@keyframes modernRotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-@keyframes modernScale {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-}
-
-.animate-modern-shimmer {
-  animation: modernShimmer 2s infinite;
-}
-
-.animate-modern-glow {
-  animation: modernGlow 3s ease-in-out infinite;
-}
-
-.animate-modern-rotate {
-  animation: modernRotate 10s linear infinite;
-}
-
-.animate-modern-scale {
-  animation: modernScale 2s ease-in-out infinite;
-}
-
-/* Reduced Motion Support */
-@media (prefers-reduced-motion: reduce) {
+  
   .asymmetric-card,
   .interactive-card,
   .floating-elements {
@@ -642,5 +413,12 @@
     break-inside: avoid;
     box-shadow: none;
     border: 1px solid #000;
+  }
+}
+
+/* Safe Area for Mobile Devices */
+@supports (padding: max(0px)) {
+  .safe-area-inset-bottom {
+    padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
   }
 }

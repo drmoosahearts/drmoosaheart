@@ -34,8 +34,8 @@ const ModernFormField: React.FC<FormFieldProps> = ({
   const inputType = type === 'password' && showPassword ? 'text' : type;
 
   const getStatusIcon = () => {
-    if (error) return <AlertCircle className="h-5 w-5 text-red-500" />;
-    if (success && value) return <CheckCircle className="h-5 w-5 text-green-500" />;
+    if (error) return <AlertCircle className="h-4 w-4 md:h-5 md:w-5 text-red-500" />;
+    if (success && value) return <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-green-500" />;
     return null;
   };
 
@@ -73,13 +73,13 @@ const ModernFormField: React.FC<FormFieldProps> = ({
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
             className={`
-              w-full px-4 py-3 border rounded-xl transition-all duration-300
+              w-full px-3 py-2 md:px-4 md:py-3 border rounded-lg md:rounded-xl transition-all duration-300
               ${getStatusColor()}
               ${disabled ? 'bg-gray-50 cursor-not-allowed' : 'bg-white'}
               focus:outline-none focus:ring-2
-              resize-none
+              resize-none text-sm md:text-base
             `}
-            whileFocus={{ scale: 1.01 }}
+            whileFocus={{ scale: 1.005 }}
           />
         ) : (
           <motion.input
@@ -92,18 +92,18 @@ const ModernFormField: React.FC<FormFieldProps> = ({
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
             className={`
-              w-full px-4 py-3 border rounded-xl transition-all duration-300
+              w-full px-3 py-2 md:px-4 md:py-3 border rounded-lg md:rounded-xl transition-all duration-300
               ${getStatusColor()}
               ${disabled ? 'bg-gray-50 cursor-not-allowed' : 'bg-white'}
-              focus:outline-none focus:ring-2
-              ${type === 'password' ? 'pr-12' : error || success ? 'pr-12' : ''}
+              focus:outline-none focus:ring-2 text-sm md:text-base
+              ${type === 'password' ? 'pr-10 md:pr-12' : error || success ? 'pr-10 md:pr-12' : ''}
             `}
-            whileFocus={{ scale: 1.01 }}
+            whileFocus={{ scale: 1.005 }}
           />
         )}
         
         {/* Password toggle or status icon */}
-        <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-2">
+        <div className="absolute right-2 md:right-3 top-1/2 -translate-y-1/2 flex items-center gap-2">
           {type === 'password' && (
             <motion.button
               type="button"
@@ -113,9 +113,9 @@ const ModernFormField: React.FC<FormFieldProps> = ({
               whileTap={{ scale: 0.9 }}
             >
               {showPassword ? (
-                <EyeOff className="h-5 w-5 text-gray-400" />
+                <EyeOff className="h-4 w-4 md:h-5 md:w-5 text-gray-400" />
               ) : (
-                <Eye className="h-5 w-5 text-gray-400" />
+                <Eye className="h-4 w-4 md:h-5 md:w-5 text-gray-400" />
               )}
             </motion.button>
           )}
@@ -130,7 +130,7 @@ const ModernFormField: React.FC<FormFieldProps> = ({
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
-              className="absolute inset-0 rounded-xl border-2 border-coral-500 pointer-events-none"
+              className="absolute inset-0 rounded-lg md:rounded-xl border-2 border-coral-500 pointer-events-none"
               style={{ marginTop: '-2px', marginLeft: '-2px', marginRight: '-2px', marginBottom: '-2px' }}
             />
           )}
@@ -144,9 +144,9 @@ const ModernFormField: React.FC<FormFieldProps> = ({
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="text-sm text-red-600 flex items-center gap-2"
+            className="text-xs md:text-sm text-red-600 flex items-center gap-2"
           >
-            <AlertCircle className="h-4 w-4 flex-shrink-0" />
+            <AlertCircle className="h-3 w-3 md:h-4 md:w-4 flex-shrink-0" />
             {error}
           </motion.p>
         )}
