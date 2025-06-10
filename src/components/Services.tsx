@@ -64,12 +64,38 @@ const Services: React.FC = () => {
 
   return (
     <section ref={ref} className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-30">
-        <div style={{
-          backgroundImage: 'radial-gradient(circle at 25% 75%, rgba(0, 69, 124, 0.1) 2px, transparent 2px)',
-          backgroundSize: '40px 40px'
-        }} className="w-full h-full"></div>
+      {/* Enhanced Background Elements */}
+      <div className="absolute inset-0">
+        {/* Animated gradient orbs */}
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.1, 0.3, 0.1],
+            rotate: [0, 180, 360]
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          className="absolute top-20 left-10 w-64 h-64 bg-coral-500/20 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            scale: [1.2, 1, 1.2],
+            opacity: [0.2, 0.1, 0.2],
+            x: [0, 100, 0]
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute bottom-20 right-10 w-80 h-80 bg-medical-blue/20 rounded-full blur-3xl"
+        />
+        
+        {/* Modern pattern overlay */}
+        <div className="absolute inset-0 modern-pattern-1 opacity-30"></div>
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
@@ -100,27 +126,38 @@ const Services: React.FC = () => {
           </p>
         </motion.div>
 
+        {/* Asymmetrical Grid Layout */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={isVisible ? "visible" : "hidden"}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16"
+          className="asymmetric-grid mb-16"
         >
           {services.map((service, index) => (
-            <motion.div key={index} variants={itemVariants}>
+            <motion.div 
+              key={index} 
+              variants={itemVariants}
+              className={`asymmetric-card ${index % 2 === 1 ? 'lg:translate-y-8' : ''}`}
+            >
               <ModernCard
                 title={service.title}
                 description={service.description}
                 icon={service.icon}
                 gradient={service.gradient}
-                className="h-full"
+                className="h-full border-white/30 hover:border-coral-300/50"
               >
                 <div className="space-y-3 mb-6">
                   {service.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center gap-3">
+                    <motion.div 
+                      key={featureIndex} 
+                      className="flex items-center gap-3"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.5 + featureIndex * 0.1 }}
+                    >
                       <div className="w-2 h-2 bg-coral-500 rounded-full"></div>
                       <span className="text-sm text-gray-600 font-medium">{feature}</span>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
                 
@@ -141,12 +178,20 @@ const Services: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="bg-gradient-to-r from-medical-blue via-medical-blue-dark to-medical-blue text-white rounded-3xl p-8 md:p-12 text-center shadow-2xl relative overflow-hidden"
+          className="relative bg-gradient-to-r from-medical-blue via-medical-blue-dark to-medical-blue text-white rounded-3xl p-8 md:p-12 text-center shadow-2xl overflow-hidden"
         >
-          {/* Background effects */}
+          {/* Enhanced background effects */}
           <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent"></div>
-          <div className="absolute -top-4 -right-4 w-24 h-24 bg-coral-500/20 rounded-full blur-xl"></div>
-          <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-medical-teal/20 rounded-full blur-xl"></div>
+          <motion.div 
+            animate={{ rotate: 360 }}
+            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+            className="absolute -top-4 -right-4 w-24 h-24 bg-coral-500/20 rounded-full blur-xl"
+          />
+          <motion.div 
+            animate={{ rotate: -360 }}
+            transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+            className="absolute -bottom-4 -left-4 w-32 h-32 bg-medical-teal/20 rounded-full blur-xl"
+          />
           
           <div className="relative z-10">
             <h3 className="text-3xl md:text-4xl font-bold mb-4">
@@ -160,20 +205,22 @@ const Services: React.FC = () => {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-3 bg-coral-500 hover:bg-coral-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-coral-500/25 transition-all duration-300"
+                  className="inline-flex items-center gap-3 bg-coral-500 hover:bg-coral-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-coral-500/25 transition-all duration-300 relative overflow-hidden group"
                 >
-                  <Heart className="h-6 w-6" />
-                  Book Consultation
-                  <ArrowRight className="h-5 w-5" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <Heart className="h-6 w-6 relative z-10" />
+                  <span className="relative z-10">Book Consultation</span>
+                  <ArrowRight className="h-5 w-5 relative z-10" />
                 </Link>
               </motion.div>
               
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <a
                   href="tel:+919061693446"
-                  className="inline-flex items-center gap-3 bg-white/20 hover:bg-white/30 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-xl font-semibold text-lg shadow-xl transition-all duration-300"
+                  className="inline-flex items-center gap-3 bg-white/20 hover:bg-white/30 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-xl font-semibold text-lg shadow-xl transition-all duration-300 relative overflow-hidden group"
                 >
-                  Emergency: +91-9061693446
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <span className="relative z-10">Emergency: +91-9061693446</span>
                 </a>
               </motion.div>
             </div>

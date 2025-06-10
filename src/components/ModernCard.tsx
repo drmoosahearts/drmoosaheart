@@ -58,6 +58,11 @@ const ModernCard: React.FC<ModernCardProps> = ({
         }} className="w-full h-full"></div>
       </div>
 
+      {/* Interactive background shimmer */}
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-700">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12 animate-shimmer"></div>
+      </div>
+
       {image && (
         <div className="aspect-video overflow-hidden">
           <motion.img
@@ -104,6 +109,9 @@ const ModernCard: React.FC<ModernCardProps> = ({
           ease: "easeInOut"
         }}
       />
+
+      {/* Modern glow effect */}
+      <div className="absolute -inset-1 bg-gradient-to-r from-coral-500/20 via-medical-blue/20 to-coral-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm -z-10"></div>
     </CardComponent>
   );
 
