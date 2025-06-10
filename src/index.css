@@ -50,14 +50,20 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground font-lato overflow-x-hidden;
     -webkit-tap-highlight-color: transparent;
     text-rendering: optimizeSpeed;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-playfair font-semibold text-medical-blue-dark;
+    font-feature-settings: "ss01", "ss02";
   }
   
   img {
@@ -68,27 +74,31 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-medical-blue hover:bg-medical-blue-dark text-white font-semibold py-2 md:py-3 px-4 md:px-6 rounded-sm transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-medical-blue-light focus:ring-opacity-50 touch-manipulation;
+    @apply bg-gradient-to-r from-medical-blue to-medical-blue-dark hover:from-medical-blue-dark hover:to-medical-blue text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-medical-blue-light focus:ring-opacity-50 touch-manipulation shadow-lg hover:shadow-xl hover:-translate-y-1;
   }
   
   .btn-secondary {
-    @apply bg-medical-teal hover:bg-medical-teal-dark text-white font-semibold py-2 md:py-3 px-4 md:px-6 rounded-sm transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-medical-teal-light focus:ring-opacity-50 touch-manipulation;
+    @apply bg-gradient-to-r from-medical-teal to-medical-teal-dark hover:from-medical-teal-dark hover:to-medical-teal text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-medical-teal-light focus:ring-opacity-50 touch-manipulation shadow-lg hover:shadow-xl hover:-translate-y-1;
   }
   
   .btn-outline {
-    @apply border-2 border-medical-blue text-medical-blue hover:bg-medical-blue hover:text-white font-semibold py-2 md:py-3 px-4 md:px-6 rounded-sm transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-medical-blue-light focus:ring-opacity-50 touch-manipulation;
+    @apply border-2 border-medical-blue text-medical-blue hover:bg-medical-blue hover:text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-medical-blue-light focus:ring-opacity-50 touch-manipulation hover:shadow-lg hover:-translate-y-1;
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-medical-blue-dark mb-4 md:mb-6 relative;
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 mb-6 relative;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .section-title::after {
-    @apply content-[''] absolute -bottom-3 left-0 w-40 h-1 bg-medical-teal;
+    @apply content-[''] absolute -bottom-4 left-0 w-24 h-1.5 bg-gradient-to-r from-coral-500 to-coral-600 rounded-full;
   }
 
   .section-subtitle {
-    @apply text-lg md:text-xl lg:text-2xl font-semibold text-medical-teal mb-3 md:mb-4;
+    @apply text-xl md:text-2xl lg:text-3xl font-semibold text-medical-teal mb-4;
   }
   
   .touch-manipulation {
@@ -98,6 +108,29 @@
   .tap-target {
     @apply min-h-[48px] min-w-[48px];
   }
+
+  .glassmorphism {
+    @apply bg-white/20 backdrop-blur-md border border-white/30 shadow-xl;
+  }
+
+  .floating-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .transform-gpu {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(1deg); }
+  50% { transform: translateY(-5px) rotate(-1deg); }
+  75% { transform: translateY(-15px) rotate(1deg); }
 }
 
 @keyframes heartbeat {
@@ -126,9 +159,27 @@
   }
 }
 
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 107, 107, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(255, 107, 107, 0.6); }
+}
+
 .animate-heartbeat {
   animation: heartbeat 2s ease-in-out forwards;
   will-change: d, stroke-dashoffset;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
 }
 
 @keyframes reveal-line {
@@ -177,42 +228,42 @@
 }
 
 .gallery-item {
-  @apply overflow-hidden relative;
+  @apply overflow-hidden relative transform transition-all duration-500 hover:scale-105 hover:z-10;
+}
+
+.gallery-item::before {
+  @apply content-[''] absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 z-10;
+}
+
+.gallery-item:hover::before {
+  @apply opacity-100;
 }
 
 .gallery-item img {
-  @apply transition-transform duration-300;
+  @apply transition-transform duration-700 ease-out;
 }
 
 .gallery-item:hover img {
-  @apply transform scale-105;
-}
-
-.gallery-item::after {
-  @apply content-[''] absolute inset-0 bg-medical-blue opacity-0 transition-opacity duration-300;
-}
-
-.gallery-item:hover::after {
-  @apply opacity-20;
+  @apply transform scale-110;
 }
 
 @media (hover: none) {
-  .gallery-item::after {
-    @apply opacity-10;
+  .gallery-item::before {
+    @apply opacity-50;
   }
   
   .gallery-item img {
-    @apply transform scale-[1.02];
+    @apply transform scale-105;
   }
 }
 
 @media (max-width: 360px) {
   .btn-primary, .btn-secondary, .btn-outline {
-    @apply py-2 px-3 text-sm;
+    @apply py-2 px-4 text-sm;
   }
   
   .section-title {
-    @apply text-2xl;
+    @apply text-3xl;
   }
   
   .section-subtitle {
@@ -230,5 +281,13 @@
     width: 100% !important;
     padding-left: 1rem !important;
     padding-right: 1rem !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
