@@ -74,7 +74,7 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-gradient-to-r from-medical-blue to-medical-blue-dark hover:from-medical-blue-dark hover:to-medical-blue text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-medical-blue-light focus:ring-opacity-50 touch-manipulation shadow-lg hover:shadow-xl hover:-translate-y-1 relative overflow-hidden group;
+    @apply bg-gradient-to-r from-medical-blue to-medical-blue-dark hover:from-medical-blue-dark hover:to-medical-blue text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-medical-blue-light focus:ring-opacity-50 touch-manipulation shadow-lg hover:shadow-xl hover:-translate-y-1 relative overflow-hidden;
   }
   
   .btn-primary::before {
@@ -82,7 +82,7 @@
   }
   
   .btn-secondary {
-    @apply bg-gradient-to-r from-medical-teal to-medical-teal-dark hover:from-medical-teal-dark hover:to-medical-teal text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-medical-teal-light focus:ring-opacity-50 touch-manipulation shadow-lg hover:shadow-xl hover:-translate-y-1 relative overflow-hidden group;
+    @apply bg-gradient-to-r from-medical-teal to-medical-teal-dark hover:from-medical-teal-dark hover:to-medical-teal text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-medical-teal-light focus:ring-opacity-50 touch-manipulation shadow-lg hover:shadow-xl hover:-translate-y-1 relative overflow-hidden;
   }
   
   .btn-secondary::before {
@@ -90,7 +90,7 @@
   }
   
   .btn-outline {
-    @apply border-2 border-medical-blue text-medical-blue hover:bg-medical-blue hover:text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-medical-blue-light focus:ring-opacity-50 touch-manipulation hover:shadow-lg hover:-translate-y-1 relative overflow-hidden group;
+    @apply border-2 border-medical-blue text-medical-blue hover:bg-medical-blue hover:text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-medical-blue-light focus:ring-opacity-50 touch-manipulation hover:shadow-lg hover:-translate-y-1 relative overflow-hidden;
   }
 
   .section-title {
@@ -153,7 +153,7 @@
   }
 
   .asymmetric-card {
-    @apply relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all duration-300 shadow-lg hover:shadow-xl group;
+    @apply relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all duration-300 shadow-lg hover:shadow-xl;
     transform: translateY(0);
   }
 
