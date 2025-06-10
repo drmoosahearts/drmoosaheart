@@ -174,7 +174,7 @@ const Services: React.FC = () => {
                   className="inline-flex items-center gap-3 bg-white/20 hover:bg-white/30 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-xl font-semibold text-lg shadow-xl transition-all duration-300"
                 >
                   Emergency: +91-9061693446
-                </Link>
+                </a>
               </motion.div>
             </div>
           </div>
