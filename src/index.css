@@ -154,8 +154,14 @@
   .asymmetric-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1rem md:gap-2rem;
+    gap: 1rem;
     position: relative;
+  }
+
+  @media (min-width: 768px) {
+    .asymmetric-grid {
+      gap: 2rem;
+    }
   }
 
   .asymmetric-grid::before {
@@ -175,7 +181,13 @@
   }
 
   .asymmetric-card:nth-child(even) {
-    transform: translateY(1rem) md:translateY(2rem);
+    transform: translateY(1rem);
+  }
+
+  @media (min-width: 768px) {
+    .asymmetric-card:nth-child(even) {
+      transform: translateY(2rem);
+    }
   }
 
   .asymmetric-card:hover {
