@@ -18,7 +18,7 @@ import BlogListPage from "./pages/BlogListPage";
 import ProceduresPage from "./pages/ProceduresPage";
 import CostCalculatorPage from "./pages/CostCalculatorPage";
 import NotFound from "./pages/NotFound";
-import Navbar from "./components/Navbar";
+import StickyNavigation from "./components/StickyNavigation";
 import Footer from "./components/Footer";
 import SplashScreen from "./components/SplashScreen";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -30,16 +30,29 @@ import TelemedicineConsultation from "./components/TelemedicineConsultation";
 import AdvancedAppointmentBooking from "./components/AdvancedAppointmentBooking";
 import IntelligentCostCalculator from "./components/IntelligentCostCalculator";
 import ComprehensiveContactSystem from "./components/ComprehensiveContactSystem";
+import { ProgressIndicator } from "./components/PerformanceOptimizer";
+import EnhancedQuickContact from "./components/EnhancedQuickContact";
 import { useState, useEffect } from 'react';
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 5 * 60 * 1000, // 5 minutes
+      cacheTime: 10 * 60 * 1000, // 10 minutes
+      retry: 2,
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 const App = () => {
   const [showSplash, setShowSplash] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowSplash(false);
+      setIsLoading(false);
     }, 2000);
 
     return () => clearTimeout(timer);
@@ -47,6 +60,7 @@ const App = () => {
 
   const handleSplashComplete = () => {
     setShowSplash(false);
+    setIsLoading(false);
   };
 
   if (showSplash) {
@@ -57,11 +71,21 @@ const App = () => {
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
-          <Toaster />
+          <Toaster 
+            position="top-right"
+            toastOptions={{
+              style: {
+                background: '#fff',
+                color: '#333',
+                border: '1px solid #e2e8f0',
+              },
+            }}
+          />
           <ErrorBoundary>
             <BrowserRouter>
-              <div className="min-h-screen flex flex-col">
-                <Navbar />
+              <div className="min-h-screen flex flex-col bg-white">
+                <ProgressIndicator />
+                <StickyNavigation />
                 <main className="flex-grow">
                   <Routes>
                     <Route path="/" element={<Index />} />
@@ -86,6 +110,7 @@ const App = () => {
                   </Routes>
                 </main>
                 <Footer />
+                <EnhancedQuickContact />
               </div>
             </BrowserRouter>
           </ErrorBoundary>

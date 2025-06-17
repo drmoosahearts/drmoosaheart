@@ -5,7 +5,6 @@ import { Globe, Plane, Heart, Award, Users, Clock } from "lucide-react";
 import ModernHero from "@/components/ModernHero";
 import SuccessStories from "@/components/SuccessStories";
 import VideoLibrary from "@/components/VideoLibrary";
-import TrustCredibility from "@/components/TrustCredibility";
 import Introduction from "@/components/Introduction";
 import Services from "@/components/Services";
 import Achievements from "@/components/Achievements";
@@ -14,20 +13,16 @@ import ContactInfo from "@/components/ContactInfo";
 import MediaCoverage from "@/components/MediaCoverage";
 import SurgicalGallery from "@/components/SurgicalGallery";
 import PatientTestimonials from "@/components/PatientTestimonials";
-import TrustSignals from "@/components/TrustSignals";
 import FAQ from "@/components/FAQ";
-import SEO from "@/components/SEO";
 import BlogSection from "@/components/BlogSection";
 import EnhancedFAQ from "@/components/EnhancedFAQ";
+import EnhancedSEO from "@/components/EnhancedSEO";
+import EnhancedTrustSignals from "@/components/EnhancedTrustSignals";
 
 const Index: React.FC = () => {
   // Set page title and meta description for SEO
   useEffect(() => {
-    document.title = "Dr. M.K. Moosa Kunhi - World-Class Cardiac Surgeon | Chennai, India | 16,000+ Successful Surgeries";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", "Dr. M.K. Moosa Kunhi - Leading cardiac surgeon with 16,000+ successful surgeries. Pioneer of beating heart surgery in India. Expert in complex cardiac procedures for international patients from 50+ countries.");
-    }
+    document.title = "Dr. M.K. Moosa Kunhi - Premier Cardiac Surgeon | Chennai, India | 16,000+ Successful Heart Surgeries";
   }, []);
 
   const homePageSchema = {
@@ -49,44 +44,76 @@ const Index: React.FC = () => {
 
   return (
     <div className="min-h-screen">
-      <SEO
-        title="Dr. M.K. Moosa Kunhi - World-Class Cardiac Surgeon | Chennai, India | 16,000+ Successful Surgeries"
-        description="Dr. M.K. Moosa Kunhi - Leading cardiac surgeon with 16,000+ successful surgeries. Pioneer of beating heart surgery in India. Expert in complex cardiac procedures for international patients from 50+ countries."
-        keywords="cardiac surgeon Chennai, heart surgery India, beating heart surgery, congenital heart disease, valve replacement, bypass surgery, pediatric cardiac surgery, international patients, medical tourism India, Dr Moosa Kunhi"
-        schemaData={homePageSchema}
+      <EnhancedSEO
+        title="Dr. M.K. Moosa Kunhi - Premier Cardiac Surgeon | Chennai, India | 16,000+ Successful Heart Surgeries"
+        description="Dr. M.K. Moosa Kunhi - World-renowned cardiac surgeon specializing in beating heart surgery, valve replacement, and pediatric cardiac care. Serving international patients from 50+ countries with 99.2% success rate."
+        keywords="cardiac surgeon Chennai, heart surgery India, beating heart surgery, Dr Moosa Kunhi, valve replacement, pediatric cardiac surgery, international medical tourism, emergency cardiac care, minimally invasive heart surgery"
+        schemaType="MedicalBusiness"
+        customSchema={homePageSchema}
       />
       
       <ModernHero />
-      <TrustCredibility />
+      <EnhancedTrustSignals />
       <SuccessStories />
       <VideoLibrary />
-      <TrustSignals />
       <Introduction />
       
-      {/* Quick Stats Section - Fixed contrast */}
-      <section className="py-12 bg-medical-blue text-white">
-        <div className="container mx-auto px-4">
+      {/* Enhanced Quick Stats Section */}
+      <section className="py-16 bg-gradient-to-br from-medical-blue via-medical-blue-dark to-slate-800 text-white relative overflow-hidden">
+        {/* Background pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'radial-gradient(circle at 50% 50%, rgba(255,255,255,0.3) 1px, transparent 1px)',
+            backgroundSize: '30px 30px'
+          }}></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Excellence in Numbers
+            </h2>
+            <p className="text-xl text-blue-200 max-w-2xl mx-auto">
+              Trusted by thousands of patients worldwide for life-saving cardiac care
+            </p>
+          </div>
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <Users className="h-8 w-8 mx-auto mb-2 text-coral-300" />
-              <div className="text-3xl font-bold mb-1 text-white">16,000+</div>
-              <div className="text-sm text-gray-200">Successful Surgeries</div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300">
+              <Users className="h-12 w-12 mx-auto mb-4 text-coral-300" />
+              <div className="text-4xl font-bold mb-2 text-white">16,000+</div>
+              <div className="text-sm text-blue-200 font-medium">Successful Surgeries</div>
+              <div className="text-xs text-blue-300 mt-1">25+ Years Experience</div>
             </div>
-            <div>
-              <Globe className="h-8 w-8 mx-auto mb-2 text-coral-300" />
-              <div className="text-3xl font-bold mb-1 text-white">50+</div>
-              <div className="text-sm text-gray-200">Countries Served</div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300">
+              <Globe className="h-12 w-12 mx-auto mb-4 text-coral-300" />
+              <div className="text-4xl font-bold mb-2 text-white">50+</div>
+              <div className="text-sm text-blue-200 font-medium">Countries Served</div>
+              <div className="text-xs text-blue-300 mt-1">International Patients</div>
             </div>
-            <div>
-              <Award className="h-8 w-8 mx-auto mb-2 text-coral-300" />
-              <div className="text-3xl font-bold mb-1 text-white">25+</div>
-              <div className="text-sm text-gray-200">Years Experience</div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300">
+              <Award className="h-12 w-12 mx-auto mb-4 text-coral-300" />
+              <div className="text-4xl font-bold mb-2 text-white">99.2%</div>
+              <div className="text-sm text-blue-200 font-medium">Success Rate</div>
+              <div className="text-xs text-blue-300 mt-1">Complex Procedures</div>
             </div>
-            <div>
-              <Clock className="h-8 w-8 mx-auto mb-2 text-coral-300" />
-              <div className="text-3xl font-bold mb-1 text-white">24/7</div>
-              <div className="text-sm text-gray-200">Emergency Care</div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300">
+              <Clock className="h-12 w-12 mx-auto mb-4 text-coral-300" />
+              <div className="text-4xl font-bold mb-2 text-white">24/7</div>
+              <div className="text-sm text-blue-200 font-medium">Emergency Care</div>
+              <div className="text-xs text-blue-300 mt-1">Always Available</div>
             </div>
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center mt-12">
+            <Link 
+              to="/contact#appointment"
+              className="inline-flex items-center gap-3 bg-coral-500 hover:bg-coral-600 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-xl"
+            >
+              <Heart className="h-6 w-6" />
+              Book Your Consultation Today
+            </Link>
           </div>
         </div>
       </section>
@@ -98,50 +125,51 @@ const Index: React.FC = () => {
       <BlogSection />
       <Achievements />
       
-      {/* Enhanced Specialized Care Section - Fixed text contrast */}
-      <section className="py-16 bg-gray-50">
+      {/* Enhanced Specialized Care Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mb-6">
               Specialized Cardiac Care Programs
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive treatment programs designed for specific patient needs and conditions
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Comprehensive treatment programs designed for specific patient needs and conditions, 
+              backed by world-class expertise and cutting-edge technology
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="grid lg:grid-cols-2 gap-8 mb-16">
             {/* CHD Program */}
-            <div className="bg-gradient-to-br from-medical-blue to-medical-blue-dark text-white rounded-xl overflow-hidden shadow-lg">
-              <div className="p-8">
-                <div className="flex items-center mb-6">
-                  <Heart className="h-10 w-10 mr-4 text-coral-300" />
+            <div className="bg-gradient-to-br from-medical-blue to-medical-blue-dark text-white rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105">
+              <div className="p-8 md:p-12">
+                <div className="flex items-center mb-8">
+                  <Heart className="h-16 w-16 mr-6 text-coral-300" />
                   <div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-white">Congenital Heart Disease</h3>
-                    <p className="text-gray-200">Pediatric & Adult CHD Program</p>
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">Congenital Heart Disease</h3>
+                    <p className="text-blue-200 text-lg">Pediatric & Adult CHD Program</p>
                   </div>
                 </div>
-                <div className="space-y-4 mb-6">
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-coral-300 rounded-full"></div>
-                    <span className="text-white">Comprehensive evaluation and treatment</span>
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center gap-4">
+                    <div className="w-3 h-3 bg-coral-300 rounded-full flex-shrink-0"></div>
+                    <span className="text-white text-lg">Comprehensive evaluation and treatment</span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-coral-300 rounded-full"></div>
-                    <span className="text-white">Family counseling and support</span>
+                  <div className="flex items-center gap-4">
+                    <div className="w-3 h-3 bg-coral-300 rounded-full flex-shrink-0"></div>
+                    <span className="text-white text-lg">Family counseling and support</span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-coral-300 rounded-full"></div>
-                    <span className="text-white">Minimally invasive surgical techniques</span>
+                  <div className="flex items-center gap-4">
+                    <div className="w-3 h-3 bg-coral-300 rounded-full flex-shrink-0"></div>
+                    <span className="text-white text-lg">Minimally invasive surgical techniques</span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-coral-300 rounded-full"></div>
-                    <span className="text-white">Long-term follow-up care</span>
+                  <div className="flex items-center gap-4">
+                    <div className="w-3 h-3 bg-coral-300 rounded-full flex-shrink-0"></div>
+                    <span className="text-white text-lg">Long-term follow-up care</span>
                   </div>
                 </div>
                 <Link 
                   to="/congenital-heart-disease" 
-                  className="inline-flex items-center gap-2 bg-white text-medical-blue px-6 py-3 rounded-sm hover:bg-gray-100 transition-colors font-medium"
+                  className="inline-flex items-center gap-3 bg-white text-medical-blue px-8 py-4 rounded-2xl hover:bg-gray-100 transition-colors font-bold text-lg shadow-lg hover:shadow-xl"
                 >
                   Learn More About CHD Care
                 </Link>
@@ -149,46 +177,46 @@ const Index: React.FC = () => {
             </div>
             
             {/* International Program */}
-            <div className="bg-gradient-to-br from-medical-teal to-medical-teal-dark text-white rounded-xl overflow-hidden shadow-lg">
-              <div className="p-8">
-                <div className="flex items-center mb-6">
-                  <Globe className="h-10 w-10 mr-4 text-white" />
+            <div className="bg-gradient-to-br from-medical-teal to-medical-teal-dark text-white rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105">
+              <div className="p-8 md:p-12">
+                <div className="flex items-center mb-8">
+                  <Globe className="h-16 w-16 mr-6 text-white" />
                   <div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-white">International Patient Program</h3>
-                    <p className="text-gray-200">Complete Medical Tourism Solutions</p>
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">International Patient Program</h3>
+                    <p className="text-teal-200 text-lg">Complete Medical Tourism Solutions</p>
                   </div>
                 </div>
-                <div className="space-y-4 mb-6">
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
-                    <span className="text-white">Virtual pre-consultation</span>
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center gap-4">
+                    <div className="w-3 h-3 bg-white rounded-full flex-shrink-0"></div>
+                    <span className="text-white text-lg">Virtual pre-consultation</span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
-                    <span className="text-white">Visa and travel assistance</span>
+                  <div className="flex items-center gap-4">
+                    <div className="w-3 h-3 bg-white rounded-full flex-shrink-0"></div>
+                    <span className="text-white text-lg">Visa and travel assistance</span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
-                    <span className="text-white">Airport pickup and accommodation</span>
+                  <div className="flex items-center gap-4">
+                    <div className="w-3 h-3 bg-white rounded-full flex-shrink-0"></div>
+                    <span className="text-white text-lg">Airport pickup and accommodation</span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
-                    <span className="text-white">24/7 patient coordination</span>
+                  <div className="flex items-center gap-4">
+                    <div className="w-3 h-3 bg-white rounded-full flex-shrink-0"></div>
+                    <span className="text-white text-lg">24/7 patient coordination</span>
                   </div>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link 
                     to="/international" 
-                    className="inline-flex items-center gap-2 bg-white text-medical-teal px-6 py-3 rounded-sm hover:bg-gray-100 transition-colors font-medium"
+                    className="inline-flex items-center gap-3 bg-white text-medical-teal px-8 py-4 rounded-2xl hover:bg-gray-100 transition-colors font-bold text-lg shadow-lg hover:shadow-xl"
                   >
-                    <Globe size={20} />
+                    <Globe size={24} />
                     International Services
                   </Link>
                   <Link 
                     to="/medical-tourism" 
-                    className="inline-flex items-center gap-2 bg-medical-blue text-white px-6 py-3 rounded-sm hover:bg-medical-blue-dark transition-colors font-medium"
+                    className="inline-flex items-center gap-3 bg-medical-blue text-white px-8 py-4 rounded-2xl hover:bg-medical-blue-dark transition-colors font-bold text-lg shadow-lg hover:shadow-xl"
                   >
-                    <Plane size={20} />
+                    <Plane size={24} />
                     Why Choose India
                   </Link>
                 </div>
@@ -196,17 +224,28 @@ const Index: React.FC = () => {
             </div>
           </div>
 
-          {/* Emergency Contact Banner - Enhanced design */}
-          <div className="bg-gradient-to-r from-coral-500 to-coral-600 text-white rounded-lg p-6 text-center shadow-lg">
-            <h3 className="text-xl font-bold mb-2 text-white">Cardiac Emergency?</h3>
-            <p className="mb-4 text-coral-100">Don't wait - immediate care can save lives</p>
-            <a 
-              href="tel:+919061693446" 
-              className="bg-white text-coral-600 px-8 py-3 rounded-sm font-bold hover:bg-gray-100 transition-colors inline-flex items-center gap-2 shadow-md"
-            >
-              <Clock className="h-5 w-5" />
-              Call Emergency: +91-9061693446
-            </a>
+          {/* Emergency Contact Banner */}
+          <div className="bg-gradient-to-r from-coral-500 to-coral-600 text-white rounded-3xl p-8 md:p-12 text-center shadow-2xl">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">Cardiac Emergency?</h3>
+            <p className="mb-8 text-coral-100 text-lg max-w-2xl mx-auto">
+              Don't wait - immediate care can save lives. Our emergency team is available 24/7 for urgent cardiac situations.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a 
+                href="tel:+919061693446" 
+                className="bg-white text-coral-600 px-8 py-4 rounded-2xl font-bold hover:bg-gray-100 transition-colors inline-flex items-center gap-3 shadow-xl hover:shadow-2xl text-lg"
+              >
+                <Clock className="h-6 w-6" />
+                Call Emergency: +91-9061693446
+              </a>
+              <a 
+                href="https://wa.me/919061693446?text=Cardiac Emergency - Need immediate assistance" 
+                className="bg-green-500 text-white px-8 py-4 rounded-2xl font-bold hover:bg-green-600 transition-colors inline-flex items-center gap-3 shadow-xl hover:shadow-2xl text-lg"
+              >
+                <Globe className="h-6 w-6" />
+                WhatsApp Emergency
+              </a>
+            </div>
           </div>
         </div>
       </section>
