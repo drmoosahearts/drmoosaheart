@@ -1,0 +1,182 @@
+
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
+import { Mic, MessageCircle, Search } from 'lucide-react';
+
+interface VoiceSearchOptimizerProps {
+  pageType: 'home' | 'procedure' | 'location' | 'about' | 'contact';
+  procedureName?: string;
+  locationName?: string;
+}
+
+const VoiceSearchOptimizer: React.FC<VoiceSearchOptimizerProps> = ({
+  pageType,
+  procedureName,
+  locationName
+}) => {
+  const generateVoiceSearchQueries = () => {
+    const baseQueries = [
+      "Who is the best cardiac surgeon in Chennai",
+      "How much does heart surgery cost in India",
+      "What is beating heart surgery",
+      "Best hospital for heart surgery in India",
+      "Dr Moosa Kunhi cardiac surgeon reviews",
+      "Heart surgery for international patients India",
+      "Emergency cardiac surgery Chennai",
+      "Congenital heart disease treatment India"
+    ];
+
+    const procedureQueries = procedureName ? [
+      `What is ${procedureName.toLowerCase()}`,
+      `How much does ${procedureName.toLowerCase()} cost in India`,
+      `Best doctor for ${procedureName.toLowerCase()} in Chennai`,
+      `${procedureName.toLowerCase()} success rate Dr Moosa Kunhi`,
+      `Recovery time for ${procedureName.toLowerCase()}`,
+      `Risks of ${procedureName.toLowerCase()}`
+    ] : [];
+
+    const locationQueries = locationName ? [
+      `Cardiac surgeon for ${locationName} patients`,
+      `Heart surgery cost comparison ${locationName} vs India`,
+      `Medical tourism ${locationName} to India cardiac surgery`,
+      `Best cardiac surgeon in India for ${locationName} patients`
+    ] : [];
+
+    return [...baseQueries, ...procedureQueries, ...locationQueries];
+  };
+
+  const generateConversationalContent = () => {
+    switch (pageType) {
+      case 'home':
+        return {
+          speakableContent: `Dr. M.K. Moosa Kunhi is a leading cardiac surgeon in Chennai, India, with over 25 years of experience and 16,000 successful heart surgeries. He specializes in beating heart surgery, valve replacement, and pediatric cardiac surgery. International patients from over 50 countries trust Dr. Moosa Kunhi for world-class cardiac care at affordable costs.`,
+          faqContent: [
+            {
+              question: "Who is Dr. M.K. Moosa Kunhi?",
+              answer: "Dr. M.K. Moosa Kunhi is a world-renowned cardiac surgeon based in Chennai, India, with over 25 years of experience and 16,000 successful cardiac surgeries."
+            },
+            {
+              question: "What makes Dr. Moosa Kunhi special?",
+              answer: "Dr. Moosa Kunhi is a pioneer of beating heart surgery in India and has a 99.2% success rate in complex cardiac procedures."
+            },
+            {
+              question: "Does Dr. Moosa Kunhi treat international patients?",
+              answer: "Yes, Dr. Moosa Kunhi has treated patients from over 50 countries and provides comprehensive medical tourism services."
+            }
+          ]
+        };
+      
+      case 'procedure':
+        return {
+          speakableContent: `${procedureName} is performed by Dr. M.K. Moosa Kunhi using advanced techniques with minimal invasive approaches. The procedure has a high success rate and faster recovery times compared to traditional methods.`,
+          faqContent: [
+            {
+              question: `What is ${procedureName}?`,
+              answer: `${procedureName} is a cardiac surgical procedure performed to treat specific heart conditions with advanced minimally invasive techniques.`
+            },
+            {
+              question: `How much does ${procedureName} cost in India?`,
+              answer: `${procedureName} costs significantly less in India compared to Western countries, typically 60-80% lower while maintaining world-class quality.`
+            }
+          ]
+        };
+      
+      default:
+        return {
+          speakableContent: `Learn about Dr. M.K. Moosa Kunhi's cardiac surgery services, including consultation booking, treatment options, and patient care.`,
+          faqContent: []
+        };
+    }
+  };
+
+  const content = generateConversationalContent();
+  const voiceQueries = generateVoiceSearchQueries();
+
+  const speakableSchema = {
+    "@context": "https://schema.org",
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".speakable-content", ".main-heading", ".procedure-description"]
+  };
+
+  const faqSchema = content.faqContent.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": content.faqContent.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  } : null;
+
+  return (
+    <>
+      <Helmet>
+        {/* Voice Search Optimization Meta Tags */}
+        <meta name="voice-search-queries" content={voiceQueries.join(', ')} />
+        <meta name="speakable-content" content={content.speakableContent} />
+        
+        {/* Structured Data for Voice Search */}
+        <script type="application/ld+json">
+          {JSON.stringify(speakableSchema)}
+        </script>
+        
+        {faqSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(faqSchema)}
+          </script>
+        )}
+      </Helmet>
+
+      {/* Voice Search Optimization Component */}
+      <div className="bg-gradient-to-r from-blue-50 to-teal-50 py-8 px-4 rounded-xl mb-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-6">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <div className="bg-medical-blue/10 p-3 rounded-full">
+                <Mic className="h-6 w-6 text-medical-blue" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-800">Voice Search Optimized</h3>
+            </div>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              This page is optimized for voice search queries and AI assistants to provide accurate information about cardiac surgery services.
+            </p>
+          </div>
+
+          {/* Speakable Content */}
+          <div className="speakable-content bg-white p-6 rounded-lg shadow-sm mb-6">
+            <div className="flex items-start gap-3">
+              <MessageCircle className="h-5 w-5 text-coral-500 mt-1 flex-shrink-0" />
+              <div>
+                <h4 className="font-semibold text-gray-800 mb-2">AI Assistant Optimized Content</h4>
+                <p className="text-gray-700 leading-relaxed">{content.speakableContent}</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Common Voice Queries */}
+          <div className="bg-white p-6 rounded-lg shadow-sm">
+            <div className="flex items-center gap-2 mb-4">
+              <Search className="h-5 w-5 text-green-600" />
+              <h4 className="font-semibold text-gray-800">Common Voice Search Queries</h4>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-3">
+              {voiceQueries.slice(0, 8).map((query, index) => (
+                <div key={index} className="flex items-center gap-2 p-2 bg-gray-50 rounded text-sm">
+                  <span className="text-gray-400">"</span>
+                  <span className="text-gray-700">{query}</span>
+                  <span className="text-gray-400">"</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default VoiceSearchOptimizer;
