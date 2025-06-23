@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Globe, Plane, Heart, Award, Users, Clock } from "lucide-react";
@@ -70,6 +69,7 @@ const Index: React.FC = () => {
 
   return (
     <div className="min-h-screen">
+      {/* SEO Components - These don't render visible content */}
       <AdvancedSEO
         title={seoData?.title}
         description={seoData?.description}
@@ -79,15 +79,14 @@ const Index: React.FC = () => {
         faqData={faqData}
         reviewData={reviewData}
       />
-      
       <VoiceSearchOptimizer pageType="home" />
       <AdvancedLocalSEO />
       
+      {/* Main Content Sections in Correct Order */}
       <ModernHero />
       <EnhancedTrustSignals />
-      <SuccessStories />
-      <VideoLibrary />
       <Introduction />
+      <SuccessStories />
       
       {/* Enhanced Quick Stats Section */}
       <section className="py-16 bg-gradient-to-br from-medical-blue via-medical-blue-dark to-slate-800 text-white relative overflow-hidden">
@@ -149,6 +148,7 @@ const Index: React.FC = () => {
         </div>
       </section>
 
+      <VideoLibrary />
       <Services />
       <PatientTestimonials />
       <MediaCoverage />
@@ -283,6 +283,8 @@ const Index: React.FC = () => {
       
       <EnhancedFAQ />
       <CallToAction />
+      
+      {/* Contact Info should be at the very end */}
       <ContactInfo />
     </div>
   );
