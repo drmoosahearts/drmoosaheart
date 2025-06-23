@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Mic, MessageCircle, Search } from 'lucide-react';
 
 interface VoiceSearchOptimizerProps {
   pageType: 'home' | 'procedure' | 'location' | 'about' | 'contact';
@@ -112,70 +111,22 @@ const VoiceSearchOptimizer: React.FC<VoiceSearchOptimizerProps> = ({
   } : null;
 
   return (
-    <>
-      <Helmet>
-        {/* Voice Search Optimization Meta Tags */}
-        <meta name="voice-search-queries" content={voiceQueries.join(', ')} />
-        <meta name="speakable-content" content={content.speakableContent} />
-        
-        {/* Structured Data for Voice Search */}
+    <Helmet>
+      {/* Voice Search Optimization Meta Tags */}
+      <meta name="voice-search-queries" content={voiceQueries.join(', ')} />
+      <meta name="speakable-content" content={content.speakableContent} />
+      
+      {/* Structured Data for Voice Search */}
+      <script type="application/ld+json">
+        {JSON.stringify(speakableSchema)}
+      </script>
+      
+      {faqSchema && (
         <script type="application/ld+json">
-          {JSON.stringify(speakableSchema)}
+          {JSON.stringify(faqSchema)}
         </script>
-        
-        {faqSchema && (
-          <script type="application/ld+json">
-            {JSON.stringify(faqSchema)}
-          </script>
-        )}
-      </Helmet>
-
-      {/* Voice Search Optimization Component */}
-      <div className="bg-gradient-to-r from-blue-50 to-teal-50 py-8 px-4 rounded-xl mb-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-6">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="bg-medical-blue/10 p-3 rounded-full">
-                <Mic className="h-6 w-6 text-medical-blue" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-800">Voice Search Optimized</h3>
-            </div>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              This page is optimized for voice search queries and AI assistants to provide accurate information about cardiac surgery services.
-            </p>
-          </div>
-
-          {/* Speakable Content */}
-          <div className="speakable-content bg-white p-6 rounded-lg shadow-sm mb-6">
-            <div className="flex items-start gap-3">
-              <MessageCircle className="h-5 w-5 text-coral-500 mt-1 flex-shrink-0" />
-              <div>
-                <h4 className="font-semibold text-gray-800 mb-2">AI Assistant Optimized Content</h4>
-                <p className="text-gray-700 leading-relaxed">{content.speakableContent}</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Common Voice Queries */}
-          <div className="bg-white p-6 rounded-lg shadow-sm">
-            <div className="flex items-center gap-2 mb-4">
-              <Search className="h-5 w-5 text-green-600" />
-              <h4 className="font-semibold text-gray-800">Common Voice Search Queries</h4>
-            </div>
-            
-            <div className="grid md:grid-cols-2 gap-3">
-              {voiceQueries.slice(0, 8).map((query, index) => (
-                <div key={index} className="flex items-center gap-2 p-2 bg-gray-50 rounded text-sm">
-                  <span className="text-gray-400">"</span>
-                  <span className="text-gray-700">{query}</span>
-                  <span className="text-gray-400">"</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
+      )}
+    </Helmet>
   );
 };
 
