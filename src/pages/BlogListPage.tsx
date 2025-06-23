@@ -2,14 +2,16 @@
 import React, { useState } from 'react';
 import { Search, Filter, Calendar, Clock, Tag } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import SEO from '@/components/SEO';
-import SEOSchema from '@/components/SEOSchema';
-import { blogArticles, getArticlesByCategory } from '@/data/blogArticles';
+import AdvancedSEO from '@/components/AdvancedSEO';
+import VoiceSearchOptimizer from '@/components/VoiceSearchOptimizer';
+import { useSEOOptimization } from '@/hooks/useSEOOptimization';
+import { blogArticles } from '@/data/blogArticles';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Badge } from '@/components/ui/badge';
 
 const BlogListPage: React.FC = () => {
+  const { seoData, isLoading } = useSEOOptimization();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
@@ -29,38 +31,37 @@ const BlogListPage: React.FC = () => {
   const startIndex = (currentPage - 1) * articlesPerPage;
   const displayedArticles = filteredArticles.slice(startIndex, startIndex + articlesPerPage);
 
-  const blogSchema = {
-    "@context": "https://schema.org",
-    "@type": "Blog",
-    "name": "Dr. M.K. Moosa Kunhi - Heart Health & Surgery Insights",
-    "description": "Comprehensive cardiac surgery education, patient guides, and medical insights",
-    "url": "https://drmoosakunhi.com/blog",
-    "author": {
-      "@type": "Person",
-      "name": "Dr. M.K. Moosa Kunhi"
+  const faqData = [
+    {
+      question: "What topics are covered in the cardiac surgery blog?",
+      answer: "Our blog covers cardiac surgery procedures, patient education, recovery tips, medical tourism information, and the latest advances in heart surgery."
     },
-    "blogPost": blogArticles.map(article => ({
-      "@type": "BlogPosting",
-      "headline": article.title,
-      "url": `https://drmoosakunhi.com/blog/${article.slug}`,
-      "datePublished": article.publishDate,
-      "author": {
-        "@type": "Person",
-        "name": article.author
-      }
-    }))
-  };
+    {
+      question: "How often is the blog updated?",
+      answer: "We publish new articles weekly, covering the latest developments in cardiac surgery, patient stories, and educational content."
+    },
+    {
+      question: "Can I ask questions about specific procedures?",
+      answer: "Yes, you can contact us directly or schedule a consultation to discuss specific cardiac procedures and treatment options."
+    }
+  ];
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <SEO
-        title="Heart Health & Surgery Blog | Dr. M.K. Moosa Kunhi"
-        description="Comprehensive cardiac surgery education, patient guides, procedure explanations, and recovery tips from leading cardiac surgeon Dr. M.K. Moosa Kunhi."
-        keywords="cardiac surgery blog, heart health education, bypass surgery guide, valve replacement, congenital heart disease, medical tourism India"
-        url="https://drmoosakunhi.com/blog"
+      <AdvancedSEO
+        title={seoData?.title}
+        description={seoData?.description}
+        keywords={seoData?.keywords}
+        url={seoData?.canonicalUrl}
+        breadcrumbs={seoData?.breadcrumbs}
+        faqData={faqData}
       />
       
-      <SEOSchema type="organization" data={blogSchema} />
+      <VoiceSearchOptimizer pageType="about" />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-medical-blue to-medical-blue-dark text-white py-16">

@@ -1,27 +1,45 @@
 
 import React from 'react';
 import { Calculator, TrendingDown, Shield, Globe } from 'lucide-react';
-import SEO from '@/components/SEO';
+import AdvancedSEO from '@/components/AdvancedSEO';
+import VoiceSearchOptimizer from '@/components/VoiceSearchOptimizer';
 import IntelligentCostCalculator from '@/components/IntelligentCostCalculator';
+import { useSEOOptimization } from '@/hooks/useSEOOptimization';
 
 const CostCalculatorPage: React.FC = () => {
-  const pageSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Cardiac Surgery Cost Calculator | Dr. M.K. Moosa Kunhi",
-    "description": "Calculate accurate costs for cardiac surgery procedures in India. Compare prices with international alternatives and get instant estimates.",
-    "url": "https://drmoosakunhi.com/cost-calculator"
-  };
+  const { seoData, isLoading } = useSEOOptimization();
+
+  const faqData = [
+    {
+      question: "How much does cardiac surgery cost in India?",
+      answer: "Cardiac surgery in India costs 60-80% less than similar procedures in Western countries, with bypass surgery starting from $5,000 and valve replacement from $6,000."
+    },
+    {
+      question: "Are there any hidden costs for international patients?",
+      answer: "No, we provide transparent pricing with all costs included upfront. Our packages cover surgery, hospital stay, medications, and post-operative care."
+    },
+    {
+      question: "What payment methods are accepted?",
+      answer: "We accept international wire transfers, credit cards, and travel insurance. Payment plans are available for qualifying patients."
+    }
+  ];
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <SEO
-        title="Cardiac Surgery Cost Calculator | Dr. M.K. Moosa Kunhi"
-        description="Calculate accurate costs for cardiac surgery procedures in India. Compare prices with international alternatives and get instant estimates for bypass surgery, valve replacement, and more."
-        keywords="cardiac surgery cost, heart surgery price India, bypass surgery cost, valve replacement cost, medical tourism pricing"
-        url="https://drmoosakunhi.com/cost-calculator"
-        schemaData={pageSchema}
+      <AdvancedSEO
+        title={seoData?.title}
+        description={seoData?.description}
+        keywords={seoData?.keywords}
+        url={seoData?.canonicalUrl}
+        breadcrumbs={seoData?.breadcrumbs}
+        faqData={faqData}
       />
+
+      <VoiceSearchOptimizer pageType="procedure" />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-medical-blue to-medical-blue-dark text-white py-16">

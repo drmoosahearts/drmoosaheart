@@ -2,9 +2,14 @@
 import React from 'react';
 import { Heart, Stethoscope, Activity, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import SEO from '@/components/SEO';
+import AdvancedSEO from '@/components/AdvancedSEO';
+import VoiceSearchOptimizer from '@/components/VoiceSearchOptimizer';
+import SEOContentOptimizer from '@/components/SEOContentOptimizer';
+import { useSEOOptimization } from '@/hooks/useSEOOptimization';
 
 const ProceduresPage: React.FC = () => {
+  const { seoData, isLoading } = useSEOOptimization();
+
   const procedures = [
     {
       id: 'beating-heart-surgery',
@@ -40,29 +45,61 @@ const ProceduresPage: React.FC = () => {
     }
   ];
 
-  const procedureSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Cardiac Surgery Procedures | Dr. M.K. Moosa Kunhi",
-    "description": "Comprehensive cardiac surgery procedures including beating heart surgery, valve replacement, bypass surgery, and congenital heart surgery",
-    "url": "https://drmoosakunhi.com/procedures",
-    "mainEntity": procedures.map(procedure => ({
-      "@type": "MedicalProcedure",
-      "name": procedure.title,
-      "description": procedure.description,
-      "procedureType": "Cardiac Surgery"
-    }))
-  };
+  const faqData = [
+    {
+      question: "What is beating heart surgery?",
+      answer: "Beating heart surgery is a minimally invasive cardiac surgery technique where the heart continues to beat during the procedure, eliminating the need for a heart-lung machine."
+    },
+    {
+      question: "How long does valve replacement surgery take?",
+      answer: "Valve replacement surgery typically takes 2-4 hours depending on the complexity of the case and whether multiple valves need replacement."
+    },
+    {
+      question: "What is the recovery time for cardiac surgery?",
+      answer: "Recovery time varies by procedure, but most patients return to normal activities within 6-8 weeks for bypass surgery and 4-6 weeks for valve procedures."
+    }
+  ];
+
+  const pageContent = `
+    Dr. M.K. Moosa Kunhi offers comprehensive cardiac surgery procedures including beating heart surgery, valve replacement, coronary bypass surgery, and congenital heart surgery. 
+    With over 16,000 successful surgeries and a 99.2% success rate, Dr. Moosa Kunhi uses advanced minimally invasive techniques for optimal patient outcomes.
+    Our cardiac surgery procedures are performed at JCI-accredited hospitals with state-of-the-art technology and internationally trained medical staff.
+  `;
+
+  const targetKeywords = [
+    'cardiac surgery procedures',
+    'beating heart surgery',
+    'valve replacement surgery',
+    'coronary bypass surgery',
+    'congenital heart surgery',
+    'Dr Moosa Kunhi',
+    'heart surgery Chennai',
+    'minimally invasive cardiac surgery'
+  ];
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <SEO
-        title="Cardiac Surgery Procedures | Dr. M.K. Moosa Kunhi"
-        description="Comprehensive cardiac surgery procedures including beating heart surgery, valve replacement, bypass surgery, and congenital heart surgery by Dr. M.K. Moosa Kunhi"
-        keywords="cardiac surgery procedures, beating heart surgery, valve replacement, bypass surgery, congenital heart surgery, CABG, heart valve repair"
-        url="https://drmoosakunhi.com/procedures"
-        schemaData={procedureSchema}
+      <AdvancedSEO
+        title={seoData?.title}
+        description={seoData?.description}
+        keywords={seoData?.keywords}
+        url={seoData?.canonicalUrl}
+        breadcrumbs={seoData?.breadcrumbs}
+        faqData={faqData}
+        procedureData={{
+          name: "Cardiac Surgery Procedures",
+          description: "Comprehensive cardiac surgery procedures including beating heart surgery, valve replacement, and bypass surgery",
+          cost: "60-80% less than Western countries",
+          duration: "2-6 hours depending on procedure",
+          recovery: "4-8 weeks typical recovery time"
+        }}
       />
+      
+      <VoiceSearchOptimizer pageType="procedure" />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-medical-blue to-medical-blue-dark text-white py-16">
@@ -93,6 +130,16 @@ const ProceduresPage: React.FC = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* SEO Content Optimizer */}
+      <section className="py-8 bg-white">
+        <div className="container mx-auto px-4">
+          <SEOContentOptimizer
+            content={pageContent}
+            targetKeywords={targetKeywords}
+          />
         </div>
       </section>
 

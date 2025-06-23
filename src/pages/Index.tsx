@@ -16,41 +16,72 @@ import PatientTestimonials from "@/components/PatientTestimonials";
 import FAQ from "@/components/FAQ";
 import BlogSection from "@/components/BlogSection";
 import EnhancedFAQ from "@/components/EnhancedFAQ";
-import EnhancedSEO from "@/components/EnhancedSEO";
 import EnhancedTrustSignals from "@/components/EnhancedTrustSignals";
+import AdvancedSEO from "@/components/AdvancedSEO";
+import VoiceSearchOptimizer from "@/components/VoiceSearchOptimizer";
+import AdvancedLocalSEO from "@/components/AdvancedLocalSEO";
+import { useSEOOptimization } from "@/hooks/useSEOOptimization";
 
 const Index: React.FC = () => {
+  const { seoData, isLoading } = useSEOOptimization();
+
   // Set page title and meta description for SEO
   useEffect(() => {
     document.title = "Dr. M.K. Moosa Kunhi - Premier Cardiac Surgeon | Chennai, India | 16,000+ Successful Heart Surgeries";
   }, []);
 
-  const homePageSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Dr. M.K. Moosa Kunhi - Cardiac Surgeon",
-    "url": "https://drmoosakunhi.com",
-    "description": "World-renowned cardiac surgeon specializing in beating heart surgery and complex cardiac procedures",
-    "publisher": {
-      "@type": "Person",
-      "name": "Dr. M.K. Moosa Kunhi"
+  const faqData = [
+    {
+      question: "Who is Dr. M.K. Moosa Kunhi?",
+      answer: "Dr. M.K. Moosa Kunhi is a world-renowned cardiac surgeon based in Chennai, India, with over 25 years of experience and 16,000+ successful cardiac surgeries. He is a pioneer of beating heart surgery in India."
     },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://drmoosakunhi.com/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
+    {
+      question: "What makes Dr. Moosa Kunhi special?",
+      answer: "Dr. Moosa Kunhi is a pioneer of beating heart surgery in India and has a 99.2% success rate in complex cardiac procedures. He treats international patients from 50+ countries."
+    },
+    {
+      question: "Does Dr. Moosa Kunhi treat international patients?",
+      answer: "Yes, Dr. Moosa Kunhi has treated patients from over 50 countries and provides comprehensive medical tourism services including visa assistance and accommodation."
+    },
+    {
+      question: "What is the cost of cardiac surgery in India?",
+      answer: "Cardiac surgery in India costs 60-80% less than similar procedures in the US, UK, or Gulf countries, while maintaining world-class quality standards."
     }
-  };
+  ];
+
+  const reviewData = [
+    {
+      author: "Ahmed Hassan",
+      rating: 5,
+      review: "Excellent care and successful heart surgery. Dr. Moosa Kunhi is truly world-class. Saved my life with beating heart surgery.",
+      date: "2024-01-15"
+    },
+    {
+      author: "Sarah Johnson",
+      rating: 5,
+      review: "Outstanding medical care and support throughout my valve replacement surgery. The international patient services were exceptional.",
+      date: "2024-02-20"
+    }
+  ];
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="min-h-screen">
-      <EnhancedSEO
-        title="Dr. M.K. Moosa Kunhi - Premier Cardiac Surgeon | Chennai, India | 16,000+ Successful Heart Surgeries"
-        description="Dr. M.K. Moosa Kunhi - World-renowned cardiac surgeon specializing in beating heart surgery, valve replacement, and pediatric cardiac care. Serving international patients from 50+ countries with 99.2% success rate."
-        keywords="cardiac surgeon Chennai, heart surgery India, beating heart surgery, Dr Moosa Kunhi, valve replacement, pediatric cardiac surgery, international medical tourism, emergency cardiac care, minimally invasive heart surgery"
-        schemaType="MedicalBusiness"
-        customSchema={homePageSchema}
+      <AdvancedSEO
+        title={seoData?.title}
+        description={seoData?.description}
+        keywords={seoData?.keywords}
+        url={seoData?.canonicalUrl}
+        breadcrumbs={seoData?.breadcrumbs}
+        faqData={faqData}
+        reviewData={reviewData}
       />
+      
+      <VoiceSearchOptimizer pageType="home" />
+      <AdvancedLocalSEO />
       
       <ModernHero />
       <EnhancedTrustSignals />
